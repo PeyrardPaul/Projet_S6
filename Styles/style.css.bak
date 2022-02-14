@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-=======
-/* Conseil de mise en page pendant la réalisation du site */
-*{
-	border-width : 1px;
-	border-style : dotted;
-	border-color : #FF0000;
-	padding : 0px;
-	margin : 0px;
-}
->>>>>>> a8767fcb230c9d493ef3501d312fc8b28fa43eb3
 h1 {
 	font-size: 5em;
 	text-align: center;
