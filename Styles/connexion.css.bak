@@ -1,0 +1,57 @@
+
+body
+{
+	background: url(../images/fond.jpg) ;
+	background-position: fixed;
+	font-family: 'Open Sans', sans-serif;
+	background-repeat: no-repeat;
+    background-position: fixed;
+	background-position: center;	
+}
+
+label 
+{
+  
+  display: inline-block;
+  width: 100px;
+  text-align: left;
+  color: black;
+  font-size: 1.3em;
+}
+
+.pseudo
+{   
+	text-align: center;
+    margin-top: 150px;
+	padding-top: 50px;
+}
+
+.password
+{
+	text-align: center;
+    margin-top: 40px;
+	padding-top: 10px;
+}
+.login
+{
+	text-align: center;
+    margin-top: 80px;
+	font-size: 1.3em;
+	border: inset ;
+    border-radius: 0.5em;
+	
+	width: 250px;
+	height: 45px;
+	margin: 70px 600px;
+	background-position: fixed;
+	background-color: grey;
+	
+	box-sizing: border-box;
+}
+
+input
+{
+	width: 240px;
+	height: 40px;
+  box-sizing: border-box;
+}
