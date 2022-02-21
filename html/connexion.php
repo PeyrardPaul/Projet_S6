@@ -5,6 +5,27 @@
 <meta charset="UTF-8">
 <link rel="stylesheet"href="../Styles/style.css"type="text/css"media="screen"/>
 <title>Welcome</title>
+<style>
+	h2 {
+		text-align:center;
+		padding-bottom:25px;
+		padding-top:25px;
+		margin: 10px 13em 10px 13em;
+		background-color: black;
+		color: white;
+		font-family:'Open Sans', sans-serif;
+		}
+	
+	p {
+		text-align:center;
+		}
+	.inscrire {
+		background-color: black;
+		color: white;
+		font-size: 18px;
+		margin-right:2px;
+		}
+</style>
 </head>
 <body>
 			
@@ -23,14 +44,15 @@
 <input type="password" name="password" placeholder="Saisir password" required/> 
 </div>
 
-<a href="MDP_oublie.html">Mot de passe oublié ?</a>
+<p><a href="MDP_oublie.html">Mot de passe oublié ?</a></p>
 
 <button type="submit" class="login" name="login">Me connecter</button>
 <br/>
 </form>
 </div>
 
-<a href="inscription.php"><h2>INSCRIVEZ-VOUS</h2></a>
-
+<form action="inscription.php" class="ins">
+	<button class="inscrire" type="submit"><h2>INSCRIVEZ-VOUS</h2></button>
+</form>
 </body>
 </html>
