@@ -30,7 +30,7 @@
 </form>
 </div>
 
-<h2>INSCRIVEZ-VOUS</h2>
+<a href="inscription.php"><h2>INSCRIVEZ-VOUS</h2></a>
 
 </body>
 </html>
