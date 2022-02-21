@@ -15,6 +15,12 @@
 		Page d'accueil
 	</h2>
     <div><p>essai accueil</p></div>
+	<p>TOUT LES LIENS POUR ALLER SUR LES AUTRES PAGES:</p><br/>
+	<a href="qui_sommes_nous.php">Qui_sommmes_nous</a>
+	<a href="inscription.php">Inscription</a>
+	<a href="connexion.php">Connexion</a>
+	<a href="contact.php">Contact</a>
+	<a href="departement.php">Departement</a>
 </body>
 </html>
 
