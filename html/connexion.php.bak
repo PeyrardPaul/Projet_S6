@@ -3,7 +3,7 @@
 
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet"href="../Styles/style.css"type="text/css"media="screen"/>
+<link rel="stylesheet" href="../Styles/connexion.css" type="text/css" />
 <title>Welcome</title>
 </head>
 <body>
@@ -30,7 +30,7 @@
 </form>
 </div>
 
-<a href="inscription.php"><h2>INSCRIVEZ-VOUS</h2></a>
+<h2>INSCRIVEZ-VOUS</h2>
 
 </body>
 </html>
