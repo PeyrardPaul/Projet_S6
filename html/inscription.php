@@ -15,7 +15,7 @@
      minlength="3" maxlength="16" size="10"
 	 placeholder="Pseudo">
 	 <br>
-<label for="nom">Identifiant :</label>
+<label for="nom">Adresse email :</label>
 <input type="text" id="name" name="name" required
      minlength="100" maxlength="100" size="10"
 	 placeholder="Adresse mail">
