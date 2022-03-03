@@ -8,19 +8,20 @@
     <title> N-Maps</title>
 </head>
 <body>
-    <h1>
-        PBF: Plus Belle la France 
-    </h1>
-    <h2>
-		Page d'accueil
-	</h2>
-    <div><p>essai accueil</p></div>
-	<p>TOUT LES LIENS POUR ALLER SUR LES AUTRES PAGES:</p><br/>
-	<a href="qui_sommes_nous.php">Qui_sommmes_nous</a>
-	<a href="inscription.php">Inscription</a>
-	<a href="connexion.php">Connexion</a>
-	<a href="contact.php">Contact</a>
-	<a href="departement.php">Departement</a>
+    <div class="bandeau">
+        <h1><a href="index.php">N-MAPS</a></h1>
+        <ul class="menu">
+        <a href="index.php">Accueil</a>
+            <li><a href="qui_sommes_nous.php">Qui sommes nous ?</a></li>
+            <li><a href="inscription.php">Inscription</a></li>
+            <li><a href="contact.php">Contact</a></li>
+            <li><a href="departement.php">Département</a></li>
+            <li><a href="connexion.php">Connexion</a></li>
+ 
+        </ul>
+            
+    </div>
+
 </body>
 </html>
 
