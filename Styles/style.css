@@ -35,6 +35,11 @@
 	color: var(--text-color-beige);
 }
 
+#logo{
+	width: 70px;
+	float: left;
+}
+
 /* a:visited{
 	color: var(--text-color) ;
 	text-decoration: none;
@@ -80,6 +85,16 @@ body {
 	color: var(--text-color);
 	border-color: #ffffff;
 	box-shadow: 3px 3px 5px var(--color-shadow);
+}
+
+.header-content{
+	background: rgba(0,0,0,.4);
+	border-radius: 8px;
+	padding: 2em;
+	max-width: 1024px;
+	min-width: 60%;
+	margin: auto;
+	height: 250px;
 }
 
 
