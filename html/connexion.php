@@ -14,14 +14,18 @@
 		padding-bottom:25px;
 		padding-top:25px;
 		margin: 10px 13em 10px 13em;
-		background-color: black;
+		background-color: #0E0D3F;
 		color: white;
-		font-family:'Open Sans', sans-serif;
 		}
 	
 	p {
 		text-align:center;
+		margin-top:10px;
+		margin-left:105px;
 		}
+	a {
+		color: blue;
+	}
 </style>
 </head>
 <body>
