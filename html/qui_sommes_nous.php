@@ -9,6 +9,7 @@
 </head>
 <body>
 <div class="bandeau">
+        <img id="logo" src="../images/N-Maps.png" alt="images logo" >
         <h1><a href="index.php">N-MAPS</a></h1>
         <ul class="menu">
             <li><a href="index.php">Accueil</a></li>
@@ -18,7 +19,6 @@
             <li><a href="departement.php">Département</a></li>
             <li><a href="connexion.php">Connexion</a></li>
         </ul>
-            
     </div>
 <p>Nous sommes un groupe de particulier pour vous aider dans le choix d'une région pour déménager ou pour un voyage à la découverte de ...</p>
     

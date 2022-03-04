@@ -22,6 +22,7 @@
 .bandeau{
 	color: var(--text-color-beige) ;
 	background:var(--bandeau);
+	z-index: 99;
 }
 
 .bandeau > h1 {
@@ -86,6 +87,16 @@ body {
 	box-shadow: 3px 3px 5px var(--color-shadow);
 }
 
+
+header {
+	background-color: #979494;
+	color: #fff;
+	position: relative;
+	padding: 0;
+	margin: 0;
+	min-height: 350px;
+}
+
 .header-content{
 	background: rgba(0,0,0,.4);
 	border-radius: 8px;
@@ -93,8 +104,30 @@ body {
 	max-width: 1024px;
 	min-width: 60%;
 	margin: auto;
-	height: 250px;
+	/* height: 250px; */
+	
 }
+.header-area {
+    text-align: center;
+    position: absolute;
+    display: flex;
+    min-height: 100%;
+    top: 0;
+    left: 0;
+    color: #fff;
+    margin: auto;
+    width: 100%;
+  }
+  .header-cover img {
+    opacity: 1;
+    width: 100%;
+    height: auto;
+    min-height: 350px;
+    margin: 0;
+    -o-object-fit: cover;
+    object-fit: cover;
+    display: block;
+  }
 
 
 /* .body

@@ -20,13 +20,22 @@
             <li><a href="connexion.php">Connexion</a></li>
         </ul>
     </div>
-
-    <div class="header-cover">
-    <div class="header-content">
-        <p>Bienvenue sur N-MAPS</p>  
-        <p>Site d'avis et de comparaison des départements en France. </p>
-    </div>
-    </div>
+    
+     <div> <!--je fais une grosse div qui contiendra la page. -->
+         <header>
+         <div class="header-cover">
+                <img src="../images/montpellier.jpg" alt="image montpellier">
+        </div>
+         <div class="header-area">
+                 <div class="header-content">
+                    <p>Bienvenue sur N-MAPS</p>  
+                    <p>Site d'avis et de comparaison des départements en France. </p>
+                </div> 
+             </div>
+            
+            
+        </header>
+            </div>
    
             
 
