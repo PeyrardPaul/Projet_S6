@@ -20,7 +20,13 @@
             <li><a href="connexion.php">Connexion</a></li>
         </ul>
     </div>
-<p>Nous sommes un groupe de particulier pour vous aider dans le choix d'une région pour déménager ou pour un voyage à la découverte de ...</p>
+<p>Nous sommes un groupe formé de cinq(5) développeurs qui avons travaillé de concert dans le but de vous proposer
+    un site à titre aussi bien informatif que distrayant .<br/> Il s'agit d'un site qui a pour idée principale 
+    de vous faire découvrir des probabilités pour des départements Français de la métropole selon un certains nombre d'indices de vie 
+    afin de vous aider dans 
+    le choix d'une région pour déménager par exemple, pour un choix de destination 
+    pour un voyage ou même juste par curiosité... 
+    </p>
     
 </body>
 </html>
