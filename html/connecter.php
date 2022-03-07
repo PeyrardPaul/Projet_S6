@@ -47,12 +47,10 @@
                 echo "pseudo= ".$mat['pseudo']."<br/>";
                 echo "password= ".$mat['password']."<br/>";
 				echo "adresse_email= ".$mat['adresse_email']."<br/>";
-                echo "adresse= ".$mat['adresse']."<br/>";
-                echo "photo= ".$mat['photo']."<br/>";
 				echo "type= ".$mat['type']."<br/>";
 				echo "code_activation= ".$mat['code_activation']."<br/>";
 				echo "code_reset= ".$mat['code_reset']."<br/>";
-				$_SESSION['user']=array($mat['user_id'],$mat['code_dep'],$mat['nom'],$mat['prenom'],$mat['pseudo'],$mat['adresse_email'],$mat['adresse'],$mat['photo'],$mat['type'],$mat['code_activation'],$mat['code_reset']);
+				$_SESSION['user']=array($mat['user_id'],$mat['code_dep'],$mat['nom'],$mat['prenom'],$mat['pseudo'],$mat['adresse_email'],$mat['type'],$mat['code_activation'],$mat['code_reset']);
             }
 			echo("<meta http-equiv='refresh' content='1; url=http://localhost/Projet_S6/html/index.php '>");
 		}

@@ -28,7 +28,7 @@
 			<li><?php
 		                if(isset($_SESSION['user'])) {
 			                echo "<li><a href='deconnexion.php'>Se déconnecter</a></li>";
-							echo "<li>Bonjour ".$_SESSION['user'][2]." ".$_SESSION['user'][3]."</li>";
+							echo "<li>Bonjour ".$_SESSION['user'][4]."</li>";
 
 		                }
 		                else {
