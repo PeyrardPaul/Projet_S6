@@ -20,13 +20,17 @@
             <li><a href="connexion.php">Connexion</a></li>
         </ul>
     </div>
-<p>Nous sommes un groupe formé de cinq(5) développeurs qui avons travaillé de concert dans le but de vous proposer
-    un site à titre aussi bien informatif que distrayant .<br/> Il s'agit d'un site qui a pour idée principale 
-    de vous faire découvrir des probabilités pour des départements Français de la métropole selon un certains nombre d'indices de vie 
-    afin de vous aider dans 
-    le choix d'une région pour déménager par exemple, pour un choix de destination 
-    pour un voyage ou même juste par curiosité... 
-    </p>
+<p>Nous sommes un groupe de cinq développeurs. Nous avons travaillé de concert dans le but de vous proposer
+    un site aussi informatif que distrayant .<br/> Il s'agit d'un outil qui a pour but principal
+    de vous faire découvrir les départements Français de la métropole à travers différents indices de vie.
+    <br/>
+    Nous souhaitons que nos utilisateurs s'approprient cet outil !
+    Que ce soit pour des projets sérieux, le choix d'un futur lieu de vie <br/>
+    quelque chose de plus léger, votre prochaine destination de vacance par exemple ! <br/>
+    Et même pour satisfaire votre soif de connaissance ! <br/>
+
+    Prenez le temps de découvrir la France à travers différents angles, nous attendons vos retours avec impatience !
+     </p>
     
 </body>
 </html>
