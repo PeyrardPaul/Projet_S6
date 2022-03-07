@@ -8,25 +8,6 @@
     <title> Inscription </title>
 </head>
 <body>
-<<<<<<< HEAD
-
-<p>Nom:</p>
-<input type="text" id="name" name="name" required
-     maxlength="20" size="20"
-	 placeholder="Pseudo">
-	 <br>
-<p >Adresse email :</p>
-<input type="text" id="name" name="name" required
-     minlength="100" maxlength="100" size="10"
-	 placeholder="Adresse mail">
-	 <br>
-<p >Mot de passe (4 à 12 charactères):</p>
-<input type="text" id="name" name="name" required
-     minlength="4" maxlength="16" size="10"
-	 placeholder="Mot de passe (attention aux majuscules)">
-	 <br>
-<p >Validez le Mot de passe :</p>
-=======
 <div class="bandeau">
         <img id="logo" src="../images/N-Maps.png" alt="images logo" >
         <h1><a href="index.php">N-MAPS</a></h1>
@@ -57,7 +38,6 @@
     placeholder="Mot de passe (attention aux majuscules)">
     <br>
 <label for="nom">Validez le Mot de passe :</label>
->>>>>>> fda8bbcb23ae77d6ec9b0784086b1ccac2dca1d2
 <input type="text" id="name" name="name" required
     minlength="4" maxlength="16" size="10"  placeholder="Répétez le mot de passe">
     
