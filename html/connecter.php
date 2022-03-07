@@ -1,4 +1,4 @@
-<?php require 'bd.php'; ?>
+<?php require '../../bd.php'; ?>
 <?php $bdd = getBD(); ?>
 <?php session_start(); ?>
 

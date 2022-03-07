@@ -1,5 +1,5 @@
 <?php
-	include 'bd.php';
+	include '../../bd.php';
 	session_start();
 
 	if(isset($_SESSION['admin'])){
