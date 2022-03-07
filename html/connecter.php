@@ -35,7 +35,7 @@
 				echo "code_reset= ".$mat['code_reset']."<br/>";
 				$_SESSION['user']=array($mat['user_id'],$mat['code_dep'],$mat['nom'],$mat['prenom'],$mat['pseudo'],$mat['adresse_email'],$mat['adresse'],$mat['photo'],$mat['type'],$mat['code_activation'],$mat['code_reset']);
             }
-			echo("<meta http-equiv='refresh' content='1; url=http://localhost:8080/Nouveau%20dossier/Projet_S6/html/index.php '>");
+			echo("<meta http-equiv='refresh' content='1; url=http://localhost/Projet_S6/html/index.php '>");
 		}
 		$rep ->closeCursor();
 		?>	
