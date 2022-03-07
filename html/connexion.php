@@ -1,5 +1,3 @@
-<?php require 'bd.php'; ?>
-<?php $bdd = getBD(); ?>
 
 <!DOCTYPE html>
 <html>
@@ -28,14 +26,28 @@
 	}
 </style>
 </head>
+
+<?php include 'session.php'; ?>
+
+
+<?php $bdd = getBD(); ?>
+
+<?php
+  if(isset($_SESSION['user']))
+  {
+    header('location: index.php');
+  }
+?>
+
 <body>
 			
 <h2>CONNECTEZ-VOUS</h2>
 <div class="body">
+
 	<form method=Post action="connecter.php" autocomplete=ON>
 		<div class="pseudo">
 			<label for="pseudo">Pseudo</label>:
-			<input type="pseudo"  name="pseudo" value=<?echo "'".$_GET['pseudo']."'"?> placeholder="Saisir pseudo" required/>
+			<input type="pseudo"  name="pseudo" value="" placeholder="Saisir pseudo" required/>
 		</div>
 
 		<div class="password">
