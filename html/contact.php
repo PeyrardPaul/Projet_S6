@@ -1,3 +1,9 @@
+<?php
+	include '../../bd.php';
+	session_start();
+	// $bdd = getBD();
+
+?>
 
 <!DOCTYPE html>
 <html lang="fr">

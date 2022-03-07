@@ -1,5 +1,9 @@
-<?php require '../../bd.php'; ?>
-<?php $bdd = getBD(); ?>
+<?php
+	include '../../bd.php';
+	session_start();
+	// $bdd = getBD();
+
+?>
 
 <!DOCTYPE html>
 <html>
