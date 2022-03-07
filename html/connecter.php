@@ -6,10 +6,29 @@
 <html lang="fr">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<link rel="stylesheet" href="styles/style.css" type="text/css" media="screen"/>
+		<link rel="stylesheet" href="../Styles/style.css" type="text/css" media="screen"/>
 		<title>N-Maps</title>
 	</head>
 	<body>
+	<div class="bandeau"> <!--ici le bandeau haut de page -->
+        <img id="logo" src="../images/N-Maps.png" alt="images logo" >
+        <h1><a href="index.php">N-MAPS</a></h1>
+        <ul class="menu">
+            <li><a href="index.php">Accueil</a></li>
+            <li><a href="qui_sommes_nous.php">Qui sommes nous ?</a></li>
+            <li><a href="contact.php">Contact</a></li>
+            <li><a href="departement.php">Département</a></li>
+			<li><?php
+		                if(isset($_SESSION['user'])) {
+			                echo "<li><a href='deconnexion.php'>Se déconnecter</a></li>";
+							echo "<li>Bonjour ".$_SESSION['user'][2]." ".$_SESSION['user'][3]."</li>";
+
+		                }
+		                else {
+			                echo "<li><a href='connexion.php'>Se connecter </a></li>";
+		                }?></li>
+        </ul>
+    </div>
     <?php
 		$pseudo=$_POST['pseudo'];
 		$mdp=$_POST['password'];
