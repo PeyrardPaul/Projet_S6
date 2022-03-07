@@ -22,6 +22,7 @@
     </div>
     
      <div> <!--je fais une grosse div qui contiendra la page. -->
+
     
          <header>
             <div class="header-cover">
@@ -34,13 +35,14 @@
                 </div> 
              </div>     
         </header>
-    </div>
 
-     <div class="footer"> <!--ici le pied de page -->
-        <p>essai footer</p>
+        <!-- carte cliquable  -->
+        
+        <!-- fin de la carte cliquable -->
     </div>
-    <footer>
-        footer 2 
+ 
+    <footer><!--ici le pied de page -->
+        N-Maps © 2022
     </footer>
    
 </body>

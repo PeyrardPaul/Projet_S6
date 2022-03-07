@@ -43,13 +43,7 @@
 }
 
 
-.footer{
-	min-height: 70px;
-	background-color:var(--footer);
-	font-size: .9rem;
-	display: flex;
-	justify-content: center;
-  }
+
 
 footer{
 	min-height: 70px;
@@ -199,3 +193,24 @@ input
 	height: 40px;
   box-sizing: border-box;
 }
+
+/* style de la carte*/
+.carte {
+	width: 85%;
+	margin: 0 auto;
+}
+path {
+	stroke: #000000;
+	stroke-width: 1px;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke-opacity: .25;
+	fill: #86aae0;
+}
+g:hover path {
+	fill: #86cce0;
+}
+g path:hover {
+	fill: #86eee0;
+}
+/* fin du style de la carte */
