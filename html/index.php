@@ -1,6 +1,8 @@
 <?php
 	include 'bd.php';
 	session_start();
+	// $bdd = getBD();
+
 ?>
 
 <!DOCTYPE html>
@@ -23,6 +25,15 @@
             <li><a href="contact.php">Contact</a></li>
             <li><a href="departement.php">Département</a></li>
             <li><a href="connexion.php">Connexion</a></li>
+			<li><?php
+		                if(isset($_SESSION['user'])) {
+			                echo "Bonjour</p> ".$_SESSION['user'][2]." ".$_SESSION['user'][3]." ";
+			                echo "<br/><a href='deconnexion.php'>Se déconnecter</a>";
+		                }
+		                else {
+			                echo "<a href='inscription.php'>Nouveau Client</a><br/>";
+			                echo "<a href='connexion.php'>Se connecter </a>";
+		                }?></li>
         </ul>
     </div>
     
@@ -37,15 +48,7 @@
                  <div class="header-content">
                     <p>Bienvenue sur N-MAPS</p>  
                     <p>Site d'avis et de comparaison des départements en France. </p>
-                    <?php
-		                if(isset($_SESSION['user'])) {
-			                echo "Bonjour ".$_SESSION['user'][2]." ".$_SESSION['user'][3]." ";
-			                echo "<br/><a href='deconnexion.php'>Se déconnecter</a><br/>";
-		                }
-		                else {
-			                echo "<a href='inscription.php'>Nouveau Client</a><br/>";
-			                echo "<a href='connexion.php'>Se connecter </a>";
-		                }?>
+                    
                 </div> 
              </div>     
         </header>
