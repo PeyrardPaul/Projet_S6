@@ -21,15 +21,24 @@
         </ul>
     </div>
 <p>Nous sommes un groupe de cinq développeurs. Nous avons travaillé de concert dans le but de vous proposer
-    un site aussi informatif que distrayant .<br/> Il s'agit d'un outil qui a pour but principal
-    de vous faire découvrir les départements Français de la métropole à travers différents indices de vie.
+    un site distrayant et informatif.<br/>
+    
+    Il s'agit d'un outil qui a pour but principal 
+    de vous faire découvrir les départements de France métropolitaine à travers différents indices de vie.
     <br/>
-    Nous souhaitons que nos utilisateurs s'approprient cet outil !
-    Que ce soit pour des projets sérieux, le choix d'un futur lieu de vie <br/>
-    quelque chose de plus léger, votre prochaine destination de vacance par exemple ! <br/>
-    Et même pour satisfaire votre soif de connaissance ! <br/>
 
-    Prenez le temps de découvrir la France à travers différents angles, nous attendons vos retours avec impatience !
+    Nous souhaitons que nos utilisateurs s'approprient cet outil !<br/>
+    <br/>
+
+    Que ce soit pour des projets sérieux tels que le choix d'un futur lieu de résidence. <br/>
+
+    Ou quelque chose de plus léger comme votre prochaine destination de vacance ! <br/>
+
+    Et même pour satisfaire votre soif de connaissances... <br/>
+    <br/>
+
+    Prenez le temps de découvrir la France à travers différents angles,
+    nous attendons vos avis, commentaires et retours avec impatience ! <br/>
      </p>
     
 </body>
