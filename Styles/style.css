@@ -3,10 +3,12 @@
 :root{
 	--background:#fffef3;
 	--bandeau: #0E0D3F ;
+	--footer: #0E0D3F ;
 	--text-color:#0E0D3F;
 	--text-color-beige: #fffce9 ;
 	--text-color-noir:black;
-	--color-shadow:rgba(255, 179, 0, 0.664);
+	/* --color-shadow:rgba(255, 179, 0, 0.664); */
+	--color-shadow:rgba(112, 33, 33, 0.664);
 
 }
 *{
@@ -40,10 +42,22 @@
 	float: left;
 }
 
-/* a:visited{
-	color: var(--text-color) ;
-	text-decoration: none;
-} */
+
+.footer{
+	min-height: 70px;
+	background-color:var(--footer);
+	font-size: .9rem;
+	display: flex;
+	justify-content: center;
+  }
+
+footer{
+	min-height: 70px;
+	background-color:var(--footer);
+	font-size: .9rem;
+	display: flex;
+	justify-content: center;
+  }
 
 a{
 	color: var(--text-color-beige);
