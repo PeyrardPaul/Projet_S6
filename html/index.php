@@ -25,11 +25,12 @@
             <li><a href="departement.php">Département</a></li>
 			<li><?php
 		                if(isset($_SESSION['user'])) {
-			                echo "Bonjour</p> ".$_SESSION['user'][2]." ".$_SESSION['user'][3]." ";
-			                echo "<br/><a href='deconnexion.php'>Se déconnecter</a>";
+			                echo "<li><a href='deconnexion.php'>Se déconnecter</a></li>";
+							echo "<li>Bonjour ".$_SESSION['user'][2]." ".$_SESSION['user'][3]."</li>";
+
 		                }
 		                else {
-			                echo "<a href='connexion.php'>Se connecter </a>";
+			                echo "<li><a href='connexion.php'>Se connecter </a></li>";
 		                }?></li>
         </ul>
     </div>
