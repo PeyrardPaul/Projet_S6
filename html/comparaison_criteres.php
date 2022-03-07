@@ -6,7 +6,6 @@
     <link rel="stylesheet"href="../Styles/style.css"type="text/css"media="screen"/>
     <title>Département</title>
 </head>
-<body>
 <div class="bandeau">
 	<img id="logo" src="../images/N-Maps.png" alt="images logo" >
 	<h1><a href="index.php">N-MAPS</a></h1>
@@ -19,18 +18,6 @@
 		<li><a href="connexion.php">Connexion</a></li>
 	</ul>
 </div>
-
- <div>
-
-    <h1>
-        Que souhaitez vous faire ?
-    </h1>
-    <p>
-            <a style="color : black" href="comparaison_2dp.php">Comparer deux départements</a>
-    </p>
-    <p>
-            <a style="color : black" href="comparaison_criteres.php">Comparer selon différents critères</a>
-    </p>
-        
+<div> 
 </div>
-</body>
+<body>
