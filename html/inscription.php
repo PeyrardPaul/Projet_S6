@@ -22,26 +22,26 @@
 </div>
 
 <div>
-<label for="nom">Nom(4 à 8 characters):</label>
+<p>Nom:</p>
 <input type="text" id="name" name="name" required
-    minlength="3" maxlength="16" size="10"
-    placeholder="Pseudo">
-    <br>
-<label for="nom">Adresse email :</label>
+     maxlength="20" size="10"
+    placeholder="Pseudo" style="margin-bottom:20px;">
+    <br/>
+<p>Adresse email :</p>
 <input type="text" id="name" name="name" required
-    minlength="100" maxlength="100" size="10"
-    placeholder="Adresse mail">
-    <br>
-<label for="nom">Mot de passe (4 à 12 charactères):</label>
+     maxlength="50" size="10"
+    placeholder="Adresse mail" style="margin-bottom:20px;">
+    <br/>
+<p>Mot de passe:</p>
 <input type="text" id="name" name="name" required
-    minlength="4" maxlength="16" size="10"
-    placeholder="Mot de passe (attention aux majuscules)">
-    <br>
-<label for="nom">Validez le Mot de passe :</label>
+    minlength="4" maxlength="20" size="10"
+    placeholder="Mot de passe" style="margin-bottom:20px;">
+    <br/>
+<p>Validez le Mot de passe :</p>
 <input type="text" id="name" name="name" required
-    minlength="4" maxlength="16" size="10"  placeholder="Répétez le mot de passe">
+    minlength="4" maxlength="20" size="10"  placeholder="Répétez le mot de passe" style="margin-bottom:20px;">
     
-    <br>
+    <br/>
 
 </div>
 </body>
