@@ -1,3 +1,8 @@
+<?php
+	include 'bd.php';
+	session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,6 +37,15 @@
                  <div class="header-content">
                     <p>Bienvenue sur N-MAPS</p>  
                     <p>Site d'avis et de comparaison des départements en France. </p>
+                    <? 
+		                if(isset($_SESSION['user'])) {
+			                echo "Bonjour ".$_SESSION['user'][2]." ".$_SESSION['user'][3]." ";
+			                echo "<br/><a href='deconnexion.php'>Se déconnecter</a><br/>";
+		                }
+		                else {
+			                echo "<a href='inscription.php'>Nouveau Client</a><br/>";
+			                echo "<a href='connexion.php'>Se connecter </a>";
+		                }?>
                 </div> 
              </div>     
         </header>
