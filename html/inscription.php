@@ -22,27 +22,34 @@
 </div>
 
 <div>
-<p>Nom:</p>
+<form method=Post action="enregistrement.php" autocomplete=ON>
+<p><strong>Nom:</strong>
 <input type="text" id="name" name="name" required
      maxlength="20" size="10"
     placeholder="Pseudo" style="margin-bottom:20px;">
+</p>
     <br/>
-<p>Adresse email :</p>
+<p><strong>Adresse email :</strong>
 <input type="text" id="name" name="name" required
      maxlength="50" size="10"
     placeholder="Adresse mail" style="margin-bottom:20px;">
+</p>
     <br/>
-<p>Mot de passe:</p>
+<p><strong>Mot de passe:</strong>
 <input type="text" id="name" name="name" required
     minlength="4" maxlength="20" size="10"
     placeholder="Mot de passe" style="margin-bottom:20px;">
+</p>
     <br/>
-<p>Validez le Mot de passe :</p>
-<input type="text" id="name" name="name" required
+<p><strong>Validez le Mot de passe :</strong>
+    <input type="text" id="name" name="name" required
     minlength="4" maxlength="20" size="10"  placeholder="Répétez le mot de passe" style="margin-bottom:20px;">
-    
-    <br/>
-
+</p>
+<br/>
+<p><div style="margin-left: 150px;">
+		<input type="submit" value="Envoyer" />
+</div></p>
+</form>
 </div>
 </body>
 </html>

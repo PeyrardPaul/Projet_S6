@@ -23,7 +23,7 @@
 </div>
 
  <div> <!--ici la grande div qui a le contenu de la page -->
-	<form class="formulaire" action="POST">
+	<form method="Post" class="formulaire" action="">
 
 	<p><strong>Nom :</strong>
 		<input type="text" id="user" value="" />
