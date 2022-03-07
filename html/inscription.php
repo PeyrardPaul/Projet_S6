@@ -8,18 +8,25 @@
     <title> Inscription </title>
 </head>
 <body>
-<div class="bandeau">
+<div class="bandeau"> <!--ici le bandeau haut de page -->
         <img id="logo" src="../images/N-Maps.png" alt="images logo" >
         <h1><a href="index.php">N-MAPS</a></h1>
         <ul class="menu">
             <li><a href="index.php">Accueil</a></li>
             <li><a href="qui_sommes_nous.php">Qui sommes nous ?</a></li>
-            <li><a href="inscription.php">Inscription</a></li>
             <li><a href="contact.php">Contact</a></li>
             <li><a href="departement.php">Département</a></li>
-            <li><a href="connexion.php">Connexion</a></li>
+			<li><?php
+		                if(isset($_SESSION['user'])) {
+			                echo "<li><a href='deconnexion.php'>Se déconnecter</a></li>";
+							echo "<li>Bonjour ".$_SESSION['user'][2]." ".$_SESSION['user'][3]."</li>";
+
+		                }
+		                else {
+			                echo "<li><a href='connexion.php'>Se connecter </a></li>";
+		                }?></li>
         </ul>
-</div>
+    </div>
 
 <div>
 <form method=Post action="enregistrement.php" autocomplete=ON>

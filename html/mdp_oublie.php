@@ -13,6 +13,25 @@
 </style>
 </head>
 <body>
+<div class="bandeau"> <!--ici le bandeau haut de page -->
+        <img id="logo" src="../images/N-Maps.png" alt="images logo" >
+        <h1><a href="index.php">N-MAPS</a></h1>
+        <ul class="menu">
+            <li><a href="index.php">Accueil</a></li>
+            <li><a href="qui_sommes_nous.php">Qui sommes nous ?</a></li>
+            <li><a href="contact.php">Contact</a></li>
+            <li><a href="departement.php">Département</a></li>
+			<li><?php
+		                if(isset($_SESSION['user'])) {
+			                echo "<li><a href='deconnexion.php'>Se déconnecter</a></li>";
+							echo "<li>Bonjour ".$_SESSION['user'][2]." ".$_SESSION['user'][3]."</li>";
+
+		                }
+		                else {
+			                echo "<li><a href='connexion.php'>Se connecter </a></li>";
+		                }?></li>
+        </ul>
+    </div>
     <form method=Post action="recuperation.php" autocomplete=ON>
         <p> Email de récupération :
             <input type="text" name="recup" value=""/>
