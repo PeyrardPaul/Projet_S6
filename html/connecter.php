@@ -10,7 +10,7 @@
 		<title>N-Maps</title>
 	</head>
 	<body>
-    <?
+    <?php
 		$pseudo=$_POST['pseudo'];
 		$mdp=$_POST['password'];
 		
