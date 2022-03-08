@@ -42,6 +42,34 @@
 	float: left;
 }
 
+.qui_sommes_nous{
+	/*padding: 10 px;*/
+	margin: 20px;
+	text-align: justify;
+	font-size: larger;
+
+}
+
+#soustitre{
+	margin: 50px;
+	font-size: 180%;
+	color: #008080;
+}
+
+.profil{
+	border-color: black;
+	border: 1px;
+	border-style:solid;
+	margin-left: 100px;
+	margin-right: 300px;
+	margin-top: 50px ;
+	margin-bottom: 50px;
+	padding-left: 40px;
+	padding-right: 40px;
+	text-align: center;
+
+}
+Écrire à
 
 
 
