@@ -93,7 +93,7 @@ body {
 .menu{
 	display: flex;              /* Transformation en flexbox */
     padding:0;                  /* Suppression des marges internes */
-	justify-content: center     /* Alignements des liens dans le menu */
+	justify-content: center;     /* Alignements des liens dans le menu */
 }
 
 .menu li {

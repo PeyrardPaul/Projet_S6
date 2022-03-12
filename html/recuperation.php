@@ -1,7 +1,7 @@
 <?php
 	include '../../bd.php';
 	session_start();
-	// $bdd = getBD();
+	$bdd = getBD();
 
 ?>
 
@@ -38,10 +38,10 @@
     </div>
     <?php 
         $recup=$_POST['recup'];
-	    $rep = $bdd -> query("select password from users where adresse_email ='{$recup}'");			//echo("<meta http-equiv='refresh' content='1; url=http://localhost/PEYRARD/index.php '>");
+	    $rep = $bdd -> query("select * from users where adresse_email ='{$recup}'");			//echo("<meta http-equiv='refresh' content='1; url=http://localhost/PEYRARD/index.php '>");
         while ($mat = $rep->fetch()) {
             if ($mat['adresse_email']!="") {
-                echo "Mot de passe= ".$mat['adresse_email']."<br/>";
+                echo "Mot de passe= ".$mat['password']."<br/>";
             }
             else {
                 echo "L'adresse email ne correspond à aucun compte !";
