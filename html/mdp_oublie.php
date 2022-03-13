@@ -44,22 +44,5 @@
 		    <input type="submit" value="Envoyer">
 		</p>
 	</form>
-    <?php /*
-	    try{
-            $db = mysqli_connect("localhost", "root", "root", "projet_s6_indice_de_vie");
-            echo "Connection réussie <br/>";
-        }
-        catch (Exception $e){
-            die('Erreur : ' . $e->getMessage().'<br/>');
-        }
-        
-        $sql="SELECT ";
-        
-        if (mysqli_query($db,$sql)) {
-            echo "Mot de passe récupérer ! <br/>";
-        } else {
-            echo "Error: " . $sql . "<br/>" . mysqli_error($bdd);
-        }*/
-	?>
 </body>
 </html>

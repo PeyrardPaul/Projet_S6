@@ -73,10 +73,6 @@
     <!-- photo de profil-->
     Nour Aït-Kadour <br/>
      ans 
-</p>
-Écrire à
-
-    
-    
+</p>    
 </body>
 </html>

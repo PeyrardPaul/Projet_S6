@@ -38,14 +38,25 @@
     </div>
     <?php 
         $recup=$_POST['recup'];
-	    $rep = $bdd -> query("select * from users where adresse_email ='{$recup}'");			//echo("<meta http-equiv='refresh' content='1; url=http://localhost/PEYRARD/index.php '>");
+        $a=1;
+	    $rep = $bdd -> query("select * from users where adresse_email ='{$recup}'");
         while ($mat = $rep->fetch()) {
-            if ($mat['adresse_email']!="") {
-                echo "Mot de passe= ".$mat['password']."<br/>";
-            }
-            else {
-                echo "L'adresse email ne correspond à aucun compte !";
-            }
+            /*ini_set( 'display_errors', 1 );
+            error_reporting( E_ALL );
+            $from = "projetpanms@gmail.com";
+            $to = $recup;
+            $subject = "Mail de récupération de votre mot de passe";
+            $message = "Voici votre mot de passe :".$mat['password']."";
+            $headers = "From: ".$from."";
+            mail($to,$subject,$message, $headers);
+            echo "<h2>L'email a été envoyé avec succès !</h2>";
+            */
+            echo "<h2>Voici votre mot de passe : ".$mat['password']."";
+            $a+=1;
+            echo "<br/>";
+        }
+        if ($a==1) {
+            echo "<h2>L'adresse email saisie ne correspond à aucun compte !</h2>";
         }
 	?>
 </body>
