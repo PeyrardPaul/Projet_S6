@@ -25,6 +25,17 @@
 		<li><a href="connexion.php">Connexion</a></li>
 	</ul>
 </div>
+<div>
+
+<h1>
+    Que souhaitez vous faire ?
+</h1>
+<p>
+        <a style="color : black" href="comparaison_2dp.php">Comparer deux départements</a>
+</p>
+<p>
+        <a style="color : black" href="comparaison_criteres.php">Comparer selon différents critères</a>
+</p>
 
  <div> <!--dans cette grande div le contenu de la page -->
     <!-- Ici le contenu de la page -->
