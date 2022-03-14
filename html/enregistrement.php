@@ -46,7 +46,7 @@
 						}
 					} 
 				enregistrer($n,$p,$psd,$dep,$adr,$mail,$mdp1);
-				echo("<meta http-equiv='refresh' content='1; url=http://localhost/Projet_S6/html/index.php '>");
+				echo("<meta http-equiv='refresh' content='1; url=http://localhost:8888/Projet_S6/html/index.php '>");
 			}
 		?>
 	</head>

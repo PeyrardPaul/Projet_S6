@@ -1,3 +1,9 @@
+<?php
+	include '../../bd.php';
+	session_start();
+	$bdd = getBD();
+?>
+
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -22,5 +28,6 @@
 
  <div> <!--dans cette grande div le contenu de la page -->
     <!-- Ici le contenu de la page -->
+
 </div>
 </body>
