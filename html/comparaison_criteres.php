@@ -36,13 +36,13 @@
   if(isset($_POST['submit']))
   {
 	  // Store the Product name in a "name" variable
-	  $name = mysqli_real_escape_string($con,$_POST['nom_dep']);
+	  $name = mysqli_real_escape_string($con,$_POST['code_dep']);
 	
   }
 ?>
 <form method="POST" action="comparaison_critere_affichage.php">
         <label>Choix dep</label>
-        <select name="nom_dep">
+        <select name="code_dep">
             <?php 
                 // use a while loop to fetch data 
                 // from the $all_categories variable 

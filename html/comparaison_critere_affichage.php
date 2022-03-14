@@ -1,3 +1,8 @@
+<?php 
+	require '../../bd.php'; 
+	$bdd = getBD();
+?>
+
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -20,7 +25,22 @@
 </div>
 <body>
     <?php
-        echo($_POST['nom_dep'])
+        //echo($_POST['nom_dep']); // ici le code du dpt
+        $rep = $bdd->query("select * from departement where Département ='".$_POST['code_dep']."'"); //ici on affiche les informations pour le département selectionné
+        while ($ligne = $rep ->fetch()) {
+            echo $ligne['Nom'].":".$ligne['Département']."<br />\n";  //Département est le Code postal 
+            echo $ligne['Population']." habitants"."<br />\n";
+            echo "Nombre de médecins pour 100 000 habitants : ".$ligne['Santé (nombre de médecin pour 100 000 habitants)']."<br />\n";
+            echo "Nombre de crimes pour 100 000 habitants : ".$ligne['Nombre de crimes pour 100 000 habitants']."<br />\n";
+            echo "Taux de chômage : ".$ligne['Taux de chomage (%)']." %"."<br />\n";
+            echo "Taux de réussite au brevet des collège : ".$ligne['Taux de réussite au brevet (%)']." %"."<br />\n";
+            echo "Nombre de jours de pluie par an : ".$ligne['Nombre de jours de pluie par an']."<br />\n";
+            echo "Nombre de plan d'eau : ".$ligne["Nombre de plans d’eau"]."<br />\n";
+            echo "Température médiane en hiver : ".$ligne["Médiane de la température du mois de janvier (Hiver) en C°"]." C°"."<br />\n";
+            echo "Température médiane en été : ".$ligne["Médiane de la température du mois de juin (Ete) en C°"]." C°"."<br />\n";
+           
+        }
+        $rep ->closeCursor();
 
     ?>
 </body>
