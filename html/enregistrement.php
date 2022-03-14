@@ -1,5 +1,7 @@
-<?php require '../../bd.php'; ?>
-<?php $bdd = getBD(); ?>
+<?php 
+	require '../../bd.php'; 
+	$bdd = getBD();
+?>
 
 <!DOCTYPE html>
 <html lang="fr">
