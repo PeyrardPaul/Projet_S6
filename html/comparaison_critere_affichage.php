@@ -41,6 +41,7 @@
            
         }
         $rep ->closeCursor();
+        echo($_POST['nom_dep']);
 
     ?>
 </body>
