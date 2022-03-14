@@ -1,7 +1,8 @@
 <?php
-	include 'bd.php';
+	
 	session_start();
 
+	include '../../bd.php';
 	if(isset($_SESSION['admin'])){
 		header('location: administrateur/home.php');
 	}

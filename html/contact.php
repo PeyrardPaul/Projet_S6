@@ -1,3 +1,9 @@
+<?php
+	include '../../bd.php';
+	session_start();
+	$bdd = getBD();
+
+?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -9,24 +15,31 @@
     <title>Qui sommes-nous ?</title>
 </head>
 <body>
-<div class="bandeau">
-	<img id="logo" src="../images/N-Maps.png" alt="images logo" >
-	<h1><a href="index.php">N-MAPS</a></h1>
-	<ul class="menu">
-		<li><a href="index.php">Accueil</a></li>
-		<li><a href="qui_sommes_nous.php">Qui sommes nous ?</a></li>
-		<li><a href="inscription.php">Inscription</a></li>
-		<li><a href="contact.php">Contact</a></li>
-		<li><a href="departement.php">Département</a></li>
-		<li><a href="connexion.php">Connexion</a></li>
-	</ul>
-</div>
+<div class="bandeau"> <!--ici le bandeau haut de page -->
+        <img id="logo" src="../images/N-Maps.png" alt="images logo" >
+        <h1><a href="index.php">N-MAPS</a></h1>
+        <ul class="menu">
+            <li><a href="index.php">Accueil</a></li>
+            <li><a href="qui_sommes_nous.php">Qui sommes nous ?</a></li>
+            <li><a href="contact.php">Contact</a></li>
+            <li><a href="departement.php">Département</a></li>
+			<li><?php
+		                if(isset($_SESSION['user'])) {
+			                echo "<li><a href='deconnexion.php'>Se déconnecter</a></li>";
+							echo "<li>Bonjour ".$_SESSION['user'][4]."</li>";
+
+		                }
+		                else {
+			                echo "<li><a href='connexion.php'>Se connecter </a></li>";
+		                }?></li>
+        </ul>
+    </div>
 
  <div> <!--ici la grande div qui a le contenu de la page -->
-	<form class="formulaire" action="POST">
+	<form method="Post" class="formulaire" action="">
 
 	<p><strong>Nom :</strong>
-		<input type="text" id="user" value="" />
+		<input style="margin-bottom:15px;" type="text" id="user" value="" />
 	</p>
 
 	<p><strong>Email :</strong>
@@ -34,10 +47,10 @@
 	</p>
 	<br/>
 	<p><strong>Sexe : </strong>
-		<p style="padding-top:-20px;">
-			Homme<input type="radio" name="H" style="margin-left:-70px;"/>
-			Femme<input type="radio" name="F" style="margin-left:-70px;"/>
-		</p>
+			<input type="checkbox" id="H" name="H" style="margin-top:15px;" value="Homme"/>
+			<label style="margin-left:-60px;" for="H">Homme</label><br>
+			<input type="checkbox" id="F" name="F" value="Femme" style="margin-left:51px;"/>
+			<label style="margin-left:-60px;margin-bottom:15px;" for="F">Femme</label>
 	</p>
 	<br/>
 	<p><strong>Motif :</strong>

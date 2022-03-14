@@ -1,3 +1,10 @@
+<?php
+	include '../../bd.php';
+	session_start();
+    $bdd = getBD();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,38 +15,64 @@
     <title>Qui sommes-nous ?</title>
 </head>
 <body>
-<div class="bandeau">
+<div class="bandeau"> <!--ici le bandeau haut de page -->
         <img id="logo" src="../images/N-Maps.png" alt="images logo" >
         <h1><a href="index.php">N-MAPS</a></h1>
         <ul class="menu">
             <li><a href="index.php">Accueil</a></li>
             <li><a href="qui_sommes_nous.php">Qui sommes nous ?</a></li>
-            <li><a href="inscription.php">Inscription</a></li>
             <li><a href="contact.php">Contact</a></li>
             <li><a href="departement.php">Département</a></li>
-            <li><a href="connexion.php">Connexion</a></li>
+			<li><?php
+		                if(isset($_SESSION['user'])) {
+			                echo "<li><a href='deconnexion.php'>Se déconnecter</a></li>";
+							echo "<li>Bonjour ".$_SESSION['user'][4]."</li>";
+
+		                }
+		                else {
+			                echo "<li><a href='connexion.php'>Se connecter </a></li>";
+		                }?></li>
         </ul>
     </div>
-<p>Nous sommes un groupe de cinq développeurs. Nous avons travaillé de concert dans le but de vous proposer
+    <p class = "qui_sommes_nous">
+    Nous sommes un groupe de cinq développeurs junior. Nous avons travaillé de concert dans le but de vous proposer
     un site distrayant et informatif.<br/>
+
+    <!-- logo paul va -->
+    Nous sommes étudiants en troisième année de licence MIASHS à l'Université Paul-Valéry Montpellier III.
+    Ce site est le fruit d'un long projet d'une année de travail dans lequel nous avons mis toutes nos compétences.
+</p>
     
-    Il s'agit d'un outil qui a pour but principal 
-    de vous faire découvrir les départements de France métropolitaine à travers différents indices de vie.
-    <br/>
-
-    Nous souhaitons que nos utilisateurs s'approprient cet outil !<br/>
-    <br/>
-
-    Que ce soit pour des projets sérieux tels que le choix d'un futur lieu de résidence. <br/>
-
-    Ou quelque chose de plus léger comme votre prochaine destination de vacance ! <br/>
-
-    Et même pour satisfaire votre soif de connaissances... <br/>
-    <br/>
-
-    Prenez le temps de découvrir la France à travers différents angles,
-    nous attendons vos avis, commentaires et retours avec impatience ! <br/>
-     </p>
+<p id="soustitre"> Présentons notre équipe <p>
     
+<p class="profil">
+    <!-- photo de profil-->
+    Mélissa Pulci <br/>
+    21 ans 
+</p>
+
+<p class="profil">
+    <!-- photo de profil-->
+    Shelmy Assiah <br/>
+     ans 
+</p>
+
+<p class="profil">
+    <!-- photo de profil-->
+    Paul Peyrard <br/>
+    20 ans 
+</p>
+
+<p class="profil">
+    <!-- photo de profil-->
+    Augustin Hannebert <br/>
+    20 ans 
+</p>
+
+<p class="profil">
+    <!-- photo de profil-->
+    Nour Aït-Kadour <br/>
+     ans 
+</p>    
 </body>
 </html>

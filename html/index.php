@@ -1,7 +1,7 @@
 <?php
-	include 'bd.php';
+	include '../../bd.php';
 	session_start();
-	// $bdd = getBD();
+	$bdd = getBD();
 
 ?>
 
@@ -23,13 +23,15 @@
             <li><a href="qui_sommes_nous.php">Qui sommes nous ?</a></li>
             <li><a href="contact.php">Contact</a></li>
             <li><a href="departement.php">Département</a></li>
-			<li><?php
+			<li>
+                <?php
 		                if(isset($_SESSION['user'])) {
-			                echo "Bonjour</p> ".$_SESSION['user'][2]." ".$_SESSION['user'][3]." ";
-			                echo "<br/><a href='deconnexion.php'>Se déconnecter</a>";
+			                echo "<li><a href='deconnexion.php'>Se déconnecter</a></li>";
+							echo "<li>Bonjour ".$_SESSION['user'][4]."</li>";
+
 		                }
 		                else {
-			                echo "<a href='connexion.php'>Se connecter </a>";
+			                echo "<li><a href='connexion.php'>Se connecter </a></li>";
 		                }?></li>
         </ul>
     </div>
@@ -45,6 +47,23 @@
                  <div class="header-content">
                     <p>Bienvenue sur N-MAPS</p>  
                     <p>Site d'avis et de comparaison des départements en France. </p>
+                    Il s'agit d'un outil qui a pour but principal 
+    de vous faire découvrir les départements de France métropolitaine à travers différents indices de vie.
+    <br/>
+
+    Nous souhaitons que nos utilisateurs s'approprient cet outil !<br/>
+    <br/>
+
+    Que ce soit pour des projets sérieux tels que le choix d'un futur lieu de résidence. <br/>
+
+    Ou quelque chose de plus léger comme votre prochaine destination de vacance ! <br/>
+
+    Et même pour satisfaire votre soif de connaissances... <br/>
+    <br/>
+
+    Prenez le temps de découvrir la France à travers différents angles,
+    nous attendons vos avis, commentaires et retours avec impatience ! <br/>
+     </p>
                     
                 </div> 
              </div>     
