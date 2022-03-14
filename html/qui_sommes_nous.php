@@ -43,7 +43,7 @@
     Ce site est le fruit d'un long projet d'une année de travail dans lequel nous avons mis toutes nos compétences.
 </p>
     
-<p id="soustitre"> Présentons notre équipe <p>
+<p class="soustitre"> Présentons notre équipe <p>
     
 <p class="profil">
     <!-- photo de profil-->
