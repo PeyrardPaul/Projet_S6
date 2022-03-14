@@ -65,8 +65,8 @@
         
         if($mail->SMTPAuth){
            $mail->SMTPSecure = 'tls';               //Protocole de sécurisation des échanges avec le SMTP
-           $mail->Username   =  'shelmyassiah9@gmail.com';    //Adresse email à utiliser
-           $mail->Password   =  'Shelssiah@09';         //Mot de passe de l'adresse email à utiliser
+           $mail->Username   =  '';    //Adresse email à utiliser
+           $mail->Password   =  '';         //Mot de passe de l'adresse email à utiliser
         }
         
         $mail->From       = 'shelmyassiah9@gmail.com';                //L'email à afficher pour l'envoi
