@@ -40,24 +40,51 @@
         $recup=$_POST['recup'];
         $a=1;
 	    $rep = $bdd -> query("select * from users where adresse_email ='{$recup}'");
+        
         while ($mat = $rep->fetch()) {
-            /*ini_set( 'display_errors', 1 );
-            error_reporting( E_ALL );
-            $from = "projetpanms@gmail.com";
-            $to = $recup;
-            $subject = "Mail de récupération de votre mot de passe";
-            $message = "Voici votre mot de passe :".$mat['password']."";
-            $headers = "From: ".$from."";
-            mail($to,$subject,$message, $headers);
-            echo "<h2>L'email a été envoyé avec succès !</h2>";
-            */
-            echo "<h2>Voici votre mot de passe : ".$mat['password']."";
-            $a+=1;
+            $mdp=$mat['password'];
             echo "<br/>";
         }
-        if ($a==1) {
-            echo "<h2>L'adresse email saisie ne correspond à aucun compte !</h2>";
+       
+        use PHPMailer\PHPMailer\PHPMailer;
+        use PHPMailer\PHPMailer\Exception;
+        
+        require '../vendor/phpmailer/phpmailer/src/Exception.php';
+        require '../vendor/phpmailer/phpmailer/src/PHPMailer.php';
+        require '../vendor/phpmailer/phpmailer/src/SMTP.php';
+        require '../vendor/autoload.php';
+        
+        $mail = new PHPMailer(true);
+        $mail->IsSMTP();
+        $mail->Host = 'localhost';               //Adresse IP ou DNS du serveur SMTP
+        $mail->Port = 25;                          //Port TCP du serveur SMTP
+        $mail->SMTPAuth = false;                        //Utiliser l'identification
+        $mail->SMTPAutoTLS = false; 
+        $mail->CharSet = 'UTF-8';
+        $mail->smtpConnect();
+        
+        if($mail->SMTPAuth){
+           $mail->SMTPSecure = 'tls';               //Protocole de sécurisation des échanges avec le SMTP
+           $mail->Username   =  'shelmyassiah9@gmail.com';    //Adresse email à utiliser
+           $mail->Password   =  'Shelssiah@09';         //Mot de passe de l'adresse email à utiliser
         }
+        
+        $mail->From       = 'shelmyassiah9@gmail.com';                //L'email à afficher pour l'envoi
+        
+        $mail->AddAddress('paul.peyrard17@gmail.com');
+        
+        $mail->Subject    =  "Voici le titre du mail";                      //Le sujet du mail
+        $mail->WordWrap   = 50; 
+        $mail->Body = 'cefzefzefezfef';			       //Nombre de caracteres pour le retour a la ligne automatique
+        $mail->AltBody = 'Salut cest le mail'; 	       //Texte brut
+        $mail->IsHTML(false);                                  //Préciser qu'il faut utiliser le texte brut
+        
+        if ($mail->send()) {
+              echo 'Message bien envoyé';
+        } else{
+            echo $mail->ErrorInfo;
+        }
+            
 	?>
 </body>
 </html>
