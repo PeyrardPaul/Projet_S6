@@ -1,3 +1,9 @@
+<?php
+	include '../../bd.php';
+	session_start();
+	$bdd = getBD();
+?>
+
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -20,17 +26,8 @@
 	</ul>
 </div>
 
- <div>
+ <div> <!--dans cette grande div le contenu de la page -->
+    <!-- Ici le contenu de la page -->
 
-    <h1>
-        Que souhaitez vous faire ?
-    </h1>
-    <p>
-            <a style="color : black" href="comparaison_2dp.php">Comparer deux départements</a>
-    </p>
-    <p>
-            <a style="color : black" href="comparaison_criteres.php">Comparer selon différents critères</a>
-    </p>
-        
 </div>
 </body>
