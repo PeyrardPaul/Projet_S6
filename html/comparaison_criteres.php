@@ -18,6 +18,51 @@
 		<li><a href="connexion.php">Connexion</a></li>
 	</ul>
 </div>
-<div> 
-</div>
+
 <body>
+
+<?php $bdd = new PDO('mysql:host=localhost;dbname=projet_s6_indice_de_vie;charset=utf8', 'root', 'root'); ?>
+<?php
+  
+  // Connect to database 
+  $con = mysqli_connect("localhost","root","root","projet_s6_indice_de_vie");
+	 
+  // Get all the categories from category table
+  $sql = "SELECT * FROM `departement`";
+  $all_categories = mysqli_query($con,$sql);
+ 
+  // The following code checks if the submit button is clicked 
+  // and inserts the data in the database accordingly
+  if(isset($_POST['submit']))
+  {
+	  // Store the Product name in a "name" variable
+	  $name = mysqli_real_escape_string($con,$_POST['nom_dep']);
+	
+  }
+?>
+<form method="POST" action="comparaison_critere_affichage.php">
+        <label>Choix dep</label>
+        <select name="nom_dep">
+            <?php 
+                // use a while loop to fetch data 
+                // from the $all_categories variable 
+                // and individually display as an option
+                while ($category = mysqli_fetch_array(
+                        $all_categories,MYSQLI_ASSOC)):; 
+            ?>
+                <option value="<?php echo $category["Département"];
+                    // The value we usually set is the primary key
+                ?>">
+                    <?php echo $category["Nom"];
+                        // To show the category name to the user
+                    ?>
+                </option>
+            <?php 
+                endwhile; 
+                // While loop must be terminated
+            ?>
+        </select>
+        <br>
+        <input type="submit" value="submit" name="submit">
+    </form>
+</body>
