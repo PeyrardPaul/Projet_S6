@@ -21,7 +21,7 @@
 <?php
   
     // Connect to database 
-    $con = mysqli_connect("localhost","root","","projet_s6_indice_de_vie");
+    $con = mysqli_connect("localhost","root","root","projet_s6_indice_de_vie");
       
     // mysqli_connect("servername","username","password","database_name")
    

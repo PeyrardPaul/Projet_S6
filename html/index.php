@@ -70,7 +70,7 @@
         </header>
 
         <!-- carte cliquable  -->
-        
+                
         <!-- fin de la carte cliquable -->
     </div>
  
