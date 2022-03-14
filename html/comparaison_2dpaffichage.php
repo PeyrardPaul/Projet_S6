@@ -20,10 +20,14 @@
 </div>
 <body>
     <?php
-	
+
         echo($_POST['dep1']);
 
         echo($_POST['dep2']);
+
+		if(isset($_POST['pop'])==True){
+			echo "test validé";
+		}
 
     ?>
 </body>
