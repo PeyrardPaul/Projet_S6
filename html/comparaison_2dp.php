@@ -42,7 +42,7 @@
 ?>
    
 <form method="POST" action="comparaison_2dpaffichage.php">
-        <label>Choix du premier departement</label>
+        <p>Choix du premier departement</p>
         <select name="dep1">
             <?php 
                 // use a while loop to fetch data 
@@ -50,7 +50,7 @@
                 // and individually display as an option
                 while ($departement = mysqli_fetch_array($all_departements,MYSQLI_ASSOC)):; 
             ?>
-                <option value="<?php echo $departement["Département"];
+                <option value="<?php echo $departement["Nom"];
                     // The value we usually set is the primary key
                 ?>">
                     <?php echo $departement["Nom"];
@@ -62,7 +62,7 @@
                 // While loop must be terminated
             ?>
         </select>
-
+</form>
 
         <?php
   
@@ -87,7 +87,7 @@
     }
 ?>
                 <form method="POST" action="comparaison_2dpaffichage.php">
-        <label>Choix du second departement</label>
+        <p>Choix du second departement</p>
         <select name="dep2">
             <?php 
                 // use a while loop to fetch data 
@@ -95,7 +95,7 @@
                 // and individually display as an option
                 while ($departement = mysqli_fetch_array($all_departements,MYSQLI_ASSOC)):; 
             ?>
-                <option value="<?php echo $departement["Département"];
+                <option value="<?php echo $departement["Nom"];
                     // The value we usually set is the primary key
                 ?>">
                     <?php echo $departement["Nom"];
@@ -111,6 +111,9 @@
         <input type="submit" value="submit" name="submit">
     </form>
     <br>
+
+    <form>
+    </form>
 </body>
 </html>
 <body>

@@ -47,9 +47,9 @@
 	</p>
 	<br/>
 	<p><strong>Sexe : </strong>
-			<input type="checkbox" id="H" name="H" style="margin-top:15px;" value="Homme"/>
+			<input type="radio" id="H" name="H" style="margin-top:15px;" value="Homme"/>
 			<label style="margin-left:-60px;" for="H">Homme</label><br>
-			<input type="checkbox" id="F" name="F" value="Femme" style="margin-left:51px;"/>
+			<input type="radio" id="F" name="F" value="Femme" style="margin-left:51px;"/>
 			<label style="margin-left:-60px;margin-bottom:15px;" for="F">Femme</label>
 	</p>
 	<br/>
