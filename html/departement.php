@@ -27,6 +27,11 @@
 			</ul>
 		</div>
 
-
+		<div> <p>
+		M-MAPS vous permet de découvrir la France ! 
+		Il vous suffit de choisir le mode de recherche que vous voulez. 
+		La recherche par département vous permet de choisir un département et nous nous chargeons du reste pour vous donner le sinformations.
+		Vous pouvez aussi comparer deux départements.
+		</p> </div>
 	</body>
 </html>
