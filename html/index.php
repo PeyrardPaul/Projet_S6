@@ -47,24 +47,25 @@
             <div class="header-area">
                  <div class="header-content">
                     <p>Bienvenue sur N-MAPS</p>  
-                    <p>Site d'avis et de comparaison des départements en France. </p>
-                    Il s'agit d'un outil qui a pour but principal 
-    de vous faire découvrir les départements de France métropolitaine à travers différents indices de vie.
-    <br/>
+                    <p>
+                        Site d'avis et de comparaison des départements en France. </p>
+                        Il s'agit d'un outil qui a pour but principal 
+                        de vous faire découvrir les départements de France métropolitaine à travers différents indices de vie.
+                        <br/>
 
-    Nous souhaitons que nos utilisateurs s'approprient cet outil !<br/>
-    <br/>
+                        Nous souhaitons que nos utilisateurs s'approprient cet outil !<br/>
+                        <br/>
 
-    Que ce soit pour des projets sérieux tels que le choix d'un futur lieu de résidence. <br/>
+                        Que ce soit pour des projets sérieux tels que le choix d'un futur lieu de résidence. <br/>
 
-    Ou quelque chose de plus léger comme votre prochaine destination de vacance ! <br/>
+                        Ou quelque chose de plus léger comme votre prochaine destination de vacance ! <br/>
 
-    Et même pour satisfaire votre soif de connaissances... <br/>
-    <br/>
+                        Et même pour satisfaire votre soif de connaissances... <br/>
+                        <br/>
 
-    Prenez le temps de découvrir la France à travers différents angles,
-    nous attendons vos avis, commentaires et retours avec impatience ! <br/>
-     </p>
+                        Prenez le temps de découvrir la France à travers différents angles,
+                        nous attendons vos avis, commentaires et retours avec impatience ! <br/>
+                    </p>
                     
                 </div> 
              </div>     
