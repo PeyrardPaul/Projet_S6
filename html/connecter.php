@@ -35,7 +35,7 @@
 		
 		if($pseudo=="" or $mdp=="") {
 			echo "mail ou mot de passe vide";
-			echo("<meta http-equiv='refresh' content='1; url=http://localhost/Projet_S6/html/connexion.php?pseudo=".$pseudo." '>");
+			echo("<meta http-equiv='refresh' content='1; url=http://localhost:8888/Projet_S6/html/connexion.php?pseudo=".$pseudo." '>");
 		}
 		else {
 			$rep = $bdd -> query("select * from users where pseudo ='{$pseudo}' and password ='{$mdp}'");
