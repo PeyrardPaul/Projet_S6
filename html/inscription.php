@@ -1,7 +1,7 @@
 <?php
 	include '../../bd.php';
 	session_start();
-	// $bdd = getBD();
+	$bdd = getBD();
 
 ?>
 
@@ -35,29 +35,52 @@
 		                }?></li>
         </ul>
     </div>
-
 <div>
 <form method=Post action="enregistrement.php" autocomplete=ON>
-<p><strong>Nom:</strong>
-<input type="text" id="name" name="name" required
+<p><strong>Nom :</strong>
+    <input type="text" id="name" name="n" required
      maxlength="20" size="10"
-    placeholder="Pseudo" style="margin-bottom:20px;">
+    placeholder="Nom" style="margin-bottom:20px;" value=<?echo "'".$_GET['n']."'"?>>
+</p>
+    <br/>
+<p><strong>Prénom :</strong>
+    <input type="text" id="name" name="p" required
+     maxlength="50" size="10"
+    placeholder="Prénom" style="margin-bottom:20px;" value=<?echo "'".$_GET['p']."'"?>>
+</p>
+    <br/>
+<p><strong>Pseudo :</strong>
+    <input type="text" id="name" name="psd" required
+     maxlength="50" size="10"
+    placeholder="Pseudo" style="margin-bottom:20px;" value=<?echo "'".$_GET['psd']."'"?>>
+</p>
+    <br/>
+<p><strong>Département :</strong>
+    <input type="text" id="name" name="dep" required
+     maxlength="2" size="10"
+    placeholder="Département Ex: 34" style="margin-bottom:20px;" value=<?echo "'".$_GET['dep']."'"?>>
 </p>
     <br/>
 <p><strong>Adresse email :</strong>
-<input type="text" id="name" name="name" required
+    <input type="text" id="name" name="mail" required
      maxlength="50" size="10"
-    placeholder="Adresse mail" style="margin-bottom:20px;">
+    placeholder="Adresse mail" style="margin-bottom:20px;" value=<?echo "'".$_GET['mail']."'"?>>
 </p>
     <br/>
-<p><strong>Mot de passe:</strong>
-<input type="text" id="name" name="name" required
+<p><strong>Adresse :</strong>
+    <input type="text" id="name" name="adr" required
+     maxlength="50" size="10"
+    placeholder="Adresse" style="margin-bottom:20px;" value=<?echo "'".$_GET['adr']."'"?>>
+</p>
+    <br/>
+<p><strong>Mot de passe :</strong>
+    <input type="password" id="name" name="mdp1" required
     minlength="4" maxlength="20" size="10"
     placeholder="Mot de passe" style="margin-bottom:20px;">
 </p>
     <br/>
 <p><strong>Validez le Mot de passe :</strong>
-    <input type="text" id="name" name="name" required
+    <input type="password" id="name" name="mdp2" required
     minlength="4" maxlength="20" size="10"  placeholder="Répétez le mot de passe" style="margin-bottom:20px;">
 </p>
 <br/>

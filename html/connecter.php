@@ -40,16 +40,7 @@
 		else {
 			$rep = $bdd -> query("select * from users where pseudo ='{$pseudo}' and password ='{$mdp}'");
 			while ($mat = $rep->fetch()) {
-				echo "user_id= ".$mat['user_id']."<br/>";
-                echo "code_dep= ".$mat['code_dep']."<br/>";
-				echo "nom= ".$mat['nom']."<br/>";
-				echo "prenom= ".$mat['prenom']."<br/>";
-                echo "pseudo= ".$mat['pseudo']."<br/>";
-                echo "password= ".$mat['password']."<br/>";
-				echo "adresse_email= ".$mat['adresse_email']."<br/>";
-				echo "type= ".$mat['type']."<br/>";
-				echo "code_activation= ".$mat['code_activation']."<br/>";
-				echo "code_reset= ".$mat['code_reset']."<br/>";
+				echo "<h2>Connexion réussie, profitez au maximum de notre site maintenant !</h2>";
 				$_SESSION['user']=array($mat['user_id'],$mat['code_dep'],$mat['nom'],$mat['prenom'],$mat['pseudo'],$mat['adresse_email'],$mat['type'],$mat['code_activation'],$mat['code_reset']);
             }
 			echo("<meta http-equiv='refresh' content='1; url=http://localhost/Projet_S6/html/index.php '>");

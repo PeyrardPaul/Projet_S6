@@ -1,7 +1,7 @@
 <?php
 	include '../../bd.php';
 	session_start();
-	// $bdd = getBD();
+	$bdd = getBD();
 
 ?>
 
@@ -39,7 +39,7 @@
 	<form method="Post" class="formulaire" action="">
 
 	<p><strong>Nom :</strong>
-		<input type="text" id="user" value="" />
+		<input style="margin-bottom:15px;" type="text" id="user" value="" />
 	</p>
 
 	<p><strong>Email :</strong>
@@ -47,10 +47,10 @@
 	</p>
 	<br/>
 	<p><strong>Sexe : </strong>
-		<p style="padding-top:-20px;">
-			Homme<input type="radio" name="H" style="margin-left:-70px;"/>
-			Femme<input type="radio" name="F" style="margin-left:-70px;"/>
-		</p>
+			<input type="checkbox" id="H" name="H" style="margin-top:15px;" value="Homme"/>
+			<label style="margin-left:-60px;" for="H">Homme</label><br>
+			<input type="checkbox" id="F" name="F" value="Femme" style="margin-left:51px;"/>
+			<label style="margin-left:-60px;margin-bottom:15px;" for="F">Femme</label>
 	</p>
 	<br/>
 	<p><strong>Motif :</strong>

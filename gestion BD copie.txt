@@ -1,0 +1,4 @@
+Ecrire pour chaque modif importante de la bd dans ce fichier
+- la date
+- la ou les commande(s) sql que les autres devront envoyer à leur base
+
