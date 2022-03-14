@@ -34,27 +34,66 @@
     if(isset($_POST['submit']))
     {
          // Store the Product name in a "name" variable
-         $name = mysqli_real_escape_string($con,$_POST['Nom']);
+         $name = mysqli_real_escape_string($con,$_POST['dep1']);
          
         // Store the departement ID in a "id" variable
         $id = mysqli_real_escape_string($con,$_POST['Département']); 
-         
-          if(mysqli_query($con,$sql_insert))
-        {
-            echo '<script>alert("Product added successfully")</script>';
-        }
     }
 ?>
    
-<form method="POST" action="comparaison_dept.php">
-        <label>Choix dep</label>
-        <select name="nom">
+<form method="POST" action="comparaison_2dpaffichage.php">
+        <label>Choix du premier departement</label>
+        <select name="dep1">
             <?php 
                 // use a while loop to fetch data 
                 // from the $all_departements variable 
                 // and individually display as an option
-                while ($departement = mysqli_fetch_array(
-                        $all_departements,MYSQLI_ASSOC)):; 
+                while ($departement = mysqli_fetch_array($all_departements,MYSQLI_ASSOC)):; 
+            ?>
+                <option value="<?php echo $departement["Département"];
+                    // The value we usually set is the primary key
+                ?>">
+                    <?php echo $departement["Nom"];
+                        // To show the departement name to the user
+                    ?>
+                </option>
+                <?php 
+                endwhile; 
+                // While loop must be terminated
+            ?>
+        </select>
+
+
+        <?php
+  
+    // Connect to database 
+    $con = mysqli_connect("localhost","root","root","projet_s6_indice_de_vie");
+      
+    // mysqli_connect("servername","username","password","database_name")
+   
+    // Get all the departements from departement table
+    $sql = "SELECT * FROM `departement`";
+    $all_departements = mysqli_query($con,$sql);
+   
+    // The following code checks if the submit button is clicked 
+    // and inserts the data in the database accordingly
+    if(isset($_POST['submit']))
+    {
+         // Store the Product name in a "name" variable
+         $name = mysqli_real_escape_string($con,$_POST['dep1']);
+         
+        // Store the departement ID in a "id" variable
+        $id = mysqli_real_escape_string($con,$_POST['Département']); 
+    }
+?>
+                <form method="POST" action="comparaison_2dpaffichage.php">
+        <label>Choix du second departement</label>
+        <select name="dep2">
+            <?php 
+                // use a while loop to fetch data 
+                // from the $all_departements variable 
+                // and individually display as an option
+                while ($departement = mysqli_fetch_array($all_departements,MYSQLI_ASSOC)):; 
             ?>
                 <option value="<?php echo $departement["Département"];
                     // The value we usually set is the primary key

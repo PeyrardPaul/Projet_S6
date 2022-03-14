@@ -20,7 +20,8 @@
 </div>
 <body>
     <?php
-        echo($_POST['nom_dep']);
+        echo($_POST['dep1'])
+        echo($_POST['dep2'])
 
     ?>
 </body>
