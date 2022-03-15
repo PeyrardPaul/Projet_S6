@@ -12,12 +12,13 @@
 
 }
 *{
-	border-width : 1px;
+	/* border-width : 1px;
 	border-style : dotted;
-	border-color : #d46d6d;
+	border-color : #d46d6d; */
 	padding : 0px;
 	margin : 0px;
 	font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+	
 
 }
 
@@ -112,12 +113,17 @@
 
 
 footer{
-	min-height: 70px;
+	min-height: 50px;
 	background-color:var(--footer);
 	font-size: .9rem;
 	display: flex;
 	justify-content: center;
 	color: var(--text-color-beige);
+	
+}
+
+footer > p{
+	margin-top: 10px;
 }
 
 a{
@@ -146,9 +152,9 @@ body {
     padding: 0.2rem 0;            /* Marges internes (2 valeurs = haut/bas et gauche/droite)*/
     text-align: center;           /* Centrage du texte */   
     background-color: #1abc9c00;    /* Couleur d'arrière-plan */
-    color: #fff;                  /* Couleur du texte */
+    color: var(--text-color-beige);                  /* Couleur du texte */
     text-decoration: none;        /* Suppression du soulignement */
-    border: 1px solid #fff;       /* Ajout d'une bordure */
+    border: 1px solid var(--background) ;       /* Ajout d'une bordure */
     border-radius: 4px;           /* Arrondis des bordures */
 	transition: all 0.5s ;          /* Ajout des effets de transition */
 
@@ -157,14 +163,14 @@ body {
 .menu a:hover { /* boite des soustitres du menu  */
 	background-color: var(--background);
 	color: var(--text-color);
-	border-color: #ffffff;
+	border-color: var(--background);
 	box-shadow: 3px 3px 5px var(--color-shadow);
 }
 
 
 header {
 	background-color: #979494;
-	color: #ffffff;
+	color: var(--text-color-beige);
 	position: relative;
 	padding: 0;
 	margin: 0;
@@ -179,6 +185,8 @@ header {
 	min-width: 60%;
 	margin: auto;
 	/* height: 250px; */
+	text-shadow: rgba(112, 112, 112, 0.609) 1px 0 10px;
+
 	
 }
 .header-area {
@@ -188,8 +196,8 @@ header {
     min-height: 100%;
     top: 0;
     left: 0;
-    color: #fff;
-    margin: auto;
+    color: var(--text-color-beige);
+	margin: auto;
     width: 100%;
   }
   .header-cover img {
@@ -278,3 +286,32 @@ g path:hover {
 	fill: #86eee0;
 }
 /* fin du style de la carte */
+
+.retour{
+	display:block;                /* Transformation en block */
+    width: 100px; 
+	            /* Largeur minimale des liens */
+	margin: 0.5rem;               /* Marges externes (1 valeurs = 4 directions) */
+    padding: 0.2rem 0;            /* Marges internes (2 valeurs = haut/bas et gauche/droite)*/
+    text-align: center;           /* Centrage du texte */   
+    background-color: var(--background);    /* Couleur d'arrière-plan */
+    color: var(--text-color);                  /* Couleur du texte */
+    text-decoration: none;        /* Suppression du soulignement */
+    border: 1px solid var(--background) ;       /* Ajout d'une bordure */
+    border-radius: 4px;           /* Arrondis des bordures */
+	border-color: var(--text-color);
+	transition: all 0.5s ;
+}
+.retour:hover{
+	background-color: var(--bandeau);
+	color: var(--text-color-beige);
+	box-shadow: 3px 3px 5px var(--color-shadow);
+}
+
+.photo_dep{
+	/* photo du dep en question. */
+	position:relative;
+	max-width: 50%;
+	margin-left: 50%;
+	transform: translateX(-50%);
+}
