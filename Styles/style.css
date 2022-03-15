@@ -77,9 +77,9 @@
 	font-size: 115% ;
 }
 
-.dep > ul {
+/* .dep > ul {
 	/*clear: both;*/
-}
+/* } */
 /* departement.php : liste */
 #gauche > li {
 	float: left;

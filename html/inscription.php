@@ -22,10 +22,15 @@
         <ul class="menu">
             <li><a href="index.php">Accueil</a></li>
             <li><a href="qui_sommes_nous.php">Qui sommes nous ?</a></li>
+            <li><a href="inscription.php">Inscription</a></li>
             <li><a href="contact.php">Contact</a></li>
-            <li><a href="departement.php">Département</a></li>
-			<li><?php
+            <li><a href="recherche_simple.php">Recherche simple</a></li>
+            <li><a href="recherche_avancee.php">Recherche avancée</a></li>
+
+			<li>
+                <?php
 		                if(isset($_SESSION['user'])) {
+
 			                echo "<li><a href='deconnexion.php'>Se déconnecter</a></li>";
 							echo "<li>Bonjour ".$_SESSION['user'][4]."</li>";
 
