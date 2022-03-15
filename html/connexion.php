@@ -40,17 +40,22 @@
   }
 ?>
 
-<body>
+
 <div class="bandeau"> <!--ici le bandeau haut de page -->
         <img id="logo" src="../images/N-Maps.png" alt="images logo" >
         <h1><a href="index.php">N-MAPS</a></h1>
         <ul class="menu">
             <li><a href="index.php">Accueil</a></li>
             <li><a href="qui_sommes_nous.php">Qui sommes nous ?</a></li>
+            <li><a href="inscription.php">Inscription</a></li>
             <li><a href="contact.php">Contact</a></li>
-            <li><a href="departement.php">Département</a></li>
-			<li><?php
+            <li><a href="recherche_simple.php">Recherche simple</a></li>
+            <li><a href="recherche_avancee.php">Recherche avancée</a></li>
+
+			<li>
+                <?php
 		                if(isset($_SESSION['user'])) {
+
 			                echo "<li><a href='deconnexion.php'>Se déconnecter</a></li>";
 							echo "<li>Bonjour ".$_SESSION['user'][4]."</li>";
 
@@ -60,26 +65,28 @@
 		                }?></li>
         </ul>
     </div>
-<h2>CONNECTEZ-VOUS</h2>
-<div class="body">
 
-	<form method=Post action="connecter.php" autocomplete=ON>
-		<div class="pseudo">
-			<label for="pseudo">Pseudo</label>:
-			<input type="pseudo"  name="pseudo" value="" placeholder="Saisir pseudo" required/>
-		</div>
+<body>
+	<h2>CONNECTEZ-VOUS</h2>
+	 <div class="body"> <!--Pourquoi créer une classe body dans le body ?????? -->
 
-		<div class="password">
-			<label for="password" name="password">Mot de passe</label>:
-			<input type="password" name="password" placeholder="Saisir password" required/> 
-		</div>
+		<form method=Post action="connecter.php" autocomplete=ON>
+			<div class="pseudo">
+				<label for="pseudo">Pseudo</label>:
+				<input type="pseudo"  name="pseudo" value="" placeholder="Saisir pseudo" required/>
+			</div>
 
-		<p><a href="mdp_oublie.php">Mot de passe oublié ?</a></p>
+			<div class="password">
+				<label for="password" name="password">Mot de passe</label>:
+				<input type="password" name="password" placeholder="Saisir password" required/> 
+			</div>
 
-		<input type="submit" class="login" name="login" value="Me connecter"/>
-		<br/>
-	</form>
-</div>
+			<p><a href="mdp_oublie.php">Mot de passe oublié ?</a></p>
+
+			<input type="submit" class="login" name="login" value="Me connecter"/>
+			<br/>
+		</form>
+	</div>
 
 <a href="inscription.php"><h2>INSCRIVEZ-VOUS</h2></a>
 </body>
