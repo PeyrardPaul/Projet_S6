@@ -34,7 +34,7 @@
 		<ul id = "gauche">
 			<li> <p class = "departement"> La recherche par département vous permet de déterminer pour un département le critère que vous recherchez 
 				et nous nous chargeons du reste pour vous donner le sinformations. </p> </li>
-			<li> <a href="comparaison_criteres.php" > Recherche par critère </a> </li>
+			<li> <a href="recherche_simple.php" > Recherche par critère </a> </li>
 		</ul>
 		
 		<ul id = "droite"> 

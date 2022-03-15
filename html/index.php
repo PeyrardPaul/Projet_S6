@@ -38,7 +38,6 @@
     </div>
     
      <div> <!--je fais une grosse div qui contiendra la page. -->
-
     
          <header>
             <div class="header-cover">
@@ -70,9 +69,22 @@
                 </div> 
              </div>     
         </header>
+                    
+    <div>
+    
+    <div> 
 
+    </div> <!-- Ici on va proposer les 2 manières de s'informer sur le dpt en question  -->
+        <p>Pour découvrir la France, choississez un mode de recherche &#x1F440;  </p><br>
+        <p>
+            &#128077; Utilisez la  &#x1F449; <a href="recherche_simple.php">recherche simple</a>&#x1F448; pour découvrir toutes les informations sur un département choisi. 
+        </p><br>
+        <p>
+            &#128077; Utilisez la recherche avancée pour comparer deux départements choisis sur une liste de critères que vous selctionnez. 
+        </p>
+    </div>
         <!-- carte cliquable  -->
-                
+               <div><p>ici on va afficher la carte cliquable</p> </div>
         <!-- fin de la carte cliquable -->
     </div>
  
