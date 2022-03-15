@@ -39,7 +39,7 @@
 		
 		<ul id = "droite"> 
 			<li> <p class = "departement"> Vous pouvez aussi comparer deux départements. </p> </li>
-			<li> <a href="comparaison_2dp.php"> Comparer deux départements </a> </li>
+			<li> <a href="recherche_avancee.php"> Comparer deux départements </a> </li>
 		</ul>
 		
 		</div>

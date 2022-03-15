@@ -49,7 +49,7 @@
     
 ?>
    
-<form method="POST" action="comparaison_2dpaffichage.php">
+<form method="POST" action="recherche_avancee_affichage.php">
         <p>Choix du premier departement</p>
         <select name="dep1">
             <?php 

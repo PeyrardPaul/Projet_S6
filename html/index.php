@@ -12,7 +12,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../Styles/style.css" type="text/css" media="screen"/>
-    <title> N-Maps</title>
+    <title>N-Maps</title>
 </head>
 <body>
      <div class="bandeau"> <!--ici le bandeau haut de page -->
