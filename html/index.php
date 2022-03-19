@@ -32,6 +32,7 @@
 
 			                echo "<li><a href='deconnexion.php'>Se déconnecter</a></li>";
 							echo "<li>Bonjour ".$_SESSION['user'][4]."</li>";
+                            echo "<li><a href='carte.php'>Voir la carte interractive</a></li>";
 
 		                }
 		                else {
