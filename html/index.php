@@ -88,7 +88,9 @@
         </p>
     </div>
         <!-- carte cliquable  -->
-               <div><p>ici on va afficher la carte cliquable</p> </div>
+               <div><p>
+               <a href='carte.php'>Voir la carte interractive</a>
+                </p> </div>
         <!-- fin de la carte cliquable -->
     </div>
  
