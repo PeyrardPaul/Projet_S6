@@ -1,8 +1,7 @@
 <?php
 	include '../../bd.php';
-	session_start();
     $bdd = getBD();
-
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -39,14 +38,15 @@
 		                }?></li>
         </ul>
     </div>
+    <img src = "../images/logo_univ_PVM3.png" width=730px height=528px  />
     <p class = "qui_sommes_nous">
     Nous sommes un groupe de cinq développeurs junior. Nous avons travaillé de concert dans le but de vous proposer
     un site distrayant et informatif.<br/>
 
-    <!-- logo paul va -->
+                        
     Nous sommes étudiants en troisième année de licence MIASHS à l'Université Paul-Valéry Montpellier III.
     Ce site est le fruit d'un long projet d'une année de travail dans lequel nous avons mis toutes nos compétences.
-</p>
+    </p>
     
 <p class="soustitre"> Présentons notre équipe <p>
     
@@ -59,7 +59,7 @@
 <p class="profil">
     <!-- photo de profil-->
     Shelmy Assiah <br/>
-     ans 
+    20 ans 
 </p>
 
 <p class="profil">
@@ -77,7 +77,7 @@
 <p class="profil">
     <!-- photo de profil-->
     Nour Aït-Kadour <br/>
-     ans 
+    20 ans 
 </p>    
 </body>
 </html>

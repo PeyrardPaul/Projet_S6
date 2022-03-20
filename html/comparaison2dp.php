@@ -20,8 +20,7 @@
 </div>
 <body>
     <?php
-        echo($_POST['dep1'])
-        echo($_POST['dep2'])
-
+        echo($_POST['dep1']);
+        echo($_POST['dep2']);
     ?>
 </body>
