@@ -346,7 +346,6 @@ fondu{
     100%{background-image: url("../images/montpellier.jpg");}
 }
 
-<<<<<<< HEAD
 /* Les colonnes (critères envirronementaux, sociétaux et réseaux et internet)
 sont identifiés par la class critcol */
 .critcol{
@@ -368,11 +367,3 @@ sont identifiées par la classe critcell */
 	padding: 100px;
 	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-=======
-.prof
-	{
-	border-radius: 50%;
-	width: 1px;
-	height: 0.5px;
-	}
->>>>>>> 3375d332741c96b1c85c570a20b33cc56e924295
