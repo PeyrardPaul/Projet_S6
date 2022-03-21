@@ -21,6 +21,13 @@
 	font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
 }
 
+/* strong dans inscription .php */
+strong{
+	display: block;
+	padding: 5px;
+	
+}
+
 .bandeau{
 	color: var(--text-color-beige) ;
 	background:var(--bandeau);
