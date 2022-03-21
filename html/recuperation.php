@@ -48,6 +48,8 @@
         
         while ($mat = $rep->fetch()) {
             $mdp=$mat['password'];
+            $nom=$mat['nom'];
+            $prenom=$mat['prenom'];
             echo "<br/>";
         }
        
@@ -66,26 +68,23 @@
         $mail->SMTPAuth = true;                        //Utiliser l'identification
         $mail->SMTPAutoTLS = true; 
         $mail->CharSet = 'UTF-8';
-        $mail->smtpConnect();
+        $mail->SMTPSecure = 'tls';               //Protocole de sécurisation des échanges avec le SMTP
+        $mail->Username   =  'projetpanms@gmail.com';    //Adresse email à utiliser
+        $mail->Password   =  'PaNmS-2022';         //Mot de passe de l'adresse email à utiliser
         
-        if($mail->SMTPAuth){
-           $mail->SMTPSecure = 'tls';               //Protocole de sécurisation des échanges avec le SMTP
-           $mail->Username   =  'projetpanms@gmail.com';    //Adresse email à utiliser
-           $mail->Password   =  'PaNmS-2022';         //Mot de passe de l'adresse email à utiliser
-        }
         
-        $mail->From       = 'projetpanms@gmail.com';                //L'email à afficher pour l'envoi
+        $mail->setFrom('projetpanms@gmail.com','N-MAPS');                //L'email à afficher pour l'envoi
         
-        $mail->AddAddress('paul.peyrard17@gmail.com');
+        $mail->AddAddress($recup);
         
-        $mail->Subject    =  "Voici le titre du mail";                      //Le sujet du mail
+        $mail->Subject    =  "Récupération du mot de passe";                      //Le sujet du mail
         $mail->WordWrap   = 50; 
-        $mail->Body = 'cefzefzefezfef';			       //Nombre de caracteres pour le retour a la ligne automatique
-        $mail->AltBody = 'Salut cest le mail'; 	       //Texte brut
-        $mail->IsHTML(false);                                  //Préciser qu'il faut utiliser le texte brut
+        $mail->Body = "Bonjour M/Mme ".$nom." ".$prenom.", vous comptez changer votre mot de passe. Si c'est bien vous, veuillez cliquer sur ce lien: <a href='http://localhost/Projet_S6/html/change_mdp.php'>Cliquer ici</a>";			       //Nombre de caracteres pour le retour a la ligne automatique
+        $mail->AltBody = 'Mail de récupération de mot de passe'; 	       //Texte brut
+        $mail->IsHTML(true);                                  //Préciser qu'il faut utiliser le texte brut
         
         if ($mail->send()) {
-              echo 'Message bien envoyé';
+              echo 'Mail bien envoyé';
         } else{
             echo $mail->ErrorInfo;
         }
