@@ -40,7 +40,7 @@
 		
 		if($pseudo=="" or $mdp=="") {
 			echo "mail ou mot de passe vide";
-			echo("<meta http-equiv='refresh' content='1; url=http://localhost:8888/Projet_S6/html/connexion.php?pseudo=".$pseudo." '>");
+			echo("<meta http-equiv='refresh' content='1; url=connexion.php?pseudo=".$pseudo." '>");
 		}
 		else {
 			$rep = $bdd -> query("select * from users where pseudo ='{$pseudo}' and password ='{$mdp}'");
@@ -48,7 +48,7 @@
 				echo "<h2>Connexion réussie, profitez au maximum de notre site maintenant !</h2>";
 				$_SESSION['user']=array($mat['user_id'],$mat['code_dep'],$mat['nom'],$mat['prenom'],$mat['pseudo'],$mat['adresse_email'],$mat['type'],$mat['code_activation'],$mat['code_reset']);
             }
-			echo("<meta http-equiv='refresh' content='1; url=http://localhost/Projet_S6/html/index.php '>");
+			echo("<meta http-equiv='refresh' content='1; url=index.php '>");
 		}
 		$rep ->closeCursor();
 		?>	
