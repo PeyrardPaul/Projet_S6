@@ -364,6 +364,6 @@ sont identifiées par la classe critcell */
 }
 
  #carte{  /* p de la carte de france*/
-	padding: 100px;
+	padding: 90px;
 	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
