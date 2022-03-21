@@ -319,3 +319,26 @@ g path:hover {
 	margin-left: 50%;
 	transform: translateX(-50%);
 }
+/*Affichage de la partie critères du formulaire sur la page recherche avancee*/
+/* Ensemble du tableau identifié par l'id : critabl */
+#critabl{
+	overflow : scroll;
+	border: 1px solid #333;
+}
+
+/* Les colonnes (critères envirronementaux, sociétaux et réseaux et internet)
+sont identifiés par la class critcol */
+.critcol{
+	border: 1px solid #333;	
+}
+
+/* Toutes les cellules du tableaux contenant la case à cocher pour choisir le critère
+sont identifiées par la classe critcell */
+
+.critcell{
+	width : auto;
+	length : auto;
+	border: 1px solid #333;
+	font-size: 12px;
+	font-style: justify;
+}

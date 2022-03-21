@@ -126,9 +126,9 @@
     <br>
 
     <p> Choix des critères de comparaison </p>
-    <table>
-        
-    <th class = "critcol"> Critères sociétaux</th>
+    <table id = "critabl">
+
+    <tr class = "critcol"> Critères sociétaux
 
         <td class = "critcell">
     <label for="pop"> Population :</label>
@@ -159,8 +159,8 @@
     <label for="brv"> Taux de réussite au brevet :</label>
     <input type="checkbox" id="brv" name="brevet">
                     </td>
-
-    <th class = "critcell"> Critères envirronementaux et indications météo </th>
+                    </tr>
+    <tr class = "critcol"> Critères envirronementaux et indications météo 
 
          <td class = "critcell">
     <label for="artif"> Part de surfaces artificialisées :</label>
@@ -186,8 +186,8 @@
     <label for="medtemph"> Température médiane en janvier (hiver) :</label>
     <input type="checkbox" id="" name="">
                     </td>
-
-    <th class = "critcell"> Réseaux mobiles et internet </th>
+                    </tr>
+    <tr class = "critcol"> Réseaux mobiles et internet 
 
         <td class = "critcell">
     <label for="2g"> Nombre de sites 2G :</label>
@@ -213,7 +213,7 @@
     <label for="qrzo"> Moyenne de qualité du réseau internet :</label>
     <input type="checkbox" id="qrzo" name="qrzo">
                     </td>
-
+                    </tr>
     </form>
 </table>
     <input type="submit" value="Valider" />
