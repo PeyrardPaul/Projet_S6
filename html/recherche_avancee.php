@@ -132,90 +132,96 @@
     <p> Choix des critères de comparaison </p>
     <table id = "critabl">
 
-    <tr class = "critcol"> Critères sociétaux
+    <tr class = "critcol">
 
         <td class = "critcell">
     <label for="pop"> Population :</label>
-    <input type="checkbox" id="population" name="pop" value="Population">
+    <input type="checkbox" id="population" name="pop" value="Niv_pop">
         </td>
 
         <td class = "critcell">
     <label for="loy"> Loyer (prix moyen au m²) :</label>
-    <input type="checkbox" id="Loyer" name="loy" value="Loyer (m2)">
+    <input type="checkbox" id="Loyer" name="loy" value="Niv_loyer">
         </td>
 
          <td class = "critcell">
     <label for="st"> Santé (nombre de médecin pour 100000 habitants) :</label>
-    <input type="checkbox" id="santé" name="st" value="Santé (nombre de médecin pour 100 000 habitants)">
+    <input type="checkbox" id="santé" name="st" value="Niv_santé">
                      </td>
+                    </tr>
+    <tr class = "critcol">
 
         <td class = "critcell">
     <label for="crim"> Crimes et délits :</label>
-    <input type="checkbox" id="crimes et délits" name="crimdel" value="Total crimes et délits">
+    <input type="checkbox" id="crimes et délits" name="crimdel" value="Niv_délit">
                     </td>
 
         <td class = "critcell">
     <label for="chom"> Taux de chômage :</label>
-    <input type="checkbox" id="chômage" name="chom" value="Taux de chomage (%)">
+    <input type="checkbox" id="chômage" name="chom" value="Niv_chom">
                     </td>
 
         <td class = "critcell">
     <label for="brv"> Taux de réussite au brevet :</label>
-    <input type="checkbox" id="brevet" name="brv" value="Taux de réussite au brevet (%)">
+    <input type="checkbox" id="brevet" name="brv" value="Niv_brevet">
                     </td>
                     </tr>
-    <tr class = "critcol"> Critères envirronementaux et indications météo 
+    <tr class = "critcol">
 
          <td class = "critcell">
     <label for="artif"> Part de surfaces artificialisées :</label>
-    <input type="checkbox" id="surfaces artificialisées" name="artif" value="Part de surfaces artificialisées (%)">
+    <input type="checkbox" id="surfaces artificialisées" name="artif" value="Niv_surfart">
                     </td>
 
         <td class = "critcell">
     <label for="plui"> Nombre de jours de pluie par an :</label>
-    <input type="checkbox" id="pluie" name="plui" value="Nombre de jours de pluie par an">
+    <input type="checkbox" id="pluie" name="plui" value="Niv_pluie">
                     </td>
 
         <td class = "critcell">
     <label for="pleau"> Nombre de plans d'eau :</label>
-    <input type="checkbox" id="plans d'eau" name="pleau" value="Nombre de plans d’eau">
+    <input type="checkbox" id="plans d'eau" name="pleau" value="Niv_plandeau">
                     </td>
+                    </tr>
+    <tr class = "critcol">
 
         <td class = "critcell">
     <label for="medtempe"> Température médiane en juin (été) :</label>
-    <input type="checkbox" id="médiane température +" name="medtempete" value="Médiane de la température du mois de juin (Ete) en C°">
+    <input type="checkbox" id="médiane température +" name="medtempete" value="Niv_temp_ete">
                     </td>
 
         <td class = "critcell">
     <label for="medtemph"> Température médiane en janvier (hiver) :</label>
-    <input type="checkbox" id="médiane température -" name="medtemphiver" value="Médiane de la température du mois de janvier (Hiver) en C°">
+    <input type="checkbox" id="médiane température -" name="medtemphiver" value="Niv_temp_hiver">
                     </td>
-                    </tr>
-    <tr class = "critcol"> Réseaux mobiles et internet 
 
         <td class = "critcell">
     <label for="2g"> Nombre de sites 2G :</label>
-    <input type="checkbox" id="2g" name="2g" value="Moyenne de site_2g">
+    <input type="checkbox" id="2g" name="2g" value="Niv_2G">
                     </td>
+                    </tr>
+    <tr class = "critcol">
 
         <td class = "critcell">
     <label for="3g"> Nombre de sites 3G :</label>
-    <input type="checkbox" id="3g" name="3g" value="Moyenne de site_3g">
+    <input type="checkbox" id="3g" name="3g" value="Niv_3G">
                     </td>
 
         <td class = "critcell">
     <label for="4g"> Nombre de sites 4G :</label>
-    <input type="checkbox" id="4g" name="4g" value="Moyenne de site_4g">
+    <input type="checkbox" id="4g" name="4g" value="Niv_4G">
                     </td>
 
         <td class = "critcell">
     <label for="5g"> Nombre de sites 5G :</label>
-    <input type="checkbox" id="5g" name="5g" value="Moyenne de site_5g">
+    <input type="checkbox" id="5g" name="5g" value="Niv_5G">
                     </td>
+                    </tr>
+    <tr class = "critcol">
 
         <td class = "critcell">
     <label for="qrzo"> Moyenne de qualité du réseau internet :</label>
-    <input type="checkbox" id="qualité réseau" name="qrzo" value="Moyenne de réseau internet sur le departement">
+    <input type="checkbox" id="qualité réseau" name="qrzo" value="Niv_reseau">
                     </td>
                     </tr>
  

@@ -379,3 +379,7 @@ sont identifiées par la classe critcell */
 	padding: 90px;
 	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+
+p a:hover {
+	color:blue;
+}

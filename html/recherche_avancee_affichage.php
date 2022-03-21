@@ -46,10 +46,10 @@
         $rep = $bdd->query("SELECT * FROM departement WHERE Nom = '{$dep1}' OR Nom = '{$dep2}'");
     //rea : récupère et affiche
     while ($ligne = $rep ->fetch()) {
-        echo "<br/><strong>".$ligne['Nom']."</strong><br/>"; //affiche le nom
+        echo "<br/><strong>".$ligne['Nom']."</strong>"; //affiche le nom
         for ($i = 0; $i != count($_SESSION['critere']); $i++) { //affiche les critères
             if ($_SESSION['critere'][$i]!="") {
-                echo $_SESSION['critere'][$i]." a un résultat de : ".$ligne[$_SESSION['critere'][$i]]."<br/>";
+                echo "Note ".$_SESSION['critere'][$i]." = ".$ligne[$_SESSION['critere'][$i]]." étoile(s)<br/>";
             }
         }
     }

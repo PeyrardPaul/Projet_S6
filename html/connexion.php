@@ -64,7 +64,7 @@
 				<input type="password" name="password" placeholder="Saisir password" required/> 
 			</div>
 
-			<p style="text-align:center;margin-top:15px;"><a href="mdp_oublie.php">Mot de passe oublié ?</a></p>
+			<p style="text-align:center;margin-top:15px;"><a id="bleu" href="mdp_oublie.php">Mot de passe oublié ?</a></p>
 
 			<input type="submit" class="login" name="login" value="Me connecter"/>
 			<br/>
