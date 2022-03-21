@@ -38,12 +38,9 @@
                 echo'<li><a href="recherche_avancee.php">Recherche avancée</a></li>';
                 echo'<li><a href="contact.php">Contact</a></li>';
                 echo'<li><a href="qui_sommes_nous.php">Qui sommes nous ?</a></li>';   
-<<<<<<< HEAD
                 echo"<li><a href='deconnexion.php'>Se déconnecter</a></li>";
-=======
                 echo"<li><a href='deconnexion.php'>Me déconnecter</a></li>";
                 echo'<li><a href="commentaire.php">Voir commentaires</a></li>';
->>>>>>> 20a45df80ef4513f3fbc9d80ebf8789f4f0eee13
             }
             ?>
 
