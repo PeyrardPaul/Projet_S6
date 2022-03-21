@@ -50,7 +50,7 @@
 <p class="soustitre"> Présentons notre équipe <p>
     
 <p class="profil">
-    <img src = "../images/melissa.jpeg" width="42" height="42"/>
+    <img src = "../images/melissa.jpeg"/>
     Mélissa Pulci <br/>
     21 ans 
 </p>
