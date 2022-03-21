@@ -37,7 +37,7 @@
             </li>
         </ul>
     </div>
-    <img src = "../images/logo_univ_PVM3.png" width="40"  />
+    <img class ="logoupv" src = "../images/logo_univ_PVM3.png"   />
     <p class = "qui_sommes_nous">
     Nous sommes un groupe de cinq développeurs junior. Nous avons travaillé de concert dans le but de vous proposer
     un site distrayant et informatif.<br/>
