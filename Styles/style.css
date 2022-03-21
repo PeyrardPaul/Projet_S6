@@ -45,6 +45,8 @@
 	float: left;
 }
 
+
+
 .qui_sommes_nous{
 	/*padding: 10 px;*/
 	margin: 20px;
@@ -60,8 +62,8 @@
 }
 
 .profil{
-	border-color: black;
-	border: 1px;
+	border-color: rgb(110, 85, 104);
+	border: 5px;
 	border-style:solid;
 	margin-left: 100px;
 	margin-right: 300px;
@@ -70,7 +72,11 @@
 	padding-left: 40px;
 	padding-right: 40px;
 	text-align: center;
-
+	/* display: table-cell ; */
+	display: inline-block;
+}
+.profil img{
+	float: inline-start;
 }
 
 .departement{
