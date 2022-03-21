@@ -34,12 +34,35 @@
     <?php
 
         echo($_POST['dep1']);
+        
+        echo "<br>";
 
         echo($_POST['dep2']);
 
-		if(isset($_POST['pop'])==True){
+        echo "<br>";
+
+        $criteres = "";
+
+if(isset($_POST['pop'])){
+ $criteres += "population,";
+ echo $criteres;
+}
+echo "<br>";
+if(isset($_POST['loy'])){
+    echo "validé";
+   }
+
+
+        $rep = $bdd->query('SELECT "" FROM articles Where departement = ain and departement = aisne');
+    //rea : récupère et affiche
+    while ($ligne = $rep ->fetch()) {}
+
+		if(isset($_POST['pop'])){
 			echo "test validé";
 		}
+        else{
+            echo "pas bon";
+        }
 
     ?>
 </body>
