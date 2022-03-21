@@ -70,11 +70,11 @@
         
         if($mail->SMTPAuth){
            $mail->SMTPSecure = 'tls';               //Protocole de sécurisation des échanges avec le SMTP
-           $mail->Username   =  'projetpaanms@gmail.com';    //Adresse email à utiliser
+           $mail->Username   =  'projetpanms@gmail.com';    //Adresse email à utiliser
            $mail->Password   =  'PaNmS-2022';         //Mot de passe de l'adresse email à utiliser
         }
         
-        $mail->From       = '';                //L'email à afficher pour l'envoi
+        $mail->From       = 'projetpanms@gmail.com';                //L'email à afficher pour l'envoi
         
         $mail->AddAddress('paul.peyrard17@gmail.com');
         

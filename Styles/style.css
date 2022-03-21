@@ -320,7 +320,6 @@ g path:hover {
 	margin-left: 50%;
 	transform: translateX(-50%);
 }
-<<<<<<< HEAD
 /*Affichage de la partie critères du formulaire sur la page recherche avancee*/
 /* Ensemble du tableau identifié par l'id : critabl */
 #critabl{
@@ -344,5 +343,3 @@ sont identifiées par la classe critcell */
 	font-size: 12px;
 	font-style: justify;
 }
-=======
->>>>>>> a5de6779b93bb30baaf4771462fb5df7e28e10f5

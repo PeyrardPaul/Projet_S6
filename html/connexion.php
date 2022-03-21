@@ -50,7 +50,7 @@
     </div>
 
 <body>
-	<h2 style="text-align:center;margin-bottom:-150px;margin-top:100px;">CONNECTEZ-VOUS<a class="retour" style="white-space:nowrap;" href="inscription.php">S'inscrire</a></h2>
+		<h2 style="text-align:center;margin-bottom:-150px;margin-top:100px;">CONNECTEZ-VOUS ou<a class="retour"href="inscription.php" style="margin-left:auto;margin-right:auto;">S'inscrire</a></h2>
 	<div class="body"> <!--Pourquoi créer une classe body dans le body ?????? -->
 
 		<form method=Post action="connecter.php" autocomplete=ON>
