@@ -9,8 +9,9 @@
 	--text-color-noir:black;
 	/* --color-shadow:rgba(255, 179, 0, 0.664); */
 	--color-shadow:rgba(112, 33, 33, 0.664);
-
 }
+
+
 *{
 	/* border-width : 1px;
 	border-style : dotted;
@@ -18,8 +19,6 @@
 	padding : 0px;
 	margin : 0px;
 	font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
-	
-
 }
 
 .bandeau{
@@ -37,7 +36,6 @@
 .bandeau > h1 > a{
 	color: var(--text-color-beige);
 	text-decoration: none;
-
 }
 
 #logo{
@@ -52,7 +50,6 @@
 	margin: 20px;
 	text-align: justify;
 	font-size: larger;
-
 }
 
 .soustitre{
@@ -76,7 +73,8 @@
 	display: inline-block;
 }
 .profil img{
-	float: inline-start;
+	float: left;
+	width: 40px;
 }
 
 .departement{

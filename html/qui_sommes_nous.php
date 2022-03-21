@@ -27,15 +27,14 @@
 
 			<li>
                 <?php
-		                if(isset($_SESSION['user'])) {
-
-			                echo "<li><a href='deconnexion.php'>Se déconnecter</a></li>";
-							echo "<li>Bonjour ".$_SESSION['user'][4]."</li>";
-
-		                }
-		                else {
-			                echo "<li><a href='connexion.php'>Se connecter </a></li>";
-		                }?></li>
+		            if(isset($_SESSION['user'])) {
+                        echo "<li><a href='deconnexion.php'>Se déconnecter</a></li>";
+						echo "<li>Bonjour ".$_SESSION['user'][4]."</li>";
+                    } else {
+			            echo "<li><a href='connexion.php'>Se connecter </a></li>";
+		            }
+                ?>
+            </li>
         </ul>
     </div>
     <img src = "../images/logo_univ_PVM3.png" width="40"  />
