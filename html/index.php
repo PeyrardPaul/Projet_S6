@@ -76,9 +76,7 @@
                     
     <div>
     
-    <div> 
-
-    </div> <!-- Ici on va proposer les 2 manières de s'informer sur le dpt en question  -->
+     <!-- Ici on va proposer les 2 manières de s'informer sur le dpt en question  -->
         <p>Pour découvrir la France, choississez un mode de recherche &#x1F440;  </p><br>
         <p>
             &#128077; Utilisez la  &#x1F449; <a href="recherche_simple.php">recherche simple</a>&#x1F448; pour découvrir toutes les informations sur un département choisi. 
@@ -88,10 +86,10 @@
         </p>
     </div>
         <!-- carte cliquable  -->
-               <div><p>
-               <a href='carte.php'>Voir la carte interractive</a>
-                </p> </div>
-        <!-- fin de la carte cliquable -->
+    <div>
+        <p id="carte"><iframe src="//fr.batchgeo.com/map/99d9e2e01b38d2e26947900b4fcc342e" frameborder="0" width="100%" height="550" sandbox="allow-top-navigation allow-scripts allow-popups allow-same-origin allow-modals allow-forms" style="border:1px solid #aaa;"></iframe></p>
+    </div>
+            <!-- fin de la carte cliquable -->
     </div>
  
     <footer><!--ici le pied de page -->
