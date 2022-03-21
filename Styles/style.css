@@ -168,6 +168,7 @@ body {
 }
 
 
+
 header {
 	background-color: #979494;
 	color: var(--text-color-beige);
@@ -289,7 +290,7 @@ g path:hover {
 
 .retour{
 	display:block;                /* Transformation en block */
-    width: 100px; 
+    width: 120px; 
 	            /* Largeur minimale des liens */
 	margin: 0.5rem;               /* Marges externes (1 valeurs = 4 directions) */
     padding: 0.2rem 0;            /* Marges internes (2 valeurs = haut/bas et gauche/droite)*/
