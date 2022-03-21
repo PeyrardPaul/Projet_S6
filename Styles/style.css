@@ -202,10 +202,10 @@ header {
   }
   .header-cover img {
     opacity: 1;
-    width: 100%;
+    width: 90%;
     height: auto;
     min-height: 350px;
-    margin: 0;
+    /* margin: 0; */
     -o-object-fit: cover;
     object-fit: cover;
     display: block;
@@ -309,9 +309,15 @@ g path:hover {
 }
 
 .photo_dep{
-	/* photo du dep en question. */
+	/* photo du dep en question de la recherche simple. */
 	position:relative;
 	max-width: 50%;
 	margin-left: 50%;
-	transform: translateX(-50%);
+	/* transform: translateX(-50%); */
+
+}
+
+.info_dep{
+	text-align: center;
+
 }

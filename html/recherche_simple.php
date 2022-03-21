@@ -52,7 +52,7 @@
 	
   }
 ?>
-<form method="POST" action="recherche_simple_affichage.php">
+<form method="GET" action="recherche_simple_affichage.php">
         <label>Choix dep</label>
         <select name="dep">
             <?php 
