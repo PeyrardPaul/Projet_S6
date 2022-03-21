@@ -61,20 +61,20 @@
         
         $mail = new PHPMailer(true);
         $mail->IsSMTP();
-        $mail->Host = 'localhost';               //Adresse IP ou DNS du serveur SMTP
-        $mail->Port = 25;                          //Port TCP du serveur SMTP
-        $mail->SMTPAuth = false;                        //Utiliser l'identification
-        $mail->SMTPAutoTLS = false; 
+        $mail->Host = 'smtp.gmail.com';               //Adresse IP ou DNS du serveur SMTP
+        $mail->Port = 587;                          //Port TCP du serveur SMTP
+        $mail->SMTPAuth = true;                        //Utiliser l'identification
+        $mail->SMTPAutoTLS = true; 
         $mail->CharSet = 'UTF-8';
         $mail->smtpConnect();
         
         if($mail->SMTPAuth){
            $mail->SMTPSecure = 'tls';               //Protocole de sécurisation des échanges avec le SMTP
-           $mail->Username   =  '';    //Adresse email à utiliser
-           $mail->Password   =  '';         //Mot de passe de l'adresse email à utiliser
+           $mail->Username   =  'projetpaanms@gmail.com';    //Adresse email à utiliser
+           $mail->Password   =  'PaNmS-2022';         //Mot de passe de l'adresse email à utiliser
         }
         
-        $mail->From       = 'shelmyassiah9@gmail.com';                //L'email à afficher pour l'envoi
+        $mail->From       = '';                //L'email à afficher pour l'envoi
         
         $mail->AddAddress('paul.peyrard17@gmail.com');
         

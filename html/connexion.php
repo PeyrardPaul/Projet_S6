@@ -8,23 +8,6 @@
 <link rel="stylesheet"href="../Styles/style.css"type="text/css"media="screen"/>
 <title>N-Maps</title>
 <style>
-	h2 {
-		text-align:center;
-		padding-bottom:25px;
-		padding-top:25px;
-		margin: 10px 13em 10px 13em;
-		background-color: #0E0D3F;
-		color: white;
-		}
-	
-	p {
-		text-align:center;
-		margin-top:10px;
-		margin-left:105px;
-		}
-	a {
-		color: blue;
-	}
 </style>
 </head>
 
@@ -67,12 +50,12 @@
     </div>
 
 <body>
-	<h2>CONNECTEZ-VOUS</h2>
-	 <div class="body"> <!--Pourquoi créer une classe body dans le body ?????? -->
+	<h2 style="text-align:center;margin-bottom:-150px;margin-top:100px;">CONNECTEZ-VOUS<a class="retour" style="white-space:nowrap;" href="inscription.php">S'inscrire</a></h2>
+	<div class="body"> <!--Pourquoi créer une classe body dans le body ?????? -->
 
 		<form method=Post action="connecter.php" autocomplete=ON>
 			<div class="pseudo">
-				<label for="pseudo">Pseudo</label>:
+				<label style="" for="pseudo">Pseudo</label>:
 				<input type="pseudo"  name="pseudo" value="" placeholder="Saisir pseudo" required/>
 			</div>
 
@@ -81,13 +64,12 @@
 				<input type="password" name="password" placeholder="Saisir password" required/> 
 			</div>
 
-			<p><a href="mdp_oublie.php">Mot de passe oublié ?</a></p>
+			<p style="text-align:center;margin-top:15px;"><a href="mdp_oublie.php">Mot de passe oublié ?</a></p>
 
 			<input type="submit" class="login" name="login" value="Me connecter"/>
 			<br/>
 		</form>
 	</div>
-
-<a href="inscription.php"><h2>INSCRIVEZ-VOUS</h2></a>
+	
 </body>
 </html>

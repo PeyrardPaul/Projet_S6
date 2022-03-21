@@ -172,6 +172,7 @@ body {
 }
 
 
+
 header {
 	background-color: #979494;
 	color: var(--text-color-beige);
@@ -293,7 +294,7 @@ g path:hover {
 
 .retour{
 	display:block;                /* Transformation en block */
-    width: 100px; 
+    width: 120px; 
 	            /* Largeur minimale des liens */
 	margin: 0.5rem;               /* Marges externes (1 valeurs = 4 directions) */
     padding: 0.2rem 0;            /* Marges internes (2 valeurs = haut/bas et gauche/droite)*/
@@ -319,6 +320,7 @@ g path:hover {
 	margin-left: 50%;
 	transform: translateX(-50%);
 }
+<<<<<<< HEAD
 /*Affichage de la partie critères du formulaire sur la page recherche avancee*/
 /* Ensemble du tableau identifié par l'id : critabl */
 #critabl{
@@ -342,3 +344,5 @@ sont identifiées par la classe critcell */
 	font-size: 12px;
 	font-style: justify;
 }
+=======
+>>>>>>> a5de6779b93bb30baaf4771462fb5df7e28e10f5
