@@ -1,3 +1,7 @@
+<?php require '../../bd.php'; ?>
+<?php $bdd = getBD(); ?>
+<?php session_start(); ?>
+
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -32,14 +36,29 @@
     </div>
 <body>
     <?php
+        $_SESSION['critere']=array();
+        if (isset($_POST['pop'])) { //il manque à faire autant de if qu'il y a de criteres
+            array_push($_SESSION['critere'],$_POST['pop']); // ajouter le critere dans la session
+        }
+        print_r($_SESSION['critere']);
 
-        echo($_POST['dep1']);
+        $dep1=$_POST['dep1'];
+        $dep2=$_POST['dep2'];
+        $rep = $bdd->query("SELECT * FROM departement WHERE Nom = '{$dep1}' OR Nom = '{$dep2}'");
+    //rea : récupère et affiche
+    while ($ligne = $rep ->fetch()) {
+        echo $ligne['Nom'];
+        echo "<br/>";
+        echo $ligne['Population'];
+        echo "<br/>";
+    }
 
-        echo($_POST['dep2']);
-
-		if(isset($_POST['pop'])==True){
+		if(isset($_POST['pop'])){
 			echo "test validé";
 		}
-
+        else{
+            echo "pas bon";
+        }
+        unset($_SESSION['critere']); //vide la session
     ?>
 </body>
