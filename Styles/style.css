@@ -20,6 +20,13 @@
 	font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
 }
 
+/* strong dans inscription .php */
+strong{
+	display: block;
+	padding: 5px;
+	
+}
+
 .bandeau{
 	color: var(--text-color-beige) ;
 	background:var(--bandeau);
@@ -40,6 +47,11 @@
 #logo{
 	width: 70px;
 	float: left;
+}
+
+.logoupv{
+	float: right;
+	width: 70px;
 }
 
 
@@ -73,7 +85,7 @@
 }
 .profil img{
 	float: left;
-	width: 40px;
+	width: 10px;
 }
 
 .departement{
