@@ -37,28 +37,22 @@
 <body>
     <?php
         $_SESSION['critere']=array();
-        if (isset($_POST['pop'])) { //il manque à faire autant de if qu'il y a de criteres
-            array_push($_SESSION['critere'],$_POST['pop']); // ajouter le critere dans la session
-        }
-        print_r($_SESSION['critere']);
+        array_push($_SESSION['critere'],$_POST['pop'],$_POST['loy'],$_POST['st'],$_POST['crimdel'],$_POST['chom'],
+        $_POST['brv'],$_POST['artif'],$_POST['plui'],$_POST['pleau'],$_POST['medtempete'],$_POST['medtemphiver'],$_POST['2g'],$_POST['3g'],$_POST['4g'],
+        $_POST['5g'],$_POST['qrzo']); // ajouter le critere dans la session
 
         $dep1=$_POST['dep1'];
         $dep2=$_POST['dep2'];
         $rep = $bdd->query("SELECT * FROM departement WHERE Nom = '{$dep1}' OR Nom = '{$dep2}'");
     //rea : récupère et affiche
     while ($ligne = $rep ->fetch()) {
-        echo $ligne['Nom'];
-        echo "<br/>";
-        echo $ligne['Population'];
-        echo "<br/>";
-    }
-
-		if(isset($_POST['pop'])){
-			echo "test validé";
-		}
-        else{
-            echo "pas bon";
+        echo "<br/><strong>".$ligne['Nom']."</strong><br/>"; //affiche le nom
+        for ($i = 0; $i != count($_SESSION['critere']); $i++) { //affiche les critères
+            if ($_SESSION['critere'][$i]!="") {
+                echo $_SESSION['critere'][$i]." a un résultat de : ".$ligne[$_SESSION['critere'][$i]]."<br/>";
+            }
         }
+    }
         unset($_SESSION['critere']); //vide la session
     ?>
 </body>
