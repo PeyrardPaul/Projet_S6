@@ -27,38 +27,13 @@
                 echo'<li><a href="contact.php">Contact</a></li>';
                 echo'<li><a href="qui_sommes_nous.php">Qui sommes nous ?</a></li>';   
                 echo"<li><a href='deconnexion.php'>Se déconnecter</a></li>";
-                echo"<li><a href='deconnexion.php'>Me déconnecter</a></li>";
-                echo'<li><a href="commentaire.php">Voir commentaires</a></li>';
+                echo'<li><a href="commentaire.php"> Espace commentaires</a></li>';
             }
         ?>
         </ul>
     </div>
     
-    <div>
-    <header>
-        <div class="conteneur">
-            <div class="d2"> </div>
-        </div>
-
-        <div class="header-area">
-            <div class="header-content">
-                <p>
-                    <?php
-                    if(isset($_SESSION['user'])) {
-                        echo "<strong><font color='white'>Bonjour ".$_SESSION['user'][4]."</font></strong><br/>";
-                        echo "Bienvenue sur N-MAPS"."<br/>";
-                    } else {
-                        echo "Bienvenue sur N-MAPS"."<br/>";
-                    }
-                    ?>
-                </p> 
-            </div> 
-        </div> 
-    </header>             
-    <div>
-
-
-    <h2>A vos posts !</h2>
+    <h2> À vos posts !</h2>
     <p class="soustitre">Derniers posts</p>
     
     <?php
