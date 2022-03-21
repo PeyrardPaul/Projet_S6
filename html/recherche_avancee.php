@@ -58,12 +58,9 @@
     
 ?>
    
-<form method="POST" action="recherche_avancee_affichage.php">
-        
-</form>
 
  
-    <form action="recherche_avancee_affichage.php" method="post">
+    <form action="recherche_avancee_affichage.php" method="POST">
 
     
     <p>Choix du premier departement</p>
@@ -124,99 +121,107 @@
          <?php endwhile; ?>
        </select>
     <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
     <p> Choix des critères de comparaison </p>
-    <table>
-        
-    <th class = "critcol"> Critères sociétaux</th>
+    <table id = "critabl">
+
+    <tr class = "critcol"> Critères sociétaux
 
         <td class = "critcell">
     <label for="pop"> Population :</label>
-    <input type="checkbox" id="pop" name="population">
+    <input type="checkbox" id="population" name="pop" value="Population">
         </td>
 
         <td class = "critcell">
     <label for="loy"> Loyer (prix moyen au m²) :</label>
-    <input type="checkbox" id="loy" name="Loyer">
+    <input type="checkbox" id="Loyer" name="loy" value="Loyer (m2)">
         </td>
 
          <td class = "critcell">
     <label for="st"> Santé (nombre de médecin pour 100000 habitants) :</label>
-    <input type="checkbox" id="st" name="santé">
+    <input type="checkbox" id="santé" name="st" value="Santé (nombre de médecin pour 100 000 habitants)">
                      </td>
 
         <td class = "critcell">
     <label for="crim"> Crimes et délits :</label>
-    <input type="checkbox" id="crim" name="crimes et delits">
+    <input type="checkbox" id="crimes et délits" name="crimdel" value="Total crimes et délits">
                     </td>
 
         <td class = "critcell">
     <label for="chom"> Taux de chômage :</label>
-    <input type="checkbox" id="chom" name="chom">
+    <input type="checkbox" id="chômage" name="chom" value="Taux de chomage (%)">
                     </td>
 
         <td class = "critcell">
     <label for="brv"> Taux de réussite au brevet :</label>
-    <input type="checkbox" id="brv" name="brevet">
+    <input type="checkbox" id="brevet" name="brv" value="Taux de réussite au brevet (%)">
                     </td>
-
-    <th class = "critcell"> Critères envirronementaux et indications météo </th>
+                    </tr>
+    <tr class = "critcol"> Critères envirronementaux et indications météo 
 
          <td class = "critcell">
     <label for="artif"> Part de surfaces artificialisées :</label>
-    <input type="checkbox" id="artif" name="artif">
+    <input type="checkbox" id="surfaces artificialisées" name="artif" value="Part de surfaces artificialisées (%)">
                     </td>
 
         <td class = "critcell">
     <label for="plui"> Nombre de jours de pluie par an :</label>
-    <input type="checkbox" id="plui" name="pluie">
+    <input type="checkbox" id="pluie" name="plui" value="Nombre de jours de pluie par an">
                     </td>
 
         <td class = "critcell">
     <label for="pleau"> Nombre de plans d'eau :</label>
-    <input type="checkbox" id="pleau" name="pleau">
+    <input type="checkbox" id="plans d'eau" name="pleau" value="Nombre de plans d’eau">
                     </td>
 
         <td class = "critcell">
     <label for="medtempe"> Température médiane en juin (été) :</label>
-    <input type="checkbox" id="" name="">
+    <input type="checkbox" id="médiane température +" name="medtempete" value="Médiane de la température du mois de juin (Ete) en C°">
                     </td>
 
         <td class = "critcell">
     <label for="medtemph"> Température médiane en janvier (hiver) :</label>
-    <input type="checkbox" id="" name="">
+    <input type="checkbox" id="médiane température -" name="medtemphiver" value="Médiane de la température du mois de janvier (Hiver) en C°">
                     </td>
-
-    <th class = "critcell"> Réseaux mobiles et internet </th>
+                    </tr>
+    <tr class = "critcol"> Réseaux mobiles et internet 
 
         <td class = "critcell">
     <label for="2g"> Nombre de sites 2G :</label>
-    <input type="checkbox" id="2g" name="2g">
+    <input type="checkbox" id="2g" name="2g" value="Moyenne de site_2g">
                     </td>
 
         <td class = "critcell">
     <label for="3g"> Nombre de sites 3G :</label>
-    <input type="checkbox" id="3g" name="3g">
+    <input type="checkbox" id="3g" name="3g" value="Moyenne de site_3g">
                     </td>
 
         <td class = "critcell">
     <label for="4g"> Nombre de sites 4G :</label>
-    <input type="checkbox" id="4g" name="4g">
+    <input type="checkbox" id="4g" name="4g" value="Moyenne de site_4g">
                     </td>
 
         <td class = "critcell">
     <label for="5g"> Nombre de sites 5G :</label>
-    <input type="checkbox" id="5g" name="5g">
+    <input type="checkbox" id="5g" name="5g" value="Moyenne de site_5g">
                     </td>
 
         <td class = "critcell">
     <label for="qrzo"> Moyenne de qualité du réseau internet :</label>
-    <input type="checkbox" id="qrzo" name="qrzo">
+    <input type="checkbox" id="qualité réseau" name="qrzo" value="Moyenne de réseau internet sur le departement">
                     </td>
-
-    </form>
+                    </tr>
+ 
 </table>
     <input type="submit" value="Valider" />
+</form>
 </body>
 </html>
 <body>

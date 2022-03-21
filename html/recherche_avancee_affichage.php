@@ -1,3 +1,7 @@
+<?php require '../../bd.php'; ?>
+<?php $bdd = getBD(); ?>
+<?php session_start(); ?>
+
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -32,14 +36,23 @@
     </div>
 <body>
     <?php
+        $_SESSION['critere']=array();
+        array_push($_SESSION['critere'],$_POST['pop'],$_POST['loy'],$_POST['st'],$_POST['crimdel'],$_POST['chom'],
+        $_POST['brv'],$_POST['artif'],$_POST['plui'],$_POST['pleau'],$_POST['medtempete'],$_POST['medtemphiver'],$_POST['2g'],$_POST['3g'],$_POST['4g'],
+        $_POST['5g'],$_POST['qrzo']); // ajouter le critere dans la session
 
-        echo($_POST['dep1']);
-
-        echo($_POST['dep2']);
-
-		if(isset($_POST['pop'])==True){
-			echo "test validé";
-		}
-
+        $dep1=$_POST['dep1'];
+        $dep2=$_POST['dep2'];
+        $rep = $bdd->query("SELECT * FROM departement WHERE Nom = '{$dep1}' OR Nom = '{$dep2}'");
+    //rea : récupère et affiche
+    while ($ligne = $rep ->fetch()) {
+        echo "<br/><strong>".$ligne['Nom']."</strong><br/>"; //affiche le nom
+        for ($i = 0; $i != count($_SESSION['critere']); $i++) { //affiche les critères
+            if ($_SESSION['critere'][$i]!="") {
+                echo $_SESSION['critere'][$i]." a un résultat de : ".$ligne[$_SESSION['critere'][$i]]."<br/>";
+            }
+        }
+    }
+        unset($_SESSION['critere']); //vide la session
     ?>
 </body>

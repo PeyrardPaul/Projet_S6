@@ -40,11 +40,11 @@
     <a class="Retour" href="recherche_simple.php">Retour</a> <!--bouton retour vers recherche simple -->
 
     <?php //echo '<img class="photo_dep" src="../images/departements/'.$_POST['dep'].'.jpg" alt="photo du département en question">';
-            $rep = $bdd->query("select * from departement where Département ='".$_POST['dep']."'"); //ici on affiche les informations pour le département selectionné
+            $rep = $bdd->query("select * from departement where Département ='".$_GET['dep']."'"); //ici on affiche les informations pour le département selectionné
             while ($ligne = $rep ->fetch()) {
                 echo('<header>
                         <div class="header-cover">
-                            <img src="../images/departements/'.$_POST['dep'].'.jpg" alt="photo du département en question">
+                            <img class="photo_dep" src="../images/departements/'.$_GET['dep'].'.jpg" alt="photo du département en question">
                         </div>
                         <div class="header-area">
                             <div class="header-content">
@@ -52,27 +52,28 @@
                             </div> 
                         </div>     
                     </header>');
-                
-                //echo "<h2>".$ligne['Département']." ".$ligne['Nom']."</h2><br>\n";  //Département est le Code postal 
-                echo " Numéro du département : ".$ligne['Département']."<br>";
-                echo $ligne['Population']." habitants"."<br>";
-                echo "Nombre de médecins pour 100 000 habitants : ".$ligne['Santé (nombre de médecin pour 100 000 habitants)']."<br>";
-                echo "Nombre de crimes pour 100 000 habitants : ".$ligne['Nombre de crimes pour 100 000 habitants']."<br>";
-                echo "Taux de chômage : ".$ligne['Taux de chomage (%)']." %"."<br>";
-                echo "Taux de réussite au brevet des collège : ".$ligne['Taux de réussite au brevet (%)']." %"."<br>";
-                echo "Nombre de jours de pluie par an : ".$ligne['Nombre de jours de pluie par an']."<br>";
-                echo "Nombre de plan d'eau : ".$ligne["Nombre de plans d’eau"]."<br>";
-                echo "Température médiane en hiver : ".$ligne["Médiane de la température du mois de janvier (Hiver) en C°"]." C°"."<br/>";
-                echo "Température médiane en été : ".$ligne["Médiane de la température du mois de juin (Ete) en C°"]." C°"."<br>";
-                
+                echo "<div class='info_dep'>";
+                    echo "<p>Numéro du département : ".$ligne['Département']."<br></p>";
+                    echo "<p>".$ligne['Population']." habitants"."<br></p>";
+                    echo "<p>Nombre de médecins pour 100 000 habitants : ".$ligne['Santé (nombre de médecin pour 100 000 habitants)']."<br></p>";
+                    echo "<p>Nombre de crimes pour 100 000 habitants : ".$ligne['Nombre de crimes pour 100 000 habitants']."<br></p>";
+                    echo "<p>Taux de chômage : ".$ligne['Taux de chomage (%)']." %"."<br></p>";
+                    echo "<p>Taux de réussite au brevet des collège : ".$ligne['Taux de réussite au brevet (%)']." %"."<br></p>";
+                    echo "<p>Nombre de jours de pluie par an : ".$ligne['Nombre de jours de pluie par an']."<br></p>";
+                    echo "<p>Nombre de plan d'eau : ".$ligne["Nombre de plans d’eau"]."<br></p>";
+                    echo "<p>Température médiane en hiver : ".$ligne["Médiane de la température du mois de janvier (Hiver) en C°"]." C°"."<br/></p>";
+                    echo "<p>Température médiane en été : ".$ligne["Médiane de la température du mois de juin (Ete) en C°"]." C°"."<br></p>";
+                echo "</div>";
                 
             }
             $rep ->closeCursor();
 
         ?>
-        <a class="Retour" href="recherche_simple.php">Retour</a>
-    </div>    
+
+        </div>    
 </body>
 <footer><!--ici le pied de page -->
        <p>N-Maps © 2022</p>
     </footer>
+
+    

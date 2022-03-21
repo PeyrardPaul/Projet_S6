@@ -37,7 +37,9 @@
             </li>
         </ul>
     </div>
+
     <img class ="logoupv" src = "../images/logo_univ_PVM3.png"   />
+    <img src = "../images/logo_univ_PVM3.png" width=230px height=140px />
     <p class = "qui_sommes_nous">
     Nous sommes un groupe de cinq développeurs junior. Nous avons travaillé de concert dans le but de vous proposer
     un site distrayant et informatif.<br/>
@@ -51,6 +53,8 @@
     
 <p class="profil">
     <img src = "../images/melissa.jpeg"/>
+    <!-- photo de profil-->
+    <img src = "../images/melissa.jpeg" width="42" height="42"/>
     Mélissa Pulci <br/>
     21 ans 
 </p>
