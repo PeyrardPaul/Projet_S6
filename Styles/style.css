@@ -1,4 +1,3 @@
-
 /* Conseil de mise en page pendant la réalisation du site */
 :root{
 	--background:#fffef3;
@@ -207,10 +206,10 @@ header {
   }
   .header-cover img {
     opacity: 1;
-    width: 90%;
+    width: 100%;
     height: auto;
     min-height: 350px;
-    /* margin: 0; */
+    margin: 0;
     -o-object-fit: cover;
     object-fit: cover;
     display: block;
@@ -314,23 +313,12 @@ g path:hover {
 }
 
 .photo_dep{
-	/* photo du dep en question de la recherche simple. */
+	/* photo du dep en question. */
 	position:relative;
 	max-width: 50%;
 	margin-left: 50%;
-<<<<<<< HEAD
-	/* transform: translateX(-50%); */
-
-}
-
-.info_dep{
-	text-align: center;
-
-}
-=======
 	transform: translateX(-50%);
 }
-<<<<<<< HEAD
 /*Affichage de la partie critères du formulaire sur la page recherche avancee*/
 /* Ensemble du tableau identifié par l'id : critabl */
 #critabl{
@@ -354,6 +342,3 @@ sont identifiées par la classe critcell */
 	font-size: 12px;
 	font-style: justify;
 }
-=======
->>>>>>> a5de6779b93bb30baaf4771462fb5df7e28e10f5
->>>>>>> aeba77621ef93f9b89221a86f514bf28d1609b7b
