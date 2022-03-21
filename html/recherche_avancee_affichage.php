@@ -1,6 +1,8 @@
-<?php require '../../bd.php'; ?>
-<?php $bdd = getBD(); ?>
-<?php session_start(); ?>
+<?php 
+    require '../../bd.php'; 
+    $bdd = getBD();
+    session_start(); 
+?>
 
 <html lang="fr">
 <head>
