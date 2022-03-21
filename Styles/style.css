@@ -50,8 +50,8 @@ strong{
 }
 
 .logoupv{
-	float: right;
-	width: 70px;
+	float: left;
+	width: 100px;
 }
 
 
@@ -61,6 +61,7 @@ strong{
 	margin: 20px;
 	text-align: justify;
 	font-size: larger;
+	float: right;
 }
 
 .soustitre{
@@ -70,22 +71,28 @@ strong{
 }
 
 .profil{
-	border-color: rgb(110, 85, 104);
-	border: 5px;
+	border-color: rgb(163, 136, 161);
+	border: 1px;
 	border-style:solid;
 	margin-left: 100px;
-	margin-right: 300px;
+	margin-right: 0px;
 	margin-top: 50px ;
 	margin-bottom: 50px;
-	padding-left: 40px;
-	padding-right: 40px;
+	padding-left: 30px;
+	padding-right: 30px;
 	text-align: center;
-	/* display: table-cell ; */
-	display: inline-block;
+	display: table-cell ;
+	overflow: auto;
+	white-space: nowrap;
+	text-align: center;
+	width: 22%;
+
 }
 .profil img{
-	float: left;
-	width: 10px;
+	/* float: left; */
+	width: 120px;
+	display: inline-flex;
+
 }
 
 .departement{

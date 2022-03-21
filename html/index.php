@@ -2,7 +2,6 @@
 	include '../../bd.php';
 	session_start();
 	$bdd = getBD();
-
 ?>
 
 <!DOCTYPE html>
@@ -38,7 +37,7 @@
                 echo'<li><a href="recherche_avancee.php">Recherche avancée</a></li>';
                 echo'<li><a href="contact.php">Contact</a></li>';
                 echo'<li><a href="qui_sommes_nous.php">Qui sommes nous ?</a></li>';   
-                echo"<li><a href='deconnexion.php'>Me déconnecter</a></li>";
+                echo"<li><a href='deconnexion.php'>Se déconnecter</a></li>";
             }
             ?>
 
