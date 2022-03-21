@@ -174,7 +174,7 @@ header {
 	position: relative;
 	padding: 0;
 	margin: 0;
-	min-height: 350px;
+	max-height:900px;
 }
 
 .header-content{
@@ -200,7 +200,7 @@ header {
 	margin: auto;
     width: 100%;
   }
-  .header-cover img {
+  .header-cover img{
     opacity: 1;
     width: 100%;
     height: auto;
@@ -315,3 +315,36 @@ g path:hover {
 	margin-left: 50%;
 	transform: translateX(-50%);
 }
+
+
+.conteneur{
+    max-width: 2000px;
+    margin: 0px auto;
+}
+.d2{
+    width: 1347px;
+    height: -50px;
+    padding-top: 54%;
+    box-shadow: 0px 0px 10px #777;
+    background-color: #EDEDED;
+    background-size: contain;
+    animation: fondu 15s ease-in-out infinite both;
+	background-repeat: no-repeat;
+}
+.d2:hover{
+    animation-play-state: paused;
+}
+@keyframes 
+fondu{
+    0%{background-image: url("../images/montpellier.jpg");}
+    33.33%{background-image: url("../images/departements/53.jpg");}
+    66.67%{background-image: url("../images/departements/93.jpg");}
+    100%{background-image: url("../images/montpellier.jpg");}
+}
+
+.prof
+	{
+	border-radius: 50%;
+	width: 1px;
+	height: 0.5px;
+	}

@@ -19,37 +19,59 @@
         <img id="logo" src="../images/N-Maps.png" alt="images logo" >
         <h1><a href="index.php">N-MAPS</a></h1>
         <ul class="menu">
-            <li><a href="index.php">Accueil</a></li>
-            <li><a href="qui_sommes_nous.php">Qui sommes nous ?</a></li>
-            <li><a href="inscription.php">Inscription</a></li>
-            <li><a href="contact.php">Contact</a></li>
-            <li><a href="recherche_simple.php">Recherche simple</a></li>
-            <li><a href="recherche_avancee.php">Recherche avancée</a></li>
+        <?php
+            if(!isset($_SESSION['user'])) 
+            {
+            echo'<li><a href="index.php">Accueil</a></li>';
+            //  <li><a href="inscription.php">Inscription</a></li>
+            echo'<li><a href="recherche_simple.php">Recherche simple</a></li>';
+            echo'<li><a href="recherche_avancee.php">Recherche avancée</a></li>';
+            echo'<li><a href="contact.php">Contact</a></li>';
+            echo'<li><a href="qui_sommes_nous.php">Qui sommes nous ?</a></li>';
+            echo'<li><a href="connexion.php">Se connecter </a></li>';
+            }
+		    else   if(isset($_SESSION['user'])) 
+            {
+                echo'<li><a href="index.php">Accueil</a></li>';
+                //  <li><a href="inscription.php">Inscription</a></li>
+                echo'<li><a href="recherche_simple.php">Recherche simple</a></li>';
+                echo'<li><a href="recherche_avancee.php">Recherche avancée</a></li>';
+                echo'<li><a href="contact.php">Contact</a></li>';
+                echo'<li><a href="qui_sommes_nous.php">Qui sommes nous ?</a></li>';   
+                echo"<li><a href='deconnexion.php'>Me déconnecter</a></li>";
+            }
+            ?>
 
-			<li>
-                <?php
-		                if(isset($_SESSION['user'])) {
-
-			                echo "<li><a href='deconnexion.php'>Se déconnecter</a></li>";
-							echo "<li>Bonjour ".$_SESSION['user'][4]."</li>";
-                            echo "<li><a href='carte.php'>Voir la carte interractive</a></li>";
-
-		                }
-		                else {
-			                echo "<li><a href='connexion.php'>Se connecter </a></li>";
-		                }?></li>
         </ul>
     </div>
     
      <div> <!--je fais une grosse div qui contiendra la page. -->
     
-         <header>
-            <div class="header-cover">
-                <img src="../images/montpellier.jpg" alt="image montpellier">
-            </div>
+        <header>
+                
+        <!--    <div class="header-cover">  </div>-->
+                   
+                        <div class="conteneur">
+                        <div class="d2"></div>
+                        </div>
+           
+           
             <div class="header-area">
                  <div class="header-content">
-                    <p>Bienvenue sur N-MAPS</p>  
+                    <p>
+                        <?php
+		                if(isset($_SESSION['user'])) {
+
+			                
+							echo "<strong><font color='white'>Bonjour ".$_SESSION['user'][4]."</font></strong><br/>";
+                            echo "Bienvenue sur N-MAPS"."<br/>";
+
+		                }
+		                else {
+                            echo "Bienvenue sur N-MAPS"."<br/>";
+		                }?>
+                    </p>
+
                     <p>
                         Site d'avis et de comparaison des départements en France. </p>
                         Il s'agit d'un outil qui a pour but principal 
@@ -69,15 +91,16 @@
                         Prenez le temps de découvrir la France à travers différents angles,
                         nous attendons vos avis, commentaires et retours avec impatience ! <br/>
                     </p>
+                   
                     
                 </div> 
-             </div>     
-        </header>
-                    
+                
+             </div> 
+             
+        </header>             
     <div>
     
     <div> 
-
     </div> <!-- Ici on va proposer les 2 manières de s'informer sur le dpt en question  -->
         <p>Pour découvrir la France, choississez un mode de recherche &#x1F440;  </p><br>
         <p>
@@ -89,7 +112,12 @@
     </div>
         <!-- carte cliquable  -->
                <div><p>
-               <a href='carte.php'>Voir la carte interractive</a>
+               <p>
+    <iframe src="//fr.batchgeo.com/map/5d1b8db6eaf1ff7764c95347a173d2a7" frameborder="0" width="98%" height="550" sandbox="allow-top-navigation allow-scripts allow-popups allow-same-origin allow-modals allow-forms" style="border:1px solid #aaa; margin-left: 15px;
+    ">
+    </iframe>
+              </p>
+</p>
                 </p> </div>
         <!-- fin de la carte cliquable -->
     </div>
