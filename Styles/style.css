@@ -357,7 +357,7 @@ sont identifiées par la classe critcell */
 
 .critcell{
 	width : auto;
-	length : auto;
+	height: auto;
 	border: 1px solid #333;
 	font-size: 12px;
 	font-style: justify;
