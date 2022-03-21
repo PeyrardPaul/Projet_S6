@@ -9,8 +9,9 @@
 	--text-color-noir:black;
 	/* --color-shadow:rgba(255, 179, 0, 0.664); */
 	--color-shadow:rgba(112, 33, 33, 0.664);
-
 }
+
+
 *{
 	/* border-width : 1px;
 	border-style : dotted;
@@ -18,8 +19,6 @@
 	padding : 0px;
 	margin : 0px;
 	font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
-	
-
 }
 
 .bandeau{
@@ -37,7 +36,6 @@
 .bandeau > h1 > a{
 	color: var(--text-color-beige);
 	text-decoration: none;
-
 }
 
 #logo{
@@ -45,12 +43,13 @@
 	float: left;
 }
 
+
+
 .qui_sommes_nous{
 	/*padding: 10 px;*/
 	margin: 20px;
 	text-align: justify;
 	font-size: larger;
-
 }
 
 .soustitre{
@@ -60,8 +59,8 @@
 }
 
 .profil{
-	border-color: black;
-	border: 1px;
+	border-color: rgb(110, 85, 104);
+	border: 5px;
 	border-style:solid;
 	margin-left: 100px;
 	margin-right: 300px;
@@ -70,7 +69,12 @@
 	padding-left: 40px;
 	padding-right: 40px;
 	text-align: center;
-
+	/* display: table-cell ; */
+	display: inline-block;
+}
+.profil img{
+	float: left;
+	width: 40px;
 }
 
 .departement{
