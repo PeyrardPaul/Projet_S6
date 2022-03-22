@@ -27,35 +27,40 @@ strong{
 	
 }
 
+/* bandeau de l'index */
 .bandeau{
 	color: var(--text-color-beige) ;
 	background:var(--bandeau);
 	z-index: 99;
 }
 
+/* titre h1 dans le bandeau */
 .bandeau > h1 {
 	font-size: 2em;
 	margin: 0 0 0 0;
 	padding: 15px;
 }
 
+/* lien des titres h1 (vers les pages) dans le bandeau */
 .bandeau > h1 > a{
 	color: var(--text-color-beige);
 	text-decoration: none;
 }
 
+/* logo Nmaps en haut à gauche  */
 #logo{
 	width: 70px;
 	float: left;
 }
 
+/* logo de paul va dans quisommesnous */
 .logoupv{
 	float: left;
 	width: 100px;
 }
 
 
-
+/* texte dans la page quisommesnous.php */
 .qui_sommes_nous{
 	/*padding: 10 px;*/
 	margin: 20px;
@@ -64,6 +69,7 @@ strong{
 	float: right;
 }
 
+/* titre h2 */
 h2{
 	text-align: center;
 	margin-left: auto;
@@ -73,12 +79,15 @@ h2{
 	color: #24445C;
 }
 
+/* sous titres */
 .soustitre{
 	margin: 50px;
 	font-size: 180%;
 	color: #008080;
 }
 
+
+/* textes dans les profils (noms et ages) */
 .profil{
 	border-color: rgb(163, 136, 161);
 	border: 1px;
@@ -95,24 +104,22 @@ h2{
 	white-space: nowrap;
 	text-align: center;
 	width: 22%;
-
 }
+
+/* photo dans les profils  */
 .profil img{
 	/* float: left; */
 	width: 120px;
 	display: inline-flex;
-
 }
 
+/*  c'est où ? */
 .departement{
 	padding-left: 30px;
 	font-size: 115% ;
 }
 
-/* .dep > ul {
-	/*clear: both;*/
-/* } */
-/* departement.php : liste */
+/*  c'est où ? */
 #gauche > li {
 	float: left;
 	color: #86aae0;
@@ -121,10 +128,9 @@ h2{
 	margin-right: 700px;
 	margin-left: 10px;
 	margin-top: 100px;
-
 }
 
-/* departement.php : liste */
+/*  c'est où ? */
 #droite{
 	float: right;
 	color: red;
@@ -137,12 +143,7 @@ h2{
 }
 
 
-
-
-
-
-
-
+/* pied de page  */
 footer{
 	min-height: 50px;
 	background-color:var(--footer);
@@ -153,32 +154,38 @@ footer{
 	
 }
 
+/* paragraphe du pied de page */
 footer > p{
 	margin-top: 10px;
 }
 
+/* les liens  */
 a{
 	color: var(--text-color-noir);
 }
 
+
+/* fond de couleur du body */
 body {
 	background-color: var(--background);
 }
 
+/*  c'est où ? */
 .menu{
 	display: flex;              /* Transformation en flexbox */
     padding:0;                  /* Suppression des marges internes */
 	justify-content: center;     /* Alignements des liens dans le menu */
 }
 
+/*  c'est où ? */
 .menu li {
     list-style-type: none ;       /* Suppression des puces */
 }
 
+/*  c'est où ? */
 .menu a {
     display:block;                /* Transformation en block */
     min-width: 120px;             /* Largeur minimale des liens */
-
 	margin: 0.5rem;               /* Marges externes (1 valeurs = 4 directions) */
     padding: 0.2rem 0;            /* Marges internes (2 valeurs = haut/bas et gauche/droite)*/
     text-align: center;           /* Centrage du texte */   
@@ -188,10 +195,11 @@ body {
     border: 1px solid var(--background) ;       /* Ajout d'une bordure */
     border-radius: 4px;           /* Arrondis des bordures */
 	transition: all 0.5s ;          /* Ajout des effets de transition */
-
 }
 
-.menu a:hover { /* boite des soustitres du menu  */
+
+/* boite des soustitres du menu  */
+.menu a:hover { 
 	background-color: var(--background);
 	color: var(--text-color);
 	border-color: var(--background);
@@ -199,7 +207,7 @@ body {
 }
 
 
-
+/* les header  */
 header {
 	background-color: #979494;
 	color: var(--text-color-beige);
@@ -208,7 +216,6 @@ header {
 	margin: 0;
 	max-height:900px;
 }
-
 .header-content{
 	background: rgba(0,0,0,.4);
 	border-radius: 8px;
@@ -218,8 +225,6 @@ header {
 	margin: auto;
 	/* height: 250px; */
 	text-shadow: rgba(112, 112, 112, 0.609) 1px 0 10px;
-
-	
 }
 .header-area {
     text-align: center;
@@ -231,8 +236,8 @@ header {
     color: var(--text-color-beige);
 	margin: auto;
     width: 100%;
-  }
-  .header-cover img{
+}
+.header-cover img{
     opacity: 1;
     width: 100%;
     height: auto;
@@ -241,18 +246,10 @@ header {
     -o-object-fit: cover;
     object-fit: cover;
     display: block;
-  }
+}
 
 
-/* .body
-{
-	/* background: url(../images/fond.jpg) ; */
-	/* background-position: fixed; */
-	/* background-repeat: no-repeat; */
-    /* background-position: fixed; */
-	/* background-position: center;	 */
-/* } */
-
+/*  c'est où ? */
 label {
   display: inline-block;
   width: 100px;
@@ -261,21 +258,22 @@ label {
   font-size: 1.3em;
 }
 
-.pseudo
-{   
+/*  c'est où ? */
+.pseudo {   
 	text-align: center;
     margin-top: 150px;
 	padding-top: 50px;
 }
 
-.password
-{
+/*  c'est où ? */
+.password{
 	text-align: center;
     margin-top: 40px;
 	padding-top: 10px;
 }
-.login
-{
+
+/*  c'est où ? */
+.login{
 	text-align: center;
     margin-top: 80px;
 	font-size: 1.3em;
@@ -291,8 +289,8 @@ label {
 	box-sizing: border-box;
 }
 
-input
-{
+/*  c'est où ? */
+input{
 	width: 240px;
 	height: 40px;
   box-sizing: border-box;
@@ -303,6 +301,8 @@ input
 	width: 85%;
 	margin: 0 auto;
 }
+
+/*  c'est où ? */
 path {
 	stroke: #000000;
 	stroke-width: 1px;
@@ -319,6 +319,7 @@ g path:hover {
 }
 /* fin du style de la carte */
 
+/*  c'est où ? */
 .retour{
 	display:block;                /* Transformation en block */
     width: 120px; 
@@ -340,6 +341,7 @@ g path:hover {
 	box-shadow: 3px 3px 5px var(--color-shadow);
 }
 
+/*  c'est où ? */
 .photo_dep{
 	/* photo du dep en question. */
 	position:relative;
@@ -349,10 +351,13 @@ g path:hover {
 }
 
 
+/*  c'est où ? */
 .conteneur{
     max-width: 2000px;
     margin: 0px auto;
 }
+
+/*  c'est où ? */
 .d2{
     width: 1347px;
     height: -50px;
@@ -366,6 +371,9 @@ g path:hover {
 .d2:hover{
     animation-play-state: paused;
 }
+
+
+/* image d'accueil qui se déroule */
 @keyframes 
 fondu{
     0%{background-image: url("../images/montpellier.jpg");}
@@ -374,7 +382,8 @@ fondu{
     100%{background-image: url("../images/montpellier.jpg");}
 }
 
-/* Les colonnes (critères envirronementaux, sociétaux et réseaux et internet)
+
+/* Les colonnes (critères environementaux, sociétaux et réseaux et internet)
 sont identifiés par la class critcol */
 .critcol{
 	border: 1px solid #333;	
@@ -382,7 +391,6 @@ sont identifiés par la class critcol */
 
 /* Toutes les cellules du tableaux contenant la case à cocher pour choisir le critère
 sont identifiées par la classe critcell */
-
 .critcell{
 	width : auto;
 	height: auto;
@@ -391,7 +399,7 @@ sont identifiées par la classe critcell */
 	font-style: justify;
 }
 
- #carte{  /* p de la carte de france*/
+#carte{  /* p de la carte de france*/
 	padding: 90px;
 	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
