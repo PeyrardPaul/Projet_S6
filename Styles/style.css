@@ -20,6 +20,13 @@
 	font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
 }
 
+/* strong dans inscription .php */
+strong{
+	display: block;
+	padding: 5px;
+	
+}
+
 .bandeau{
 	color: var(--text-color-beige) ;
 	background:var(--bandeau);
@@ -42,6 +49,11 @@
 	float: left;
 }
 
+.logoupv{
+	float: left;
+	width: 100px;
+}
+
 
 
 .qui_sommes_nous{
@@ -49,6 +61,16 @@
 	margin: 20px;
 	text-align: justify;
 	font-size: larger;
+	float: right;
+}
+
+h2{
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 10%;
+	font-size:xx-large;
+	color: #24445C;
 }
 
 .soustitre{
@@ -58,22 +80,28 @@
 }
 
 .profil{
-	border-color: rgb(110, 85, 104);
-	border: 5px;
+	border-color: rgb(163, 136, 161);
+	border: 1px;
 	border-style:solid;
 	margin-left: 100px;
-	margin-right: 300px;
+	margin-right: 0px;
 	margin-top: 50px ;
 	margin-bottom: 50px;
-	padding-left: 40px;
-	padding-right: 40px;
+	padding-left: 30px;
+	padding-right: 30px;
 	text-align: center;
-	/* display: table-cell ; */
-	display: inline-block;
+	display: table-cell ;
+	overflow: auto;
+	white-space: nowrap;
+	text-align: center;
+	width: 22%;
+
 }
 .profil img{
-	float: left;
-	width: 40px;
+	/* float: left; */
+	width: 120px;
+	display: inline-flex;
+
 }
 
 .departement{
@@ -366,4 +394,8 @@ sont identifiées par la classe critcell */
  #carte{  /* p de la carte de france*/
 	padding: 90px;
 	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+p a:hover {
+	color:blue;
 }
