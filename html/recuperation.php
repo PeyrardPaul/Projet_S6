@@ -43,19 +43,26 @@
     </div>
     <?php 
         $recup=$_POST['recup'];
-        $a=1;
+        $a=true;
 	    $rep = $bdd -> query("select * from users where adresse_email ='{$recup}'");
-        
-        while ($mat = $rep->fetch()) {
-            $mdp=$mat['password'];
-            $nom=$mat['nom'];
-            $prenom=$mat['prenom'];
-            echo "<br/>";
+        if ($a==1) {
+            while ($mat = $rep->fetch()) {
+                $mdp=$mat['password'];
+                $nom=$mat['nom'];
+                $prenom=$mat['prenom'];
+                if(isset($mat['user_id'])) {
+                    $_SESSION['recup']=$mat['user_id'];
+                }
+                echo "<br/>";
+                $a=false;
+            }
         }
-       
+        if ($a==true) {
+            echo "L'adresse email ne correspond à aucun compte";
+        }
+        
         use PHPMailer\PHPMailer\PHPMailer;
         use PHPMailer\PHPMailer\Exception;
-        
         require '../vendor/phpmailer/phpmailer/src/Exception.php';
         require '../vendor/phpmailer/phpmailer/src/PHPMailer.php';
         require '../vendor/phpmailer/phpmailer/src/SMTP.php';
@@ -72,7 +79,6 @@
         $mail->Username   =  'projetpanms@gmail.com';    //Adresse email à utiliser
         $mail->Password   =  'PaNmS-2022';         //Mot de passe de l'adresse email à utiliser
         
-        
         $mail->setFrom('projetpanms@gmail.com','N-MAPS');                //L'email à afficher pour l'envoi
         
         $mail->AddAddress($recup);
@@ -81,14 +87,13 @@
         $mail->WordWrap   = 50; 
         $mail->Body = "Bonjour M/Mme ".$nom." ".$prenom.", vous comptez changer votre mot de passe. Si c'est bien vous, veuillez cliquer sur ce lien: <a href='http://localhost/Projet_S6/html/change_mdp.php'>Cliquer ici</a>";			       //Nombre de caracteres pour le retour a la ligne automatique
         $mail->AltBody = 'Mail de récupération de mot de passe'; 	       //Texte brut
-        $mail->IsHTML(true);                                  //Préciser qu'il faut utiliser le texte brut
-        
+        $mail->IsHTML(false);                                  //Préciser qu'il faut utiliser le texte brut
         if ($mail->send()) {
               echo 'Mail bien envoyé';
         } else{
             echo $mail->ErrorInfo;
         }
-            
+        
 	?>
 </body>
 </html>
