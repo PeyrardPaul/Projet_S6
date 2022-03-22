@@ -22,24 +22,18 @@
             if(!isset($_SESSION['user'])) 
             {
             echo'<li><a href="index.php">Accueil</a></li>';
-            //  <li><a href="inscription.php">Inscription</a></li>
             echo'<li><a href="recherche_simple.php">Recherche simple</a></li>';
-            echo'<li><a href="recherche_avancee.php">Recherche avancée</a></li>';
             echo'<li><a href="contact.php">Contact</a></li>';
-            echo'<li><a href="qui_sommes_nous.php">Qui sommes nous ?</a></li>';
-            echo'<li><a href="connexion.php">Se connecter </a></li>';
-            echo'<li><a href="commentaire.php">Voir commentaires</a></li>';
+            echo'<li><a href="connexion.php">Connexion </a></li>';
+            
             }
 		    else   if(isset($_SESSION['user'])) 
             {
                 echo'<li><a href="index.php">Accueil</a></li>';
-                //  <li><a href="inscription.php">Inscription</a></li>
                 echo'<li><a href="recherche_simple.php">Recherche simple</a></li>';
                 echo'<li><a href="recherche_avancee.php">Recherche avancée</a></li>';
                 echo'<li><a href="contact.php">Contact</a></li>';
-                echo'<li><a href="qui_sommes_nous.php">Qui sommes nous ?</a></li>';   
-                echo"<li><a href='deconnexion.php'>Se déconnecter</a></li>";
-                echo"<li><a href='deconnexion.php'>Me déconnecter</a></li>";
+                echo"<li><a href='deconnexion.php'>Déconnexion</a></li>";
                 echo'<li><a href="commentaire.php"> Espace commentaires</a></li>';
             }
             ?>
@@ -99,27 +93,35 @@
                 
              </div> 
              
-        </header>             
-    <div>
+        </header>
+    <?php
+        if(isset($_SESSION['user'])){
+            echo("
+            <div>
     
-     <!-- Ici on va proposer les 2 manières de s'informer sur le dpt en question  -->
-        <p>Pour découvrir la France, choississez un mode de recherche &#x1F440;  </p><br>
-        <p>
-            &#128077; Utilisez la  &#x1F449; <a href="recherche_simple.php">recherche simple</a>&#x1F448; pour découvrir toutes les informations sur un département choisi. 
-        </p><br>
-        <p>
-            &#128077; Utilisez la recherche avancée pour comparer deux départements choisis sur une liste de critères que vous selctionnez. 
-        </p>
-    </div>
+            <!-- Ici on va proposer les 2 manières de s'informer sur le dpt en question  -->
+                <p>Pour découvrir la France, choississez un mode de recherche &#x1F440;  </p><br>
+                <p>
+                    &#128077; Utilisez la  &#x1F449; <a href='recherche_simple.php'>recherche simple</a>&#x1F448; pour découvrir toutes les informations sur un département choisi. 
+                </p><br>
+                <p>
+                    &#128077; Utilisez la recherche avancée pour comparer deux départements choisis sur une liste de critères que vous selctionnez. 
+                </p>
+            </div>
+            ");
+        }
+    ?>
+
         <!-- carte cliquable  -->
     <div>
-        <p id="carte"><iframe src="//fr.batchgeo.com/map/99d9e2e01b38d2e26947900b4fcc342e" frameborder="0" width="100%" height="550" sandbox="allow-top-navigation allow-scripts allow-popups allow-same-origin allow-modals allow-forms" style="border:1px solid #aaa;"></iframe></p>
+        <!-- <p id="carte"><iframe src="//fr.batchgeo.com/map/99d9e2e01b38d2e26947900b4fcc342e" frameborder="0" width="100%" height="550" sandbox="allow-top-navigation allow-scripts allow-popups allow-same-origin allow-modals allow-forms" style="border:1px solid #aaa;"></iframe></p> -->
     </div>
             <!-- fin de la carte cliquable -->
     </div>
  
     <footer><!--ici le pied de page -->
-        N-Maps © 2022
+        <p>N-Maps © 2022 - <a id="quisommesnous" href="qui_sommes_nous.php">Qui sommes nous ?</a></p>
+        
     </footer>
    
 </body>

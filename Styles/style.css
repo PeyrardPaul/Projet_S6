@@ -157,6 +157,15 @@ footer > p{
 	margin-top: 10px;
 }
 
+#quisommesnous{
+	color: var(--text-color-beige);
+	text-decoration: none;
+}
+#quisommesnous:hover{
+	font-style: italic;
+}
+
+
 a{
 	color: var(--text-color-noir);
 }
@@ -354,11 +363,11 @@ g path:hover {
     margin: 0px auto;
 }
 .d2{
-    width: 1347px;
-    height: -50px;
+    width: auto;
+    /* height: -50px; */
     padding-top: 54%;
     box-shadow: 0px 0px 10px #777;
-    background-color: #EDEDED;
+    background-color: var(--background);
     background-size: contain;
     animation: fondu 15s ease-in-out infinite both;
 	background-repeat: no-repeat;
@@ -398,4 +407,9 @@ sont identifiées par la classe critcell */
 
 p a:hover {
 	color:blue;
+}
+
+.profil img{
+	 border-radius: 50%;  /* permet de mettre la photo en rond*/
+	 box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
