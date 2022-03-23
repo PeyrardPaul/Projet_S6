@@ -159,7 +159,7 @@ footer > p{
 	margin-top: 10px;
 }
 
-<<<<<<< HEAD
+
 #quisommesnous{
 	color: var(--text-color-beige);
 	text-decoration: none;
@@ -169,9 +169,6 @@ footer > p{
 }
 
 
-=======
-/* les liens  */
->>>>>>> 6ecc8418b9183d52a2c2743c526a330b6892153a
 a{
 	color: var(--text-color-noir);
 }
@@ -424,3 +421,18 @@ p a:hover {
 	 border-radius: 50%;  /* permet de mettre la photo en rond*/
 	 box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+
+.rating a {
+	float: right;
+	color: orange;
+	text-decoration: none;
+	font-size: 3em;
+	transition: color .4s;
+ }
+ .rating a:hover,
+ .rating a:focus,
+ .rating a:hover ~ a,
+ .rating a:focus ~ a {
+	color: orange;
+	cursor: pointer;
+ }
