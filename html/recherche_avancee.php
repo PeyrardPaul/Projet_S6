@@ -153,7 +153,7 @@
 
         <td class = "critcell">
     <label for="crim"> Crimes et délits :</label>
-    <input type="checkbox" id="crimes et délits" name="crimdel" value="Niv_délit">
+    <input type="checkbox" id="crimes et délits" name="crimdel" value="Niv_delit">
                     </td>
 
         <td class = "critcell">

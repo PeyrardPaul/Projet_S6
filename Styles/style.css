@@ -422,17 +422,16 @@ p a:hover {
 	 box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.rating a {
+.rating p {
 	float: right;
 	color: orange;
 	text-decoration: none;
-	font-size: 3em;
+	font-size: 6em;
 	transition: color .4s;
  }
- .rating a:hover,
- .rating a:focus,
- .rating a:hover ~ a,
- .rating a:focus ~ a {
-	color: orange;
-	cursor: pointer;
+ #etoile {
+	 color:orange;
+	 font-size: 25px;
+	 white-space: nowrap;
+	 display: inline;
  }

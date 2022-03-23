@@ -51,17 +51,43 @@
         echo "<br/><strong>".$ligne['Nom']."</strong>"; //affiche le nom
         for ($i = 0; $i != count($_SESSION['critere']); $i++) { //affiche les critères
             if ($_SESSION['critere'][$i]!="") {
-                echo "Note ".$_SESSION['critere'][$i]." = ".$ligne[$_SESSION['critere'][$i]]." étoile(s)<br/>";
+                echo "Note ".$_SESSION['critere'][$i]." = ";
+                if($ligne[$_SESSION['critere'][$i]]=="1") {
+                    echo "<p id='etoile'>★☆☆☆☆</p><br/>";
+                }
+                else if($ligne[$_SESSION['critere'][$i]]=="2") {
+                    echo "<p id='etoile'>★★☆☆☆</p><br/>";
+                }
+                else if($ligne[$_SESSION['critere'][$i]]=="3") {
+                    echo "<p id='etoile'>★★★☆☆</p><br/>";
+                }
+                else if($ligne[$_SESSION['critere'][$i]]=="4") {
+                    echo "<p id='etoile'>★★★★☆</p><br/>";
+                }
+                else {
+                    echo "<p id='etoile'>★★★★★</p><br/>";
+                }
             }
         }
     }
+    echo "<h2>Description des critères :</h2>";
+    echo "<br/><br/><p>Niv_pop: </p><br/>";
+    echo "<p>Niv_loyer: </p><br/>";
+    echo "<p>Niv_santé: </p><br/>";
+    echo "<p>Niv_delit: </p><br/>";
+    echo "<p>Niv_chom: </p><br/>";
+    echo "<p>Niv_brevet: </p><br/>";
+    echo "<p>Niv_surfart: </p><br/>";
+    echo "<p>Niv_pluie: </p><br/>";
+    echo "<p>Niv_plandeau: </p><br/>";
+    echo "<p>Niv_temp_ete: </p><br/>";
+    echo "<p>Niv_temp_hiver: </p><br/>";
+    echo "<p>Niv_2G: </p><br/>";
+    echo "<p>Niv_3G: </p><br/>";
+    echo "<p>Niv_4G: </p><br/>";
+    echo "<p>Niv_5G: </p><br/>";
+    echo "<p>Niv_Niv_reseau: </p><br/>";
         unset($_SESSION['critere']); //vide la session
     ?>
-    <div class="rating"><!--
-   --><a href="#1" title="Donner 1 étoile">☆</a><!--
-   --><a href="#2" title="Donner 2 étoiles">☆</a><!--
-   --><a href="#3" title="Donner 3 étoiles">☆</a><!--
-   --><a href="#4" title="Donner 4 étoiles">☆</a><!--
-   --><a href="#5" title="Donner 5 étoiles">☆</a>
-</div>
 </body>
+</html>
