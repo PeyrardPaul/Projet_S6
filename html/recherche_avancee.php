@@ -62,7 +62,7 @@
  
     <form action="recherche_avancee_affichage.php" method="POST">
 
-    
+    <div class="sais_dep">
     <p>Choix du premier departement</p>
         <select name="dep1">
             <?php 
@@ -120,9 +120,7 @@
             </option>
          <?php endwhile; ?>
        </select>
-    <br>
-    <br>
-    <br>
+                    </div>
     <br>
     <br>
     <br>

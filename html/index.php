@@ -38,7 +38,7 @@
             }
             ?>
 
-        </ul>
+       </ul>
     </div>
     
      <div> <!--je fais une grosse div qui contiendra la page. -->

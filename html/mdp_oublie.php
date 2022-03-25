@@ -42,12 +42,14 @@
         </ul>
     </div>
     <form method=Post action="recuperation.php" autocomplete=ON>
+        <div class="sais_dep">
         <p> Email de récupération :
             <input type="text" name="recup" value=""/>
         </p>
         <p>
 		    <input type="submit" value="Envoyer">
 		</p>
+        </div>
 	</form>
 </body>
 </html>
