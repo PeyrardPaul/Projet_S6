@@ -7,6 +7,16 @@
 </head>
 <body>
 <h1>A vos posts!</h1>
+
+<form action="recup.php" method="post">
+<p>
+<label for="pseudo">Pseudo</label> : <input type="text"
+name="psd" id="psd" /><br />
+<label for="message">Message</label> : <input type="text"
+name="message" id="message" /><br />
+<input type="submit" value="Envoyer" />
+</p>
+</form>
 <p><a href="commentaire.php">Retour à la liste des posts</a></p>
 <?php
 include '../../bd.php';
@@ -28,7 +38,7 @@ $donnees = $req->fetch();
 <div class="news">
 <h3>
 <?php echo htmlspecialchars($donnees['titre']); ?>
-<em>le <?php echo $donnees['date_creation_fr']; ?></em>
+<em> <?php echo $donnees['date_creation_fr']; ?></em>
 </h3>
 <p>
 <?php
