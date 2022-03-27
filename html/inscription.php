@@ -42,6 +42,7 @@
     </div>
 <div>
 <form method=Post action="enregistrement.php" autocomplete=ON>
+<div class="marg">
 <p><strong>Nom :</strong>
     <input type="text" id="name" name="n" required
      maxlength="20" size="10"
@@ -89,6 +90,7 @@
     minlength="4" maxlength="20" size="10"  placeholder="Répétez le mot de passe" style="margin-bottom:20px;">
 </p>
 <br/>
+</div>
 <p><div style="margin-left: 150px;">
 		<input type="submit" value="Envoyer" />
 </div></p>

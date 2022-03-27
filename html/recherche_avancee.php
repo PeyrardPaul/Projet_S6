@@ -126,7 +126,7 @@
     <br>
     <br>
     <br>
-
+    <div class="marg">
     <p> Choix des critères de comparaison </p>
     <table id = "critabl">
 
@@ -224,6 +224,7 @@
                     </tr>
  
 </table>
+</div>
     <input type="submit" value="Valider" />
 </form>
 </body>
