@@ -33,13 +33,11 @@
 					function  enregistrer($depart,$nom,$pre,$psdo,$mdp,$email,$adres) 
 					{
 						$bdd = getBD();
-                        $psw=$_POST['mdp1'];
-						$psw = password_hash($psw, PASSWORD_DEFAULT);
 
 						$req = $bdd->prepare('INSERT INTO users (user_id,code_dep, nom, prenom, pseudo,password,adresse_email,adresse,type,password_reset)
 						VALUES(?,?,?,?,?,?,?,?,?,?)'); 
-					   $req->execute(array($_POST['user_id'], $_POST['dep'],
-					   $_POST['n'],$_POST['p'],$_POST['psd'],$psw,$_POST['mail'],$_POST['adr'],'0',''));
+					    $req->execute(array($_POST['user_id'], $_POST['dep'],
+					    $_POST['n'],$_POST['p'],$_POST['psd'],$_POST['mdp1'],$_POST['mail'],$_POST['adr'],'0',''));
 
 						// $sql="INSERT INTO users(code_dep,nom,prenom,pseudo,password,adresse_email,adresse,type,code_activation,code_reset) VALUES($dep,$n,$p,$psd,$psw,$mail,$adr,'0',ROUND(RAND()*100),ROUND(RAND()*100))";
 

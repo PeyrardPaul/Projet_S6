@@ -15,24 +15,22 @@ include 'session.php'; ?>
         <img id="logo" src="../images/N-Maps.png" alt="images logo" >
         <h1><a href="index.php">N-MAPS</a></h1>
         <ul class="menu">
-            <li><a href="index.php">Accueil</a></li>
-            <li><a href="qui_sommes_nous.php">Qui sommes nous ?</a></li>
-            <li><a href="inscription.php">Inscription</a></li>
-            <li><a href="contact.php">Contact</a></li>
-            <li><a href="recherche_simple.php">Recherche simple</a></li>
-            <li><a href="recherche_avancee.php">Recherche avancée</a></li>
-
-			<li>
-                <?php
-		                if(isset($_SESSION['user'])) {
-
-			                echo "<li><a href='deconnexion.php'>Se déconnecter</a></li>";
-							echo "<li>Bonjour ".$_SESSION['user'][4]."</li>";
-
-		                }
-		                else {
-			                echo "<li><a href='connexion.php'>Se connecter </a></li>";
-		                }?></li>
+		<?php
+            // si l'utilisateur n'est pas connecté 
+            if(!isset($_SESSION['user'])) {
+                echo'<li><a href="index.php">Accueil</a></li>';
+                echo'<li><a href="recherche_simple.php">Recherche simple</a></li>';
+                echo'<li><a href="connexion.php">Connexion </a></li>';
+            } else if(isset($_SESSION['user'])) {
+                // si l'utilisateur est connecté 
+				//header('location:index.php');
+                echo'<li><a href="index.php">Accueil</a></li>';
+                echo'<li><a href="recherche_simple.php">Recherche simple</a></li>';
+                echo'<li><a href="recherche_avancee.php">Recherche avancée</a></li>';
+                echo"<li><a href='deconnexion.php'>Déconnexion</a></li>";
+                echo "<li>Bonjour ".$_SESSION['user'][2]."</li>";
+            }
+        ?>
         </ul>
     </div>
     <?php
@@ -41,8 +39,19 @@ if(isset($_POST['login'])){
 		
 	$pseudo = $_POST['pseudo'];
 	$password = $_POST['password'];
+	$bdd = getBD();
 
-	try{
+	$rep = $bdd -> query("SELECT * FROM users WHERE pseudo ='{$pseudo}' and password ='{$password}'");
+	while ($mat = $rep->fetch()) {
+		echo "<h2>Connexion réussie, profitez au maximum de notre site maintenant !</h2>";
+		$_SESSION['user']=array($mat['user_id'],$mat['code_dep'],$mat['nom'],$mat['password'],$mat['adresse_email'],$mat['adresse'],$mat['type'],$mat['password_reset']);
+    }
+}
+echo("<meta http-equiv='refresh' content='1; url=index.php '>");
+
+//header('location: connexion.php');
+$rep-> closeCursor();
+	/*try{
 
 		$stmt = $bdd->prepare("SELECT *, COUNT(*) AS numrows FROM users WHERE pseudo= :pseudo");
 		$stmt->execute(['pseudo'=>$pseudo]);
@@ -51,12 +60,12 @@ if(isset($_POST['login'])){
 				if(password_verify($password, $row['password'])){
 					if($row['type']==1){
 						$_SESSION['admin'] = $row['user_id'];
-						//header('location: administrateur/home.php');
+						/////header('location: administrateur/home.php');
 					}
 					else
 					{
 						$_SESSION['user'] = $row['user_id'];
-					 //	header('location: index.php');
+					 ////	header('location: index.php');
 					}
 				}
 				else{
@@ -74,25 +83,7 @@ if(isset($_POST['login'])){
 }
 else{
 	$_SESSION['error'] = 'erreur';
-}
-
-		// $pseudo=$_POST['pseudo'];
-		// $mdp=$_POST['password'];
-		
-		// if($pseudo=="" or $mdp=="") {
-		// 	echo "mail ou mot de passe vide";
-		// 	echo("<meta http-equiv='refresh' content='1; url=connexion.php?pseudo=".$pseudo." '>");
-		// }
-		// else {
-		// 	$rep = $bdd -> query("select * from users where pseudo ='{$pseudo}' and password ='{$mdp}'");
-		// 	while ($mat = $rep->fetch()) {
-		// 		echo "<h2>Connexion réussie, profitez au maximum de notre site maintenant !</h2>";
-		// 		$_SESSION['user']=array($mat['user_id'],$mat['code_dep'],$mat['nom'],$mat['prenom'],$mat['pseudo'],$mat['adresse_email'],$mat['type'],$mat['code_activation'],$mat['code_reset']);
-        //     }
-		// 	echo("<meta http-equiv='refresh' content='1; url=index.php '>");
-		// }
-		$stmt-> closeCursor();
-		header('location: connexion.php');
+}*/
 		?>	
 	</body>
 </html>

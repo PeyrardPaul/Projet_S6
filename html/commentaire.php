@@ -23,7 +23,7 @@
                 echo'<li><a href="recherche_simple.php">Recherche simple</a></li>';
                 echo'<li><a href="recherche_avancee.php">Recherche avancée</a></li>';
                 echo"<li><a href='deconnexion.php'>Déconnexion</a></li>";
-                echo "<li>Bonjour ".$_SESSION['user'][4]."</li>";
+                echo "<li>Bonjour ".$_SESSION['user'][2]."</li>";
             }
         ?>
         </ul>

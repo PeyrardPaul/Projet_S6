@@ -14,6 +14,27 @@
 <title>Welcome</title>
 </head>
 <body>
+<div class="bandeau"> <!--ici le bandeau haut de page -->
+        <img id="logo" src="../images/N-Maps.png" alt="images logo" >
+        <h1><a href="index.php">N-MAPS</a></h1>
+        <ul class="menu">
+        <?php
+            // si l'utilisateur n'est pas connecté 
+            if(!isset($_SESSION['user'])) {
+                echo'<li><a href="index.php">Accueil</a></li>';
+                echo'<li><a href="recherche_simple.php">Recherche simple</a></li>';
+                echo'<li><a href="connexion.php">Connexion </a></li>';
+            } else if(isset($_SESSION['user'])) {
+                // si l'utilisateur est connecté 
+                echo'<li><a href="index.php">Accueil</a></li>';
+                echo'<li><a href="recherche_simple.php">Recherche simple</a></li>';
+                echo'<li><a href="recherche_avancee.php">Recherche avancée</a></li>';
+                echo"<li><a href='deconnexion.php'>Déconnexion</a></li>";
+                echo "<li>Bonjour ".$_SESSION['user'][2]."</li>";
+            }
+        ?>
+        </ul>
+</div>
     <?php
     if(isset($_POST['mdp'])) {
         $mdp=$_POST['mdp'];
