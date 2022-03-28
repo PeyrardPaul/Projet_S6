@@ -69,24 +69,24 @@
                 }
             }
         }
-    }
+    }//Description des critères
     echo "<h2>Description des critères :</h2>";
-    echo "<br/><br/><p>Niv_pop: </p><br/>";
-    echo "<p>Niv_loyer: </p><br/>";
-    echo "<p>Niv_santé: </p><br/>";
-    echo "<p>Niv_delit: </p><br/>";
-    echo "<p>Niv_chom: </p><br/>";
-    echo "<p>Niv_brevet: </p><br/>";
-    echo "<p>Niv_surfart: </p><br/>";
-    echo "<p>Niv_pluie: </p><br/>";
-    echo "<p>Niv_plandeau: </p><br/>";
-    echo "<p>Niv_temp_ete: </p><br/>";
-    echo "<p>Niv_temp_hiver: </p><br/>";
-    echo "<p>Niv_2G: </p><br/>";
-    echo "<p>Niv_3G: </p><br/>";
-    echo "<p>Niv_4G: </p><br/>";
-    echo "<p>Niv_5G: </p><br/>";
-    echo "<p>Niv_Niv_reseau: </p><br/>";
+    echo "<br/><br/><p><strong>Niv_pop:</strong> Population, où 5 étoiles signifie un niveau élevé de population </p><br/>";
+    echo "<p><strong>Niv_loyer:</strong> Prix moyen du loyer au mètre carré, où 5 étoiles signifie un prix moyen élevé du loyer </p><br/>";
+    echo "<p><strong>Niv_santé:</strong> Nombre de médecins pour 100 000 habitants, où 5 étoiles signifie un nombre élevé de médecins </p><br/>";
+    echo "<p><strong>Niv_delit:</strong> Total des crimes et délits, où 5 étoiles signifie un nombre élevé de crimes et délits </p><br/>";
+    echo "<p><strong>Niv_chom:</strong> Taux de chômage, où 5 étoiles signifie un taux élevé de chômage </p><br/>";
+    echo "<p><strong>Niv_brevet:</strong> Taux de réussite au brevet, où 5 étoiles signifie un taux élevé de réussite au brevet </p><br/>";
+    echo "<p><strong>Niv_surfart:</strong> Part de surfaces artificialisées, où 5 étoiles signifie une part élevée de surfaces artificialisées </p><br/>";
+    echo "<p><strong>Niv_pluie:</strong> Nombre de jours de pluie par an, où 5 étoiles signifie un nombre élevé de jours de pluie </p><br/>";
+    echo "<p><strong>Niv_plandeau:</strong> Nombre de plans d'eau, où 5 étoiles signifie un nombre élevé de plans d'eau </p><br/>";
+    echo "<p><strong>Niv_temp_ete:</strong> Température en Eté en C°, où 5 étoiles signifie une température élevée en Eté </p><br/>";
+    echo "<p><strong>Niv_temp_hiver:</strong> Température en Hiver en C°, où 5 étoiles signifie une température élevée en Hiver </p><br/>";
+    echo "<p><strong>Niv_2G:</strong> Couverture réseau en 2G, où 5 étoiles signifie une couverture de réseau élevée en 2G </p><br/>";
+    echo "<p><strong>Niv_3G:</strong> Couverture réseau en 3G, où 5 étoiles signifie une couverture de réseau élevée en 3G </p><br/>";
+    echo "<p><strong>Niv_4G:</strong> Couverture réseau en 4G, où 5 étoiles signifie une couverture de réseau élevée en 4G </p><br/>";
+    echo "<p><strong>Niv_5G:</strong> Couverture réseau en 5G, où 5 étoiles signifie une couverture de réseau élevée en 5G </p><br/>";
+    echo "<p><strong>Niv_Niv_reseau:</strong> Réseau internet sur le département, où 5 étoiles signifie un réseau internet élevée </p><br/>";
         unset($_SESSION['critere']); //vide la session
     ?>
 </body>
