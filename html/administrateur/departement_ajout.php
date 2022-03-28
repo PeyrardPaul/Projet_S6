@@ -7,7 +7,7 @@
 
 		$conn = $pdo->open();
 
-		$stmt = $conn->prepare("SELECT *, COUNT(*) AS numrows FROM departement WHERE name=:name");
+		$stmt = $conn->prepare("SELECT *, COUNT(*) AS numrows FROM departement WHERE Nom=:name");
 		$stmt->execute(['name'=>$name]);
 		$row = $stmt->fetch();
 
@@ -16,7 +16,7 @@
 		}
 		else{
 			try{
-				$stmt = $conn->prepare("INSERT INTO departement (nom) VALUES (:name)");
+				$stmt = $conn->prepare("INSERT INTO departement (Nom) VALUES (:name)");
 				$stmt->execute(['name'=>$name]);
 				$_SESSION['success'] = 'Nouveau département ajouté';
 			}

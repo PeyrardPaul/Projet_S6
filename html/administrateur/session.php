@@ -7,12 +7,12 @@
 		exit();
 	}
 
-	$conn = $pdo->open();
+	$conn = getBD();
 
-	$stmt = $conn->prepare("SELECT * FROM users WHERE id=:id");
+	$stmt = $conn->prepare("SELECT * FROM users WHERE user_id=:id");
 	$stmt->execute(['id'=>$_SESSION['admin']]);
 	$admin = $stmt->fetch();
 
-	$pdo->close();
+	
 
 ?>
