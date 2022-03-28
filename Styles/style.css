@@ -158,13 +158,26 @@ footer{
 
 /* paragraphe du pied de page */
 footer > p{
+	background-color:var(--footer);
 	margin-top: 10px;
+	color: var(--text-color-beige);
+	font-size: .9rem;
+	display: flex;
+}
+/* les liens du pieds de page */
+footer > a{
+	background-color:var(--footer);
+	margin-top: 10px;
+	color: var(--text-color-beige);
+	text-decoration: none;
+	font-size: .9rem;
 }
 
 
 #quisommesnous{
 	color: var(--text-color-beige);
 	text-decoration: none;
+	
 }
 #quisommesnous:hover{
 	font-style: italic;
@@ -172,7 +185,7 @@ footer > p{
 
 
 a{
-	color: var(--text-color-noir);
+	text-decoration: none;
 }
 
 
@@ -195,17 +208,17 @@ body {
 
 /*  c'est où ? */
 .menu a {
-    display:block;                /* Transformation en block */
-    min-width: 120px;             /* Largeur minimale des liens */
-	margin: 0.5rem;               /* Marges externes (1 valeurs = 4 directions) */
-    padding: 0.2rem 0;            /* Marges internes (2 valeurs = haut/bas et gauche/droite)*/
-    text-align: center;           /* Centrage du texte */   
-    background-color: #1abc9c00;    /* Couleur d'arrière-plan */
-    color: var(--text-color-beige);                  /* Couleur du texte */
-    text-decoration: none;        /* Suppression du soulignement */
-    border: 1px solid var(--background) ;       /* Ajout d'une bordure */
-    border-radius: 4px;           /* Arrondis des bordures */
-	transition: all 0.5s ;          /* Ajout des effets de transition */
+    display:block;                			/* Transformation en block */
+    min-width: 120px;             			/* Largeur minimale des liens */
+	margin: 0.5rem;               			/* Marges externes (1 valeurs = 4 directions) */
+    padding: 0.4rem 1rem;           			/* Marges internes (2 valeurs = haut/bas et gauche/droite)*/
+    text-align: center;           			/* Centrage du texte */   
+    background-color: #1abc9c00;    	   /* Couleur d'arrière-plan */
+    color: var(--text-color-beige);         /* Couleur du texte */
+    text-decoration: none;        			/* Suppression du soulignement */
+    border: 1px solid var(--background) ;   /* Ajout d'une bordure */
+    border-radius: 4px;           			/* Arrondis des bordures */
+	transition: all 0.5s ;          		/* Ajout des effets de transition */
 }
 
 
@@ -393,20 +406,25 @@ fondu{
     100%{background-image: url("../images/montpellier.jpg");}
 }
 
+#choidp{
+	height: 50 px;
+	border:solid 1 px;
+	margin-right: 500px;
 
-/* Les colonnes (critères environementaux, sociétaux et réseaux et internet)
-sont identifiés par la class critcol */
-.critcol{
-	border: 1px solid #333;	
+}
+.choixdp{
+	margin-top: 20px;
+	margin-left: 80px;
+	margin-right: 50px;
 }
 
 /* Toutes les cellules du tableaux contenant la case à cocher pour choisir le critère
 sont identifiées par la classe critcell */
 .critcell{
-	width : auto;
-	height: auto;
-	border: 1px solid #333;
-	font-size: 12px;
+	margin: 10px;
+	width:40%;
+	height:auto;
+	font-size: 14px;
 	font-style: justify;
 }
 
