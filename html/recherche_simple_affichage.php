@@ -1,5 +1,6 @@
 <?php 
 	require '../../bd.php'; 
+    session_start();
 	$bdd = getBD();
 ?>
 
@@ -22,7 +23,7 @@
             <li><a href="recherche_simple.php">Recherche simple</a></li>
             <li><a href="recherche_avancee.php">Recherche avancée</a></li>
 
-			<li>
+			
                 <?php
 		                if(isset($_SESSION['user'])) {
 
@@ -32,7 +33,7 @@
 		                }
 		                else {
 			                echo "<li><a href='connexion.php'>Se connecter </a></li>";
-		                }?></li>
+		                }?>
         </ul>
     </div>
 <body>
