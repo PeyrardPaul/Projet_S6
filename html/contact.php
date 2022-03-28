@@ -2,7 +2,6 @@
 	include '../../bd.php';
 	session_start();
 	$bdd = getBD();
-
 ?>
 
 <!DOCTYPE html>
@@ -14,17 +13,18 @@
     <link rel="stylesheet"href="../Styles/style.css"type="text/css"media="screen"/>
     <title> Nous contacter </title>
 </head>
+
 <body>
-<div class="bandeau"> <!--ici le bandeau haut de page -->
+	<div class="bandeau"> <!--ici le bandeau haut de page -->
         <img id="logo" src="../images/N-Maps.png" alt="images logo" >
         <h1><a href="index.php">N-MAPS</a></h1>
         <ul class="menu">
 		<?php
             // si l'utilisateur n'est pas connecté 
             if(!isset($_SESSION['user'])) {
-                echo'<li><a href="index.php">Accueil</a></li>';
-                echo'<li><a href="recherche_simple.php">Recherche simple</a></li>';
-                echo'<li><a href="connexion.php">Connexion </a></li>';
+                echo('<li><a href="index.php"> Accueil </a></li>');
+                echo'<li><a href="recherche_simple.php"> Recherche simple </a></li>';
+                echo'<li><a href="connexion.php"> Connexion </a></li>';
             } else if(isset($_SESSION['user'])) {
                 // si l'utilisateur est connecté 
                 header('location: index.php');
@@ -38,42 +38,44 @@
         </ul>
     </div>
 
- <div> <!--ici la grande div qui a le contenu de la page -->
-	<form method="Post" class="formulaire" action="">
+	<div> <!--ici la grande div qui a le contenu de la page -->
+	<form method="post" class="formulaire" action="">
 	<div class="marg">
-	<p><strong>Nom :</strong>
+	<p> <strong> Nom : </strong>
 		<input style="margin-bottom:15px;" type="text" id="user" value="" />
 	</p>
 
-	<p><strong>Email :</strong>
-			<input type="text" value="" />
+	<p> <strong> Email : </strong>
+		<input type="text" value="" />
+	</p>
+
+	<br/>
+	<p> <strong> Sexe : </strong>
+		<input type="radio" id="H" name="H" style="margin-top:15px;" value="Homme" />
+		<label style="margin-left:-60px;" for="H"> Homme </label> <br/>
+		
+		<input type="radio" id="F" name="F" style="margin-left:0px;" value="Femme" />
+		<label style="margin-left:-60px; margin-bottom:15px;" for="F"> Femme </label>
 	</p>
 	<br/>
-	<p><strong>Sexe : </strong>
-			<input type="radio" id="H" name="H" style="margin-top:15px;" value="Homme"/>
-			<label style="margin-left:-60px;" for="H">Homme</label><br>
-			<input type="radio" id="F" name="F" value="Femme" style="margin-left:0px;"/>
-			<label style="margin-left:-60px;margin-bottom:15px;" for="F">Femme</label>
+	<p> <strong>Motif : </strong>
+			Aide/Renseignements <input style="margin-left:-80px;" type="checkbox" name="motif" />
+			Demande d'inscription <input style="margin-left:-80px;" type="checkbox" name="motif" class="pq" />
+			Plainte <input style="margin-left:-80px;" type="checkbox" name="motif" class="pq" />
 	</p>
 	<br/>
-	<p><strong>Motif :</strong>
-		<p>
-			Aide/Renseignements<input style="margin-left:-80px;" type="checkbox" name="motif" />
-			Demande d'inscription<input style="margin-left:-80px;" type="checkbox" name="motif" class="pq" />
-			Plainte<input style="margin-left:-80px;" type="checkbox" name="motif" class="pq" />
-		</p>
-	</p>
-	<br/>
-	<p><strong>Message :</strong>
-		<p><textarea rows="5" cols="25"></textarea></p>
+	<p> <strong> Message : </strong>
+		<textarea rows="5" cols="25"> </textarea>
 	</p>
 	</div>
-	<p><div style="margin-left: 150px;">
-		<input type="submit" value="Envoyer" />
-		<input type="reset" value="Recommencer" />
+
+	<div style="margin-left: 150px;">
+		<p> <input type="submit" value="Envoyer" /> </p>
+		<p> <input type="reset" value="Recommencer" /> </p>
 	</div>
+
 	</form>
-</div>
+	</div>
 	
 	<footer>
         <p>N-Maps &copy; 2022 

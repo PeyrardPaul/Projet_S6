@@ -96,7 +96,7 @@
 </form>
 </div>
 
-<footer>
+    <footer>
         <p>N-Maps &copy; 2022 
         -   <a href="qui_sommes_nous.php"> Qui sommes nous ? </a>   
         -   <a href="contact.php"> Nous contacter </a>  
