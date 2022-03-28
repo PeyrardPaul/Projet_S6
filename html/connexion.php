@@ -1,4 +1,4 @@
-
+<?php include 'session.php'; ?>
 
 <!DOCTYPE html>
 <html>
@@ -10,13 +10,6 @@
 <style>
 </style>
 </head>
-
-<?php include 'session.php'; ?>
-
-
-
-
-
 
 <body>
 
