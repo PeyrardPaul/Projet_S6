@@ -73,8 +73,6 @@
 
         </div>    
 </body>
-<footer><!--ici le pied de page -->
-       <p>N-Maps © 2022</p>
-    </footer>
+
 
     
