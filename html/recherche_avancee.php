@@ -224,8 +224,8 @@
                     </tr>
  
 </table>
-</div>
     <input type="submit" value="Valider" />
+</div>
 </form>
 </body>
 </html>
