@@ -26,7 +26,6 @@
                 echo'<li><a href="connexion.php">Connexion </a></li>';
             } else if(isset($_SESSION['user'])) {
                 // si l'utilisateur est connecté 
-                header('location: index.php');
                 echo'<li><a href="index.php">Accueil</a></li>';
                 echo'<li><a href="recherche_simple.php">Recherche simple</a></li>';
                 echo'<li><a href="recherche_avancee.php">Recherche avancée</a></li>';

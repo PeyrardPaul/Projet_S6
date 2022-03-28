@@ -23,7 +23,6 @@
                 echo'<li><a href="connexion.php">Connexion </a></li>';
             } else if(isset($_SESSION['user'])) {
                 // si l'utilisateur est connecté 
-                header('location: index.php');
                 echo'<li><a href="index.php">Accueil</a></li>';
                 echo'<li><a href="recherche_simple.php">Recherche simple</a></li>';
                 echo'<li><a href="recherche_avancee.php">Recherche avancée</a></li>';
@@ -37,7 +36,12 @@
 	if(isset($_POST['login'])){	
 		$pseudo = $_POST['pseudo'];
 		$password = $_POST['password'];
-		try{
+		$rep = $bdd -> query("select * from users where pseudo ='{$pseudo}' and password ='{$password}'");			//echo("<meta http-equiv='refresh' content='1; url=http://localhost/PEYRARD/index.php '>");
+		while ($mat = $rep->fetch()) {
+			$_SESSION['user']=array($mat['user_id'],$mat['code_dep'],$mat['nom'],$mat['prenom'],$mat['pseudo'],$mat['password'],$mat['adresse_email'],$mat['adresse'],$mat['type'],$mat['password_reset']);
+		}
+	}
+			/*try{
 			$stmt = $bdd->prepare("SELECT *, COUNT(*) AS numrows FROM users WHERE pseudo = :pseudo");
 			$stmt->execute(['pseudo'=>$pseudo]);
 			$row = $stmt->fetch();
@@ -62,6 +66,7 @@
 	}
 	$stmt-> closeCursor();
 	header('location: connexion.php');
+	*/
 	?>	
 	</body>
 
