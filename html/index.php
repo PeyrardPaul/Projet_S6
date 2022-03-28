@@ -18,24 +18,21 @@
         <h1><a href="index.php">N-MAPS</a></h1>
         <ul class="menu">
         <?php
-            if(!isset($_SESSION['user'])) 
-            {
-            echo'<li><a href="index.php">Accueil</a></li>';
-            echo'<li><a href="recherche_simple.php">Recherche simple</a></li>';
-            echo'<li><a href="contact.php">Contact</a></li>';
-            echo'<li><a href="connexion.php">Connexion </a></li>';
-            
-            }
-		    else   if(isset($_SESSION['user'])) 
-            {
+            // si l'utilisateur n'est pas connecté 
+            if(!isset($_SESSION['user'])) {
+                echo'<li><a href="index.php">Accueil</a></li>';
+                echo'<li><a href="recherche_simple.php">Recherche simple</a></li>';
+                echo'<li><a href="connexion.php">Connexion </a></li>';
+            } else if(isset($_SESSION['user'])) {
+                // si l'utilisateur est connecté 
+                header('location: index.php');
                 echo'<li><a href="index.php">Accueil</a></li>';
                 echo'<li><a href="recherche_simple.php">Recherche simple</a></li>';
                 echo'<li><a href="recherche_avancee.php">Recherche avancée</a></li>';
-                echo'<li><a href="contact.php">Contact</a></li>';
                 echo"<li><a href='deconnexion.php'>Déconnexion</a></li>";
-                echo'<li><a href="commentaire.php"> Espace commentaires</a></li>';
+                echo "<li>Bonjour ".$_SESSION['user'][4]."</li>";
             }
-            ?>
+        ?>
 
        </ul>
     </div>
@@ -47,7 +44,7 @@
         <!--    <div class="header-cover">  </div>-->
                    
                         <div class="conteneur">
-                        <div class="d2"></div>
+                            <div class="d2"></div>
                         </div>
            
            
@@ -95,16 +92,16 @@
     <?php
         if(isset($_SESSION['user'])){
             echo("
-            <div>
+            <div class='page'>
     
             <!-- Ici on va proposer les 2 manières de s'informer sur le dpt en question  -->
-                <p>Pour découvrir la France, choississez un mode de recherche &#x1F440;  </p><br>
-                <p>
+                <h3>Pour découvrir la France, choississez un mode de recherche &#x1F440;</h3>
+                
                     &#128077; Utilisez la  &#x1F449; <a href='recherche_simple.php'>recherche simple</a>&#x1F448; pour découvrir toutes les informations sur un département choisi. 
-                </p><br>
-                <p>
+                <br>
+                
                     &#128077; Utilisez la recherche avancée pour comparer deux départements choisis sur une liste de critères que vous selctionnez. 
-                </p>
+                
             </div>
             ");
         }
@@ -117,11 +114,15 @@
             <!-- fin de la carte cliquable -->
     </div>
  
+    
+</body>
     <footer><!--ici le pied de page -->
-        <p>N-Maps © 2022 - <a id="quisommesnous" href="qui_sommes_nous.php">Qui sommes nous ?</a></p>
-        
+        <p>N-Maps &copy; 2022 
+        -   <a href="qui_sommes_nous.php"> Qui sommes nous ? </a>   
+        -   <a href="contact.php"> Nous contacter </a>  
+        -   <a href="commentaire.php"> Espace commentaires</a>  
+        </p> 
     </footer>
    
-</body>
 </html>
 
