@@ -151,7 +151,9 @@ footer{
 	display: flex;
 	justify-content: center;
 	color: var(--text-color-beige);
-	
+	/* position:fixed; */
+    /* bottom: 0; */
+	width: 100%;
 }
 
 /* paragraphe du pied de page */
@@ -231,7 +233,7 @@ body {
 
 /* les header  */
 header {
-	background-color: #979494;
+	/* background-color: #979494; */
 	color: var(--text-color-beige);
 	position: relative;
 	padding: 0;
@@ -239,14 +241,14 @@ header {
 	max-height:900px;
 }
 .header-content{
-	background: rgba(0,0,0,.4);
-	border-radius: 8px;
+	background: rgba(44, 44, 44, 0.4);
+	border-radius: 20px;
 	padding: 2em;
 	max-width: 1024px;
-	min-width: 60%;
+	min-width: 30%;
 	margin: auto;
 	/* height: 250px; */
-	text-shadow: rgba(112, 112, 112, 0.609) 1px 0 10px;
+	/* text-shadow: rgba(112, 112, 112, 0.609) 1px 0 10px; */
 }
 .header-area {
     text-align: center;
@@ -264,10 +266,10 @@ header {
     width: 100%;
     height: auto;
     min-height: 350px;
-    margin: 0;
     -o-object-fit: cover;
     object-fit: cover;
     display: block;
+	border-radius: 20px;
 }
 
 
@@ -384,7 +386,7 @@ g path:hover {
     width: auto;
     /* height: -50px; */
     padding-top: 54%;
-    box-shadow: 0px 0px 10px #777;
+    /* box-shadow: 0px 0px 10px #777; */
     background-color: var(--background);
     background-size: contain;
     animation: fondu 15s ease-in-out infinite both;
@@ -453,10 +455,45 @@ p a:hover {
 	 white-space: nowrap;
 	 display: inline;
  }
+
+ .page{
+	 margin: 0 auto 30px auto;
+	 width: 70%;
+	 text-align: center;
+	 line-height: 1.5em;
+ }
  .sais_dep {
 	 margin-top: 50px;
 	 margin-left: 50px;
  }
 .marg {
 	margin-left:50px;
+}
+
+
+input{
+	padding: 5px;
+	width: auto;
+	height: auto;
+	margin: 5px;
+}
+
+.sais_dep>p{  /* paragraphe dans la recherche simple */
+	color: var(--text-color);
+}
+
+.sais_dep>form>*{
+	margin-left: 50%;
+	transform: translateX(-50%);
+	color: var(--text-color);
+	text-align: center;
+	border: solid 2px var(--bandeau);
+	border-radius: 10px;
+	width: auto;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.sais_dep>form>select{
+	margin-top: 50px;
+	
 }

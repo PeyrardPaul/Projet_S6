@@ -1,5 +1,6 @@
 <?php 
 	require '../../bd.php'; 
+    session_start();
 	$bdd = getBD();
 ?>
 
@@ -22,7 +23,7 @@
             <li><a href="recherche_simple.php">Recherche simple</a></li>
             <li><a href="recherche_avancee.php">Recherche avancée</a></li>
 
-			<li>
+			
                 <?php
 		                if(isset($_SESSION['user'])) {
 
@@ -32,7 +33,7 @@
 		                }
 		                else {
 			                echo "<li><a href='connexion.php'>Se connecter </a></li>";
-		                }?></li>
+		                }?>
         </ul>
     </div>
 <body>
@@ -48,7 +49,7 @@
                         </div>
                         <div class="header-area">
                             <div class="header-content">
-                                <h2>'.$ligne['Nom'].'</h2><br> 
+                                <h1>'.$ligne['Nom'].'</h1><br> 
                             </div> 
                         </div>     
                     </header>');
@@ -72,8 +73,6 @@
 
         </div>    
 </body>
-<footer><!--ici le pied de page -->
-       <p>N-Maps © 2022</p>
-    </footer>
+
 
     
