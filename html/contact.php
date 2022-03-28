@@ -42,7 +42,7 @@
 
  <div> <!--ici la grande div qui a le contenu de la page -->
 	<form method="Post" class="formulaire" action="">
-
+	<div class="marg">
 	<p><strong>Nom :</strong>
 		<input style="margin-bottom:15px;" type="text" id="user" value="" />
 	</p>
@@ -54,7 +54,7 @@
 	<p><strong>Sexe : </strong>
 			<input type="radio" id="H" name="H" style="margin-top:15px;" value="Homme"/>
 			<label style="margin-left:-60px;" for="H">Homme</label><br>
-			<input type="radio" id="F" name="F" value="Femme" style="margin-left:51px;"/>
+			<input type="radio" id="F" name="F" value="Femme" style="margin-left:0px;"/>
 			<label style="margin-left:-60px;margin-bottom:15px;" for="F">Femme</label>
 	</p>
 	<br/>
@@ -69,6 +69,7 @@
 	<p><strong>Message :</strong>
 		<p><textarea rows="5" cols="25"></textarea></p>
 	</p>
+	</div>
 	<p><div style="margin-left: 150px;">
 		<input type="submit" value="Envoyer" />
 		<input type="reset" value="Recommencer" />
