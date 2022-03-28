@@ -8,17 +8,19 @@
 	}
 
 	if(isset($_SESSION['user'])){
-		$conn = $pdo->open();
+		$bdd = getBD();
 
 		try{
-			$stmt = $conn->prepare("SELECT * FROM users WHERE id=:id");
+			$stmt = $bdd->prepare("SELECT * FROM users WHERE user_id=:id");
 			$stmt->execute(['id'=>$_SESSION['user']]);
 			$user = $stmt->fetch();
+
+			//$_SESSION['prenom']= $user['prenom'];
 		}
 		catch(PDOException $e){
 			echo "Problème de connexion";
 		}
 
-		$pdo->close();
+		
 	}
 ?>

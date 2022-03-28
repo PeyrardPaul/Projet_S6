@@ -1,6 +1,5 @@
 <?php
-	include '../../bd.php';
-	session_start();
+	include 'session.php';
 	$bdd = getBD();
 ?>
 
@@ -52,9 +51,8 @@
                     <p>
                         <?php
 		                if(isset($_SESSION['user'])) {
-
-			                
-							echo "<strong><font color='white'>Bonjour ".$_SESSION['user'][4]."</font></strong><br/>";
+   
+							echo "Bonjour <strong><font color='black'>". $user['pseudo']. "</font></strong><br/>" ;
                             echo "Bienvenue sur N-MAPS"."<br/>";
 
 		                }

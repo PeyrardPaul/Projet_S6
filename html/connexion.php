@@ -14,14 +14,8 @@
 <?php include 'session.php'; ?>
 
 
-<?php $bdd = getBD(); ?>
 
-<?php
-  if(isset($_SESSION['user']))
-  {
-    header('location: index.php');
-  }
-?>
+
 
 
 <div class="bandeau"> <!--ici le bandeau haut de page -->
@@ -35,17 +29,27 @@
             <li><a href="recherche_simple.php">Recherche simple</a></li>
             <li><a href="recherche_avancee.php">Recherche avancée</a></li>
 
-			<li>
-                <?php
-		                if(isset($_SESSION['user'])) {
-
-			                echo "<li><a href='deconnexion.php'>Se déconnecter</a></li>";
-							echo "<li>Bonjour ".$_SESSION['user'][4]."</li>";
-
-		                }
-		                else {
-			                echo "<li><a href='connexion.php'>Se connecter </a></li>";
-		                }?></li>
+	 
+				<li>
+				<?php
+			if(isset($_SESSION['user']))
+			{
+				header('location: index.php');
+				echo "<li><a href='deconnexion.php'>Se déconnecter</a></li>";
+					echo "<li>Bonjour ".$_SESSION['user'][4]."</li>";
+			}
+			else if(isset($_SESSION['admin']))
+			{
+				header('location: administrateur/home.php');
+				echo "<li><a href='deconnexion.php'>Se déconnecter</a></li>";
+					echo "<li>Bonjour ".$_SESSION['admin'][4]."</li>";
+			}
+			else
+			 {
+				echo "<li><a href='connexion.php'>Se connecter </a></li>";}
+?>
+	
+				</li> 
         </ul>
     </div>
 
@@ -53,7 +57,7 @@
 		<h2 style="text-align:center;margin-bottom:-150px;margin-top:100px;">SE CONNECTER ou<a class="retour"href="inscription.php" style="margin-left:auto;margin-right:auto;width:200px;">S'inscrire</a></h2>
 	<div class="body"> <!--Pourquoi créer une classe body dans le body ?????? -->
 
-		<form method=Post action="connecter.php" autocomplete=ON>
+		<form method="post" action="connecter.php" autocomplete="on">
 			<div class="pseudo">
 				<label style="" for="pseudo">Pseudo</label>:
 				<input type="pseudo"  name="pseudo" value="" placeholder="Saisir pseudo" required/>

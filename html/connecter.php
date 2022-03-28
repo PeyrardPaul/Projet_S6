@@ -1,6 +1,7 @@
-<?php require '../../bd.php'; ?>
+<?php
+include 'session.php'; ?>
 <?php $bdd = getBD(); ?>
-<?php session_start(); ?>
+
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -35,22 +36,63 @@
         </ul>
     </div>
     <?php
-		$pseudo=$_POST['pseudo'];
-		$mdp=$_POST['password'];
+
+if(isset($_POST['login'])){
 		
-		if($pseudo=="" or $mdp=="") {
-			echo "mail ou mot de passe vide";
-			echo("<meta http-equiv='refresh' content='1; url=connexion.php?pseudo=".$pseudo." '>");
+	$pseudo = $_POST['pseudo'];
+	$password = $_POST['password'];
+
+	try{
+
+		$stmt = $bdd->prepare("SELECT *, COUNT(*) AS numrows FROM users WHERE pseudo = :pseudo");
+		$stmt->execute(['pseudo'=>$pseudo]);
+		$row = $stmt->fetch();
+		if($row['numrows'] > 0){
+				if(password_verify($password, $row['password'])){
+					if($row['type']==1){
+						$_SESSION['admin'] = $row['user_id'];
+						//header('location: administrateur/home.php');
+					}
+					else
+					{
+						$_SESSION['user'] = $row['user_id'];
+					 //	header('location: index.php');
+					}
+				}
+				else{
+					$_SESSION['error'] = 'Mot de passe incorrect';
+				}
 		}
-		else {
-			$rep = $bdd -> query("select * from users where pseudo ='{$pseudo}' and password ='{$mdp}'");
-			while ($mat = $rep->fetch()) {
-				echo "<h2>Connexion réussie, profitez au maximum de notre site maintenant !</h2>";
-				$_SESSION['user']=array($mat['user_id'],$mat['code_dep'],$mat['nom'],$mat['prenom'],$mat['pseudo'],$mat['adresse_email'],$mat['type'],$mat['code_activation'],$mat['code_reset']);
-            }
-			echo("<meta http-equiv='refresh' content='1; url=index.php '>");
+		else{
+			$_SESSION['error'] = 'pseudo non trouvé';
 		}
-		$rep ->closeCursor();
+	}
+	catch(PDOException $e){
+		echo "Problème de connection: " . $e->getMessage();
+	}
+
+}
+else{
+	$_SESSION['error'] = 'erreur';
+}
+
+		// $pseudo=$_POST['pseudo'];
+		// $mdp=$_POST['password'];
+		
+		// if($pseudo=="" or $mdp=="") {
+		// 	echo "mail ou mot de passe vide";
+		// 	echo("<meta http-equiv='refresh' content='1; url=connexion.php?pseudo=".$pseudo." '>");
+		// }
+		// else {
+		// 	$rep = $bdd -> query("select * from users where pseudo ='{$pseudo}' and password ='{$mdp}'");
+		// 	while ($mat = $rep->fetch()) {
+		// 		echo "<h2>Connexion réussie, profitez au maximum de notre site maintenant !</h2>";
+		// 		$_SESSION['user']=array($mat['user_id'],$mat['code_dep'],$mat['nom'],$mat['prenom'],$mat['pseudo'],$mat['adresse_email'],$mat['type'],$mat['code_activation'],$mat['code_reset']);
+        //     }
+		// 	echo("<meta http-equiv='refresh' content='1; url=index.php '>");
+		// }
+		$stmt-> closeCursor();
+		header('location: connexion.php');
 		?>	
 	</body>
 </html>
