@@ -1,7 +1,7 @@
 <?php
-	include '../../bd.php';
+	//include '../../bd.php';
 	include 'session.php';
-	$bdd = getBD();
+	//$bdd = getBD();
 
 ?>
 
