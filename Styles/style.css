@@ -220,7 +220,7 @@ body {
 
 /* les header  */
 header {
-	background-color: #979494;
+	/* background-color: #979494; */
 	color: var(--text-color-beige);
 	position: relative;
 	padding: 0;
@@ -228,11 +228,11 @@ header {
 	max-height:900px;
 }
 .header-content{
-	background: rgba(0,0,0,.4);
-	border-radius: 8px;
+	background: rgba(44, 44, 44, 0.4);
+	border-radius: 20px;
 	padding: 2em;
 	max-width: 1024px;
-	min-width: 60%;
+	min-width: 30%;
 	margin: auto;
 	/* height: 250px; */
 	/* text-shadow: rgba(112, 112, 112, 0.609) 1px 0 10px; */
@@ -253,10 +253,10 @@ header {
     width: 100%;
     height: auto;
     min-height: 350px;
-    margin: 0;
     -o-object-fit: cover;
     object-fit: cover;
     display: block;
+	border-radius: 20px;
 }
 
 

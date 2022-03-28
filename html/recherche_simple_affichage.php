@@ -49,7 +49,7 @@
                         </div>
                         <div class="header-area">
                             <div class="header-content">
-                                <h2>'.$ligne['Nom'].'</h2><br> 
+                                <h1>'.$ligne['Nom'].'</h1><br> 
                             </div> 
                         </div>     
                     </header>');
