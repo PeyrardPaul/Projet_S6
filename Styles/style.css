@@ -156,7 +156,19 @@ footer{
 
 /* paragraphe du pied de page */
 footer > p{
+	background-color:var(--footer);
 	margin-top: 10px;
+	color: var(--text-color-beige);
+	font-size: .9rem;
+	display: flex;
+}
+/* les liens du pieds de page */
+footer > a{
+	background-color:var(--footer);
+	margin-top: 10px;
+	color: var(--text-color-beige);
+	text-decoration: none;
+	font-size: .9rem;
 }
 
 
@@ -170,7 +182,7 @@ footer > p{
 
 
 a{
-	color: var(--text-color-noir);
+	text-decoration: none;
 }
 
 
