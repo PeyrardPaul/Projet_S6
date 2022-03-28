@@ -62,7 +62,7 @@
  
     <form action="recherche_avancee_affichage.php" method="POST">
 
-    
+    <div class="sais_dep">
     <p>Choix du premier departement</p>
         <select name="dep1">
             <?php 
@@ -120,15 +120,13 @@
             </option>
          <?php endwhile; ?>
        </select>
+                    </div>
     <br>
     <br>
     <br>
     <br>
     <br>
-    <br>
-    <br>
-    <br>
-
+    <div class="marg">
     <p> Choix des critères de comparaison </p>
     <table id = "critabl">
 
@@ -226,6 +224,7 @@
                     </tr>
  
 </table>
+</div>
     <input type="submit" value="Valider" />
 </form>
 </body>

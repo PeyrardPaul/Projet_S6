@@ -53,7 +53,8 @@
   }
 ?>
 <form method="GET" action="recherche_simple_affichage.php">
-        <label>Choix dep</label>
+        <div class="sais_dep">
+        <p>Choix département</p>
         <select name="dep">
             <?php 
                 // use a while loop to fetch data 
@@ -75,6 +76,7 @@
             ?>
         </select>
         <br>
-        <input type="submit" value="submit" name="submit">
+        <input type="submit" value="Valider" name="submit">
+        </div>
     </form>
 </body>

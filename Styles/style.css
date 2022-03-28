@@ -435,6 +435,7 @@ p a:hover {
 	 white-space: nowrap;
 	 display: inline;
  }
+<<<<<<< HEAD
 
  .page{
 	 margin: 0 auto 30px auto;
@@ -442,3 +443,12 @@ p a:hover {
 	 text-align: center;
 	 line-height: 1.5em;
  }
+=======
+ .sais_dep {
+	 margin-top: 50px;
+	 margin-left: 50px;
+ }
+.marg {
+	margin-left:50px;
+}
+>>>>>>> 46e9b1e3487528ab6d172d4e791916573a68bf7b
