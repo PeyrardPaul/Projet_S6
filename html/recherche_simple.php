@@ -50,45 +50,39 @@
 	
   }
 ?>
-<form method="GET" action="recherche_simple_affichage.php">
-        <div class="sais_dep">
-        <p>Choix département</p>
-        <select name="dep">
-            <?php 
-                // use a while loop to fetch data 
-                // from the $all_categories variable 
-                // and individually display as an option
-                while ($category = mysqli_fetch_array(
-                        $all_categories,MYSQLI_ASSOC)):; 
-            ?>
-                <option value="<?php echo $category["Département"];
-                    // The value we usually set is the primary key
-                ?>">
-                    <?php echo $category["Nom"];
-                        // To show the category name to the user
-                    ?>
-                </option>
-            <?php 
-                endwhile; 
-                // While loop must be terminated
-            ?>
-        </select>
-        <br>
-        <input type="submit" value="Valider" name="submit">
-        </div>
-    </form>
 
+    <div class="sais_dep">
+    <p>
+        Grâce à la recherche simple, vous pouvez consulter toutes les informations sur le département de votre choix. Vous retrouverez différents indicateurs sur le niveau de vie, le climat, la sécurité, l'éducation, les loisirs, etc
+    </p>
+   
+    <form method="GET" action="recherche_simple_affichage.php">
+            <select name="dep">
+                <?php 
+                    // use a while loop to fetch data 
+                    // from the $all_categories variable 
+                    // and individually display as an option
+                    while ($category = mysqli_fetch_array(
+                            $all_categories,MYSQLI_ASSOC)):; 
+                ?>
+                    <option value="<?php echo $category["Département"];
+                        // The value we usually set is the primary key
+                    ?>">
+                        <?php echo $category["Nom"];
+                            // To show the category name to the user
+                        ?>
+                    </option>
+                <?php 
+                    endwhile; 
+                    // While loop must be terminated
+                ?>
+            </select>
+            <br>
+            <input type="submit" value="Valider" name="submit">
+    </form>
+    </div>
+    
+</body>
 
 
     
-
-</body>
-<footer>
-        <p>N-Maps &copy; 2022 
-        -   <a href="qui_sommes_nous.php"> Qui sommes nous ? </a>   
-        -   <a href="contact.php"> Nous contacter </a>  
-        -   <a href="commentaire.php"> Espace commentaires</a>  
-        </p> 
-    </footer>
-
-</html>

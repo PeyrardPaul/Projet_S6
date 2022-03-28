@@ -1,5 +1,4 @@
 <?php 
-	// require '../../bd.php'; 
 	include("../../bd.php");
 ?>
 

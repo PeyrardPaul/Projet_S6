@@ -44,7 +44,7 @@
         <!--    <div class="header-cover">  </div>-->
                    
                         <div class="conteneur">
-                        <div class="d2"></div>
+                            <div class="d2"></div>
                         </div>
            
            
@@ -92,16 +92,16 @@
     <?php
         if(isset($_SESSION['user'])){
             echo("
-            <div>
+            <div class='page'>
     
             <!-- Ici on va proposer les 2 manières de s'informer sur le dpt en question  -->
-                <p>Pour découvrir la France, choississez un mode de recherche &#x1F440;  </p><br>
-                <p>
+                <h3>Pour découvrir la France, choississez un mode de recherche &#x1F440;</h3>
+                
                     &#128077; Utilisez la  &#x1F449; <a href='recherche_simple.php'>recherche simple</a>&#x1F448; pour découvrir toutes les informations sur un département choisi. 
-                </p><br>
-                <p>
+                <br>
+                
                     &#128077; Utilisez la recherche avancée pour comparer deux départements choisis sur une liste de critères que vous selctionnez. 
-                </p>
+                
             </div>
             ");
         }
