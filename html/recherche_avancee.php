@@ -198,17 +198,16 @@
          
     <label class = "critcell" for="qrzo"> Moyenne de qualité du réseau internet :</label>
     <input type="checkbox" id="qualité réseau" name="qrzo" value="Niv_reseau">
-<<<<<<< HEAD
                       
     <br>
 
 </div>
-=======
+
                     </td>
                     </tr>
  
 </table>
->>>>>>> b24369cc8b0b2f8d1523438189c23bc372481f87
+
     <input type="submit" value="Valider" />
 </div>
 </form>

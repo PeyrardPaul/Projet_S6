@@ -71,7 +71,6 @@
         }
     }//Description des critères
     echo "<h2>Description des critères :</h2>";
-<<<<<<< HEAD
     echo "<br/><br/><p>L'ensemble des critères suivants sont présentés avec une évaluation purement comparative. Attribuer 5 étoiles à la moyenne de température de janvier n'est,
      dans l'absolut pas très intéressant. Dans le cas présent un département avec 5 étoiles pour cet indicateur aura une température particulièrement
       clémente comparé aux autres départements.</p><br/>";
@@ -91,7 +90,6 @@
     echo "<p>Niv_4G: Moyenne de sites 4G </p><br/>";
     echo "<p>Niv_5G: Moyenne de sites 5G </p><br/>";
     echo "<p>Niv_Niv_reseau: Qualité de la couverture réseau </p><br/>";
-=======
     echo "<br/><br/><p><strong>Niv_pop:</strong> Population, où 5 étoiles signifie un niveau élevé de population </p><br/>";
     echo "<p><strong>Niv_loyer:</strong> Prix moyen du loyer au mètre carré, où 5 étoiles signifie un prix moyen élevé du loyer </p><br/>";
     echo "<p><strong>Niv_santé:</strong> Nombre de médecins pour 100 000 habitants, où 5 étoiles signifie un nombre élevé de médecins </p><br/>";
@@ -108,8 +106,8 @@
     echo "<p><strong>Niv_4G:</strong> Couverture réseau en 4G, où 5 étoiles signifie une couverture de réseau élevée en 4G </p><br/>";
     echo "<p><strong>Niv_5G:</strong> Couverture réseau en 5G, où 5 étoiles signifie une couverture de réseau élevée en 5G </p><br/>";
     echo "<p><strong>Niv_Niv_reseau:</strong> Réseau internet sur le département, où 5 étoiles signifie un réseau internet élevée </p><br/>";
->>>>>>> b24369cc8b0b2f8d1523438189c23bc372481f87
         unset($_SESSION['critere']); //vide la session
+
     ?>
 </body>
 </html>
