@@ -19,7 +19,7 @@
 		$pdo->close();
 	}
 	else{
-		$_SESSION['error'] = 'Sélectionner d''abord un département à supprimer';
+		$_SESSION['error'] = "Sélectionner d'abord un département à supprimer";
 	}
 
 	header('location: departement.php');
