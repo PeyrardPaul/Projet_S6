@@ -1,6 +1,6 @@
 <?php
 	include '../../bd.php';
-	session_start();
+	include 'session.php';
 	$bdd = getBD();
 
 ?>
@@ -39,59 +39,63 @@
 			                echo "<li><a href='connexion.php'>Se connecter </a></li>";
 		                }?></li>
         </ul>
-    </div>
+</div>
 <div>
-<form method=Post action="enregistrement.php" autocomplete=ON>
+<form method="post" action="enregistrement.php" autocomplete="ON">
+
 <p><strong>Nom :</strong>
-    <input type="text" id="name" name="n" required
+    <input type="text"  name="n" required
      maxlength="20" size="10"
-    placeholder="Nom" style="margin-bottom:20px;" value=<?php echo "'".$_GET['n']."'"?>>
+    placeholder="Nom" style="margin-bottom:20px;" />
 </p>
-    <br/>
+   
 <p><strong>Prénom :</strong>
-    <input type="text" id="name" name="p" required
+    <input type="text"  name="p" required
      maxlength="50" size="10"
-    placeholder="Prénom" style="margin-bottom:20px;" value=<?php echo "'".$_GET['p']."'"?>>
+    placeholder="Prénom" style="margin-bottom:20px;" />
 </p>
-    <br/>
+    
 <p><strong>Pseudo :</strong>
-    <input type="text" id="name" name="psd" required
+    <input type="text"  name="psd" required
      maxlength="50" size="10"
-    placeholder="Pseudo" style="margin-bottom:20px;" value=<?php echo "'".$_GET['psd']."'"?>>
+    placeholder="Pseudo" style="margin-bottom:20px;" />
 </p>
-    <br/>
+    
 <p><strong>Département :</strong>
-    <input type="text" id="name" name="dep" required
+    <input type="text" name="dep" required
      maxlength="2" size="10"
-    placeholder="Département Ex: 34" style="margin-bottom:20px;" value=<?php echo "'".$_GET['dep']."'"?>>
+    placeholder="Département Ex: 34" style="margin-bottom:20px;" />
 </p>
-    <br/>
+    
 <p><strong>Adresse email :</strong>
-    <input type="text" id="name" name="mail" required
+    <input type="text"  name="mail" required
      maxlength="50" size="10"
-    placeholder="Adresse mail" style="margin-bottom:20px;" value=<?php echo "'".$_GET['mail']."'"?>>
+    placeholder="Adresse mail" style="margin-bottom:20px;" />
 </p>
-    <br/>
+   
 <p><strong>Adresse :</strong>
-    <input type="text" id="name" name="adr" required
+    <input type="text"  name="adr" required
      maxlength="50" size="10"
-    placeholder="Adresse" style="margin-bottom:20px;" value=<?php echo "'".$_GET['adr']."'"?>>
+    placeholder="Adresse" style="margin-bottom:20px;" />
 </p>
-    <br/>
+    
 <p><strong>Mot de passe :</strong>
-    <input type="password" id="name" name="mdp1" required
+    <input type="password"  name="mdp1" required
     minlength="4" maxlength="20" size="10"
-    placeholder="Mot de passe" style="margin-bottom:20px;">
+    placeholder="Mot de passe" style="margin-bottom:20px;"/>
 </p>
-    <br/>
+    
 <p><strong>Validez le Mot de passe :</strong>
-    <input type="password" id="name" name="mdp2" required
-    minlength="4" maxlength="20" size="10"  placeholder="Répétez le mot de passe" style="margin-bottom:20px;">
+    <input type="password"  name="mdp2" required
+    minlength="4" maxlength="20" size="10"  placeholder="Répétez le mot de passe" style="margin-bottom:20px;"/>
 </p>
-<br/>
-<p><div style="margin-left: 150px;">
+
+<p>
+    <div style="margin-left: 150px;">
 		<input type="submit" value="Envoyer" />
-</div></p>
+    </div>
+</p>
+
 </form>
 </div>
 </body>
