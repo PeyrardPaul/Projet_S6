@@ -1,6 +1,5 @@
 <?php
-	include '../../bd.php';
-	session_start();
+	include 'session.php';
 	$bdd = getBD();
 ?>
 
@@ -19,24 +18,21 @@
         <h1><a href="index.php">N-MAPS</a></h1>
         <ul class="menu">
         <?php
-            if(!isset($_SESSION['user'])) 
-            {
-            echo'<li><a href="index.php">Accueil</a></li>';
-            echo'<li><a href="recherche_simple.php">Recherche simple</a></li>';
-            echo'<li><a href="contact.php">Contact</a></li>';
-            echo'<li><a href="connexion.php">Connexion </a></li>';
-            
-            }
-		    else   if(isset($_SESSION['user'])) 
-            {
+            // si l'utilisateur n'est pas connecté 
+            if(!isset($_SESSION['user'])) {
+                echo'<li><a href="index.php">Accueil</a></li>';
+                echo'<li><a href="recherche_simple.php">Recherche simple</a></li>';
+                echo'<li><a href="connexion.php">Connexion </a></li>';
+            } else if(isset($_SESSION['user'])) {
+                // si l'utilisateur est connecté 
+                header('location: index.php');
                 echo'<li><a href="index.php">Accueil</a></li>';
                 echo'<li><a href="recherche_simple.php">Recherche simple</a></li>';
                 echo'<li><a href="recherche_avancee.php">Recherche avancée</a></li>';
-                echo'<li><a href="contact.php">Contact</a></li>';
                 echo"<li><a href='deconnexion.php'>Déconnexion</a></li>";
-                echo'<li><a href="commentaire.php"> Espace commentaires</a></li>';
+                echo "<li>Bonjour ".$_SESSION['user'][4]."</li>";
             }
-            ?>
+        ?>
 
        </ul>
     </div>
@@ -57,9 +53,8 @@
                     <p>
                         <?php
 		                if(isset($_SESSION['user'])) {
-
-			                
-							echo "<strong><font color='white'>Bonjour ".$_SESSION['user'][4]."</font></strong><br/>";
+   
+							echo "Bonjour <strong><font color='black'>". $user['pseudo']. "</font></strong><br/>" ;
                             echo "Bienvenue sur N-MAPS"."<br/>";
 
 		                }
@@ -119,11 +114,15 @@
             <!-- fin de la carte cliquable -->
     </div>
  
+    
+</body>
     <footer><!--ici le pied de page -->
-        <p>N-Maps © 2022 - <a id="quisommesnous" href="qui_sommes_nous.php">Qui sommes nous ?</a></p>
-        
+        <p>N-Maps &copy; 2022 
+        -   <a href="qui_sommes_nous.php"> Qui sommes nous ? </a>   
+        -   <a href="contact.php"> Nous contacter </a>  
+        -   <a href="commentaire.php"> Espace commentaires</a>  
+        </p> 
     </footer>
    
-</body>
 </html>
 
