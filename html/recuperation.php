@@ -86,7 +86,7 @@
         $mail->AltBody = 'Mail de récupération de mot de passe'; 	       //Texte brut
         $mail->IsHTML(false);                                  //Préciser qu'il faut utiliser le texte brut
         if ($mail->send()) {
-              echo 'Mail bien envoyé';
+              echo '<h2>Mail bien envoyé</h2>';
         } else{
             echo $mail->ErrorInfo;
         }

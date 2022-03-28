@@ -40,14 +40,21 @@ if(isset($_POST['login'])){
 	$pseudo = $_POST['pseudo'];
 	$password = $_POST['password'];
 	$bdd = getBD();
+	$boo=false;
 
 	$rep = $bdd -> query("SELECT * FROM users WHERE pseudo ='{$pseudo}' and password ='{$password}'");
 	while ($mat = $rep->fetch()) {
+		$boo=true;
 		echo "<h2>Connexion réussie, profitez au maximum de notre site maintenant !</h2>";
 		$_SESSION['user']=array($mat['user_id'],$mat['code_dep'],$mat['nom'],$mat['password'],$mat['adresse_email'],$mat['adresse'],$mat['type'],$mat['password_reset']);
     }
 }
-echo("<meta http-equiv='refresh' content='1; url=index.php '>");
+if ($boo==true) {
+	echo("<meta http-equiv='refresh' content='1; url=index.php '>");
+}
+else {
+	header('location: connexion.php?pseudo='.$pseudo.'');
+}
 
 //header('location: connexion.php');
 $rep-> closeCursor();

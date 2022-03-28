@@ -58,14 +58,17 @@
     else {
         echo "
         <form method=Post action='change_mdp.php' autocomplete=ON>
-            <p><strongVeuillez saisir votre nouveau mot de passe :</strong>
+            <div class='marg'>
+            <p><strong>Veuillez saisir votre nouveau mot de passe :</strong>
                 <input type='password' id='name' name='mdp' required
                 minlength='4' maxlength='20' size='10'
-                placeholder='Mot de passe' style='margin-bottom:20px;'>
+                placeholder='Mot de passe'>
             </p>
-            <p><div style='margin-left: 150px;'>
+            <br/>
+            <p>
 		        <input type='submit' value='Envoyer' />
-            </div></p>
+            </p>
+            </div>
         </form>";
     }
     ?>

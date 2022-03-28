@@ -41,7 +41,7 @@
 	<form method="post" action="connecter.php" autocomplete="on">
 		<div class="pseudo">
 			<label style="" for="pseudo"> Pseudo </label> :
-			<input type="pseudo"  name="pseudo" value="" placeholder="Saisir pseudo" required/>
+			<input type="pseudo"  name="pseudo" value=<?php echo "'".$_GET['pseudo']."'"?> placeholder="Saisir pseudo" required/>
 		</div>
 
 		<div class="password">
