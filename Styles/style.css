@@ -404,20 +404,25 @@ fondu{
     100%{background-image: url("../images/montpellier.jpg");}
 }
 
+#choidp{
+	height: 50 px;
+	border:solid 1 px;
+	margin-right: 500px;
 
-/* Les colonnes (critères environementaux, sociétaux et réseaux et internet)
-sont identifiés par la class critcol */
-.critcol{
-	border: 1px solid #333;	
+}
+.choixdp{
+	margin-top: 20px;
+	margin-left: 80px;
+	margin-right: 50px;
 }
 
 /* Toutes les cellules du tableaux contenant la case à cocher pour choisir le critère
 sont identifiées par la classe critcell */
 .critcell{
-	width : auto;
-	height: auto;
-	border: 1px solid #333;
-	font-size: 12px;
+	margin: 10px;
+	width:40%;
+	height:auto;
+	font-size: 14px;
 	font-style: justify;
 }
 

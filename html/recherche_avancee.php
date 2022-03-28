@@ -61,8 +61,8 @@
     <form action="recherche_avancee_affichage.php" method="POST">
 
     <div class="sais_dep">
-    <p>Choix du premier departement</p>
-        <select name="dep1">
+    <p id = "choidp">Choix des départements :</p>
+        <select class = "choixdp" name="dep1">
             <?php 
                 // use a while loop to fetch data 
                 // from the $all_departements variable 
@@ -79,10 +79,8 @@
                 <?php endwhile; ?>
                 <!-- While loop must be terminated -->
         </select>  
-    
-    <p>Choix du second departement</p>
 
-    <?php
+<?php
   
     // Connect to database 
     $con = mysqli_connect("localhost","root","root","projet_s6_indice_de_vie");
@@ -104,7 +102,7 @@
         $id = mysqli_real_escape_string($con,$_POST['Département']); 
     
 ?>
-        <select name="dep2">
+        <select class = "choixdp" name="dep2">
             <?php 
                 // use a while loop to fetch data 
                 // from the $all_departements variable 
@@ -120,108 +118,97 @@
        </select>
                     </div>
     <br>
-    <br>
-    <br>
-    <br>
-    <br>
     <div class="marg">
-    <p> Choix des critères de comparaison </p>
-    <table id = "critabl">
-
-    <tr class = "critcol">
-
-        <td class = "critcell">
-    <label for="pop"> Population :</label>
+    <p> Choix des critères de comparaison : </p>
+        
+    <label class = "critcell" for="pop"> Population :</label>
     <input type="checkbox" id="population" name="pop" value="Niv_pop">
-        </td>
-
-        <td class = "critcell">
-    <label for="loy"> Loyer (prix moyen au m²) :</label>
+    
+    <br>
+   
+    <label class = "critcell" for="loy"> Loyer (prix moyen au m²) :</label>
     <input type="checkbox" id="Loyer" name="loy" value="Niv_loyer">
-        </td>
-
-         <td class = "critcell">
-    <label for="st"> Santé (nombre de médecin pour 100000 habitants) :</label>
+        
+    <br>
+          
+    <label class = "critcell" for="st"> Santé (nombre de médecin pour 100000 habitants) :</label>
     <input type="checkbox" id="santé" name="st" value="Niv_santé">
-                     </td>
-                    </tr>
-    <tr class = "critcol">
-
-        <td class = "critcell">
-    <label for="crim"> Crimes et délits :</label>
+                                  
+    <br>
+         
+    <label class = "critcell" for="crim"> Crimes et délits :</label>
     <input type="checkbox" id="crimes et délits" name="crimdel" value="Niv_delit">
-                    </td>
-
-        <td class = "critcell">
-    <label for="chom"> Taux de chômage :</label>
+                      
+    <br>
+         
+    <label class = "critcell" for="chom"> Taux de chômage :</label>
     <input type="checkbox" id="chômage" name="chom" value="Niv_chom">
-                    </td>
-
-        <td class = "critcell">
-    <label for="brv"> Taux de réussite au brevet :</label>
+                      
+    <br>              
+         
+    <label class = "critcell" for="brv"> Taux de réussite au brevet :</label>
     <input type="checkbox" id="brevet" name="brv" value="Niv_brevet">
-                    </td>
-                    </tr>
-    <tr class = "critcol">
-
-         <td class = "critcell">
-    <label for="artif"> Part de surfaces artificialisées :</label>
+                      
+    <br>
+          
+    <label class = "critcell" for="artif"> Part de surfaces artificialisées :</label>
     <input type="checkbox" id="surfaces artificialisées" name="artif" value="Niv_surfart">
-                    </td>
-
-        <td class = "critcell">
-    <label for="plui"> Nombre de jours de pluie par an :</label>
+                      
+    <br>
+         
+    <label class = "critcell" for="plui"> Nombre de jours de pluie par an :</label>
     <input type="checkbox" id="pluie" name="plui" value="Niv_pluie">
-                    </td>
-
-        <td class = "critcell">
-    <label for="pleau"> Nombre de plans d'eau :</label>
+                      
+    <br>
+         
+    <label class = "critcell" for="pleau"> Nombre de plans d'eau :</label>
     <input type="checkbox" id="plans d'eau" name="pleau" value="Niv_plandeau">
-                    </td>
-                    </tr>
-    <tr class = "critcol">
-
-        <td class = "critcell">
-    <label for="medtempe"> Température médiane en juin (été) :</label>
+                      
+    <br>
+         
+    <label class = "critcell" for="medtempe"> Température médiane en juin (été) :</label>
     <input type="checkbox" id="médiane température +" name="medtempete" value="Niv_temp_ete">
-                    </td>
-
-        <td class = "critcell">
-    <label for="medtemph"> Température médiane en janvier (hiver) :</label>
+                      
+    <br>
+         
+    <label class = "critcell" for="medtemph"> Température médiane en janvier (hiver) :</label>
     <input type="checkbox" id="médiane température -" name="medtemphiver" value="Niv_temp_hiver">
-                    </td>
-
-        <td class = "critcell">
-    <label for="2g"> Nombre de sites 2G :</label>
+                      
+    <br>
+         
+    <label class = "critcell" class = "critcell" for="2g"> Nombre de sites 2G :</label>
     <input type="checkbox" id="2g" name="2g" value="Niv_2G">
-                    </td>
-                    </tr>
-    <tr class = "critcol">
-
-        <td class = "critcell">
-    <label for="3g"> Nombre de sites 3G :</label>
+        
+    <br>
+         
+    <label class = "critcell" for="3g"> Nombre de sites 3G :</label>
     <input type="checkbox" id="3g" name="3g" value="Niv_3G">
-                    </td>
-
-        <td class = "critcell">
-    <label for="4g"> Nombre de sites 4G :</label>
+                      
+    <br>
+         
+    <label class = "critcell" for="4g"> Nombre de sites 4G :</label>
     <input type="checkbox" id="4g" name="4g" value="Niv_4G">
-                    </td>
-
-        <td class = "critcell">
-    <label for="5g"> Nombre de sites 5G :</label>
+                      
+    <br>
+         
+    <label class = "critcell" for="5g"> Nombre de sites 5G :</label>
     <input type="checkbox" id="5g" name="5g" value="Niv_5G">
-                    </td>
-                    </tr>
-    <tr class = "critcol">
-
-        <td class = "critcell">
-    <label for="qrzo"> Moyenne de qualité du réseau internet :</label>
+        
+    <br>
+         
+    <label class = "critcell" for="qrzo"> Moyenne de qualité du réseau internet :</label>
     <input type="checkbox" id="qualité réseau" name="qrzo" value="Niv_reseau">
+<<<<<<< HEAD
+                      
+    <br>
+
+</div>
+=======
                     </td>
                     </tr>
  
 </table>
+>>>>>>> b24369cc8b0b2f8d1523438189c23bc372481f87
     <input type="submit" value="Valider" />
 </div>
 </form>
