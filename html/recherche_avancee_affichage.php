@@ -71,22 +71,25 @@
         }
     }
     echo "<h2>Description des critères :</h2>";
-    echo "<br/><br/><p>Niv_pop: </p><br/>";
-    echo "<p>Niv_loyer: </p><br/>";
-    echo "<p>Niv_santé: </p><br/>";
-    echo "<p>Niv_delit: </p><br/>";
-    echo "<p>Niv_chom: </p><br/>";
-    echo "<p>Niv_brevet: </p><br/>";
-    echo "<p>Niv_surfart: </p><br/>";
-    echo "<p>Niv_pluie: </p><br/>";
-    echo "<p>Niv_plandeau: </p><br/>";
-    echo "<p>Niv_temp_ete: </p><br/>";
-    echo "<p>Niv_temp_hiver: </p><br/>";
-    echo "<p>Niv_2G: </p><br/>";
-    echo "<p>Niv_3G: </p><br/>";
-    echo "<p>Niv_4G: </p><br/>";
-    echo "<p>Niv_5G: </p><br/>";
-    echo "<p>Niv_Niv_reseau: </p><br/>";
+    echo "<br/><br/><p>L'ensemble des critères suivants sont présentés avec une évaluation purement comparative. Attribuer 5 étoiles à la moyenne de température de janvier n'est,
+     dans l'absolut pas très intéressant. Dans le cas présent un département avec 5 étoiles pour cet indicateur aura une température particulièrement
+      clémente comparé aux autres départements.</p><br/>";
+    echo "<br/><br/><p>Niv_pop: densité de population ?</p><br/>";
+    echo "<p>Niv_loyer: prix du loyer </p><br/>";
+    echo "<p>Niv_santé: nombre de médecins pour 100 000 habitants</p><br/>";
+    echo "<p>Niv_delit: Nombre de crimes pour 100000 habitants </p><br/>";
+    echo "<p>Niv_chom: Taux de chômage </p><br/>";
+    echo "<p>Niv_brevet: Taux de réussite au brevet </p><br/>";
+    echo "<p>Niv_surfart: pourcentage de part de surfaces artificialisées </p><br/>";
+    echo "<p>Niv_pluie: Nombre de jours de pluie par an</p><br/>";
+    echo "<p>Niv_plandeau: Nombre de plan d'eaux accessibles dans le département </p><br/>";
+    echo "<p>Niv_temp_ete: Médiane température au mois de Juin </p><br/>";
+    echo "<p>Niv_temp_hiver: Médiane température au mois de Janvier </p><br/>";
+    echo "<p>Niv_2G: Moyenne de sites 2G </p><br/>";
+    echo "<p>Niv_3G: Moyenne de sites 3G </p><br/>";
+    echo "<p>Niv_4G: Moyenne de sites 4G </p><br/>";
+    echo "<p>Niv_5G: Moyenne de sites 5G </p><br/>";
+    echo "<p>Niv_Niv_reseau: Qualité de la couverture réseau </p><br/>";
         unset($_SESSION['critere']); //vide la session
     ?>
 </body>
