@@ -32,7 +32,7 @@
             }
         ?>
         </ul>
-    </div>
+</div>
 <body>
     <div><!-- ici une div avec le contenu des informations sur la page  -->
     <a class="Retour" href="recherche_simple.php">Retour</a> <!--bouton retour vers recherche simple -->
@@ -51,6 +51,7 @@
                         </div>     
                     </header>');
                 echo "<div class='info_dep'>";
+                $dep = $ligne['Nom'];
                     echo "<p>Numéro du département : ".$ligne['Département']."<br></p>";
                     echo "<p>".$ligne['Population']." habitants"."<br></p>";
                     echo "<p>Nombre de médecins pour 100 000 habitants : ".$ligne['Santé (nombre de médecin pour 100 000 habitants)']."<br></p>";
@@ -65,10 +66,36 @@
                 
             }
             $rep ->closeCursor();
+        ?> 
+        <h2>Espace commentaire département <?php echo $dep;?></h2> <br/> 
+        <?php
+        $req = $bdd->query('SELECT id_commentaire,user_id,code_dep,contenu, DATE_FORMAT(date_commentaire, \'%d/%m/%Y à %Hh%imin%ss\') AS
+        date_commentaire_fr FROM commentaires ORDER BY date_commentaire DESC LIMIT 0,7');
+        while ($mat = $req->fetch()) {?>
+        <div class="news">
+            <?php 
+                $id=$mat['user_id'];
+                $req2 = $bdd->query("SELECT nom, prenom FROM users WHERE user_id = '{$id}'");
+                while ($mat2 = $req2->fetch()) {
+                    $nom = $mat2['nom'];
+                    $prenom = $mat2['prenom'];
+                }
+                $req2->closeCursor();
+            ?>
+            <h3 style="margin-bottom:5px;"> 
+                <em style="border-bottom:1px black solid;"><?php echo $dep." -- ".$mat['date_commentaire_fr']." par M/Mme ".$nom." ".$prenom;?></em>
+            </h3>
+            <p>
+                <?php echo $mat['contenu']."<br/><br/>"; ?>
+            </p>
+        </div>
 
+        <?php
+        } 
+        $req->closeCursor();
         ?>
-
-        </div>    
+        
+    </div> 
 </body>
 <footer><!--ici le pied de page -->
         <p>N-Maps &copy; 2022 
