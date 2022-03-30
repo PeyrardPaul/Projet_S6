@@ -513,3 +513,13 @@ input{
 	margin-left: 50px;
 	width: 500px;
 }
+.sais_com {
+	text-align:center;
+	margin-top:25px;
+}
+.sais_com>h3 {
+	color:orange;
+}
+.sais_com>form>p {
+	font-size: 13px;
+}

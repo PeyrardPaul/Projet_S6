@@ -106,6 +106,7 @@
                     </header>');
                 echo "<div class='info_dep'>";
                 $dep = $ligne['Nom'];
+                $id_dep = $ligne['Département'];
                     echo "<p>Numéro du département : ".$ligne['Département']."<br></p>";
                     echo "<p>".$ligne['Population']." habitants"."<br></p>";
                     echo "<p>Nombre de médecins pour 100 000 habitants : ".$ligne['Santé (nombre de médecin pour 100 000 habitants)']."<br></p>";
@@ -123,8 +124,8 @@
         ?> 
         <h2>Espace commentaire département <?php echo $dep;?></h2> <br/> 
         <?php
-        $req = $bdd->query('SELECT id_commentaire,user_id,code_dep,contenu, DATE_FORMAT(date_commentaire, \'%d/%m/%Y à %Hh%imin%ss\') AS
-        date_commentaire_fr FROM commentaires ORDER BY date_commentaire DESC LIMIT 0,7');
+        $req = $bdd->query("SELECT id_commentaire,user_id,code_dep,contenu, DATE_FORMAT(date_commentaire, '%d/%m/%Y à %Hh%imin%ss') AS date_commentaire_fr 
+        FROM commentaires WHERE code_dep = '{$id_dep}' ORDER BY date_commentaire_fr DESC LIMIT 0,7");
         while ($mat = $req->fetch()) {?>
         <div class="news">
             <?php 
@@ -149,7 +150,43 @@
         $req->closeCursor();
         ?>
         
-    </div> 
+    </div>
+    <?php
+    if (isset($_SESSION['user'])) {
+        if (isset($_POST['com'])) {
+            $id_client_c = $_SESSION['user'][0];
+            $com = $_POST['com'];
+            
+            try{
+                $db = mysqli_connect("localhost", "root", "root", "projet_s6_indice_de_vie");
+            }
+            catch (Exception $e){
+                die('Erreur : ' . $e->getMessage().'<br/>');
+            }
+        
+            $sql="INSERT INTO commentaires(user_id,code_dep,contenu,date_commentaire) VALUES(".$id_client_c.",".$id_dep.",'".$com."',NOW())";
+        
+            if (mysqli_query($db,$sql)) {
+                echo "Votre commentaire a bien été ajouté<br/>";
+            } else {
+                echo "Error: " . $sql . "<br/>" . mysqli_error($bdd);
+            }
+        }
+        else {
+        echo "<div class='sais_com'>
+        <h3>Laissez un commentaire ici</h3>
+        <form method=Post action='recherche_simple_affichage.php?dep=".$id_dep."&submit=Valider' autocomplete=ON>
+            <p>Message :<br/>
+		    <textarea rows='5' cols='25' name='com'> </textarea>
+	        </p>
+        <p>
+		    <input type='submit' value='Envoyer' />
+        </p>
+        </form>
+        </div>";
+        }
+    }
+    ?>
 </body>
 <footer><!--ici le pied de page -->
         <p>N-Maps &copy; 2022 
