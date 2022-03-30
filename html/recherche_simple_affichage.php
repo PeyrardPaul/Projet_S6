@@ -20,12 +20,12 @@
             // si l'utilisateur n'est pas connecté 
             if(!isset($_SESSION['user'])) {
                 echo'<li><a href="index.php">Accueil</a></li>';
-                echo'<li><a href="recherche_simple.php">Recherche simple</a></li>';
+                // echo'<li><a href="recherche_simple.php">Recherche simple</a></li>';
                 echo'<li><a href="connexion.php">Connexion </a></li>';
             } else if(isset($_SESSION['user'])) {
                 // si l'utilisateur est connecté 
                 echo'<li><a href="index.php">Accueil</a></li>';
-                echo'<li><a href="recherche_simple.php">Recherche simple</a></li>';
+                // echo'<li><a href="recherche_simple.php">Recherche simple</a></li>';
                 echo'<li><a href="recherche_avancee.php">Recherche avancée</a></li>';
                 echo"<li><a href='deconnexion.php'>Déconnexion</a></li>";
                 echo "<li>Bonjour ".$_SESSION['user'][2]."</li>";
@@ -35,7 +35,61 @@
 </div>
 <body>
     <div><!-- ici une div avec le contenu des informations sur la page  -->
-    <a class="Retour" href="recherche_simple.php">Retour</a> <!--bouton retour vers recherche simple -->
+    <a class="Retour" href="index.php#ancre">Retour carte</a> <!--bouton retour vers recherche simple -->
+
+    <!-- rajout de menu déroulant -->
+            
+    <?php $bdd = new PDO('mysql:host=localhost;dbname=projet_s6_indice_de_vie;charset=utf8', 'root', 'root'); ?>
+    <?php
+    
+    // Connect to database 
+    $con = mysqli_connect("localhost","root","root","projet_s6_indice_de_vie");
+        
+    // Get all the categories from category table
+    $sql = "SELECT * FROM `departement`";
+    $all_categories = mysqli_query($con,$sql);
+    
+    // The following code checks if the submit button is clicked 
+    // and inserts the data in the database accordingly
+    if(isset($_POST['submit']))
+    {
+        // Store the Product name in a "name" variable
+        $name = mysqli_real_escape_string($con,$_POST['dep']);
+        
+    }
+    ?>
+
+    <div class="sais_dep">
+    <p>
+        Explorez un nouveau département
+    </p>
+   
+    <form method="GET" action="recherche_simple_affichage.php">
+            <select name="dep">
+                <?php 
+                    // use a while loop to fetch data 
+                    // from the $all_categories variable 
+                    // and individually display as an option
+                    while ($category = mysqli_fetch_array(
+                            $all_categories,MYSQLI_ASSOC)):; 
+                ?>
+                    <option value="<?php echo $category["Département"];
+                        // The value we usually set is the primary key
+                    ?>">
+                        <?php echo $category["Nom"];
+                            // To show the category name to the user
+                        ?>
+                    </option>
+                <?php 
+                    endwhile; 
+                    // While loop must be terminated
+                ?>
+            </select>
+            <br>
+            <input type="submit" value="Valider" name="submit">
+    </form>
+    </div>
+    <!-- fin du menu déroulant -->
 
     <?php //echo '<img class="photo_dep" src="../images/departements/'.$_POST['dep'].'.jpg" alt="photo du département en question">';
             $rep = $bdd->query("select * from departement where Département ='".$_GET['dep']."'"); //ici on affiche les informations pour le département selectionné
