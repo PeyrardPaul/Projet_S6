@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Hôte : localhost:8889
--- Généré le : lun. 21 mars 2022 à 14:16
--- Version du serveur : 5.7.34
--- Version de PHP : 8.0.8
+-- Host: localhost:3306:3306
+-- Generation Time: Mar 31, 2022 at 02:59 PM
+-- Server version: 5.7.24
+-- PHP Version: 7.4.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,26 +18,61 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `projet_s6_indice_de_vie`
+-- Database: `projet_s6_indice_de_vie`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `commentaires`
+-- Table structure for table `commentaires`
 --
 
 CREATE TABLE `commentaires` (
   `id_commentaire` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `code_dep` int(11) NOT NULL,
-  `contenu` varchar(100) NOT NULL
+  `contenu` varchar(5000) NOT NULL,
+  `date_commentaire` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `commentaires`
+--
+
+INSERT INTO `commentaires` (`id_commentaire`, `user_id`, `code_dep`, `contenu`, `date_commentaire`) VALUES
+(1, 11, 11, ' mon premier commentaire', '2022-03-30'),
+(2, 11, 11, ' mon premier commentaire', '2022-03-30'),
+(3, 11, 11, ' mon premier commentaire', '2022-03-30'),
+(4, 11, 11, ' salut', '2022-03-30'),
+(5, 11, 11, ' salut', '2022-03-30'),
+(6, 11, 11, ' salut', '2022-03-30'),
+(7, 12, 3, ' caca', '2022-03-30'),
+(8, 12, 13, 'pipi', '2022-03-30'),
+(9, 12, 1, ' popopo', '2022-03-30'),
+(10, 12, 1, 'rerere', '2022-03-30'),
+(11, 12, 17, ' ici cest paris', '2022-03-30'),
+(12, 12, 64, ' c est mon probleme', '2022-03-30'),
+(13, 12, 64, ' aujourd\'hui', '2022-03-30'),
+(14, 12, 64, ' j\'aimerais savoir quel est lle probèle ici pour ça', '2022-03-30'),
+(15, 12, 75, ' ici c\'est PARIS !!!', '2022-03-30');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contact`
+--
+
+CREATE TABLE `contact` (
+  `id_contact` int(11) NOT NULL,
+  `mail` varchar(50) NOT NULL,
+  `motif` varchar(50) NOT NULL,
+  `message` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `departement`
+-- Table structure for table `departement`
 --
 
 CREATE TABLE `departement` (
@@ -80,7 +115,7 @@ CREATE TABLE `departement` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `departement`
+-- Dumping data for table `departement`
 --
 
 INSERT INTO `departement` (`Département`, `Nom`, `Population`, `Niv_pop`, `Loyer (m2)`, `Niv_loyer`, `Santé (nombre de médecin pour 100 000 habitants)`, `Niv_santé`, `Total crimes et délits`, `Niv_delit`, `Nombre de crimes pour 100 000 habitants`, `Niv_crimes`, `Taux de chomage (%)`, `Niv_chom`, `Taux de réussite au brevet (%)`, `Niv_brevet`, `Part de surfaces artificialisées (%)`, `Niv_surfart`, `Nombre de jours de pluie par an`, `Niv_pluie`, `Nombre de plans d’eau`, `Niv_plandeau`, `Moyenne de site_2g`, `Niv_2G`, `Moyenne de site_3g`, `Niv_3G`, `Moyenne de site_4g`, `Niv_4G`, `Moyenne de site_5g`, `Niv_5G`, `Moyenne de réseau internet sur le departement`, `Niv_reseau`, `Médiane de la température du mois de juin (Ete) en C°`, `Niv_temp_ete`, `Médiane de la température du mois de janvier (Hiver) en C°`, `Niv_temp_hiver`) VALUES
@@ -182,37 +217,41 @@ INSERT INTO `departement` (`Département`, `Nom`, `Population`, `Niv_pop`, `Loye
 -- --------------------------------------------------------
 
 --
--- Structure de la table `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
   `user_id` int(11) NOT NULL,
   `code_dep` int(11) NOT NULL,
-  `nom` varchar(20) NOT NULL,
-  `prenom` varchar(20) NOT NULL,
-  `pseudo` varchar(20) NOT NULL,
-  `password` varchar(20) NOT NULL,
-  `adresse_email` varchar(50) NOT NULL,
-  `adresse` varchar(50) NOT NULL,
-  `photo` varchar(100) NOT NULL,
-  `type` varchar(20) NOT NULL,
-  `code_activation` varchar(50) NOT NULL,
-  `code_reset` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `nom` varchar(150) NOT NULL,
+  `prenom` varchar(500) NOT NULL,
+  `pseudo` varchar(500) NOT NULL,
+  `password` varchar(1000) NOT NULL,
+  `adresse_email` varchar(500) NOT NULL,
+  `adresse` varchar(500) NOT NULL,
+  `type` tinyint(1) NOT NULL,
+  `password_reset` varchar(300) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `users`
+-- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`user_id`, `code_dep`, `nom`, `prenom`, `pseudo`, `password`, `adresse_email`, `adresse`, `photo`, `type`, `code_activation`, `code_reset`) VALUES
-(1, 10, 'hannebert', 'augustin', 'AU', 'mdp', 'mail@mail.fr', 'rue du truc ', 'ma_tete ', '1', '123', '1234');
+INSERT INTO `users` (`user_id`, `code_dep`, `nom`, `prenom`, `pseudo`, `password`, `adresse_email`, `adresse`, `type`, `password_reset`) VALUES
+(3, 16, 'iris', 'lila', 'lili', '$2y$10$0rAF3WA2r1dZTT6a8HJCGOWNljY/aou11ZqGronUmGVR4kvve3pka', 'lili@lila', 'rue des rosiers', 0, ''),
+(4, 34, 'Cyr', 'Me', 'Cyrme', '$2y$10$Hqce/fsL5ttMhxNaQBreluIE83Y0g4DXCAEXtQck8S3ch4R7eeQ6y', 'cyr@me', 'le calvados', 0, ''),
+(6, 2, 'Admin', 'Me', 'AdminMe', '$2y$10$lWvy8vsfod8ClROxkryqreuNzNa5VFpCZoHA7TpQhVGZzaCg6i8s.', 'admin@me', 'rue des piverts', 1, ''),
+(7, 35, 'gh', 'gfghjhj', 'lui', '$2y$10$/PAt2r/niy4RIamde8xF3ujbrnvDiqZDpKNLgzZoEX2.1a.bwJdHe', 'lui@elle', 'fghjjkk', 0, ''),
+(8, 1, 'a', 'a', 'a', '$2y$10$FYt8FVlhQBIiZOR1eIfBVO/sdYrarkqQ5skiC4eQVVp2lwr0fl0CS', 'a', 'le@thao', 0, ''),
+(11, 12, 'Dupalmier', 'Michel', 'popo', 'pmpm', 'michel@gm.frr', 'Adresse de ma rue à l\'avenue', 0, ''),
+(12, 34, 'peyrard', 'paul', 'paulito', 'motdepasse', 'paul.peyrard17@gmail.com', 'Adresse de ma rue à l\'avenue', 0, '');
 
 --
--- Index pour les tables déchargées
+-- Indexes for dumped tables
 --
 
 --
--- Index pour la table `commentaires`
+-- Indexes for table `commentaires`
 --
 ALTER TABLE `commentaires`
   ADD PRIMARY KEY (`id_commentaire`),
@@ -220,44 +259,62 @@ ALTER TABLE `commentaires`
   ADD KEY `code_dep` (`code_dep`);
 
 --
--- Index pour la table `departement`
+-- Indexes for table `contact`
+--
+ALTER TABLE `contact`
+  ADD PRIMARY KEY (`id_contact`);
+
+--
+-- Indexes for table `departement`
 --
 ALTER TABLE `departement`
   ADD PRIMARY KEY (`Département`);
 
 --
--- Index pour la table `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`user_id`),
-  ADD KEY `code_dep` (`code_dep`);
+  ADD KEY `cle1` (`code_dep`);
 
 --
--- AUTO_INCREMENT pour les tables déchargées
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT pour la table `commentaires`
+-- AUTO_INCREMENT for table `commentaires`
 --
 ALTER TABLE `commentaires`
-  MODIFY `id_commentaire` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_commentaire` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- Contraintes pour les tables déchargées
+-- AUTO_INCREMENT for table `contact`
+--
+ALTER TABLE `contact`
+  MODIFY `id_contact` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- Constraints for dumped tables
 --
 
 --
--- Contraintes pour la table `commentaires`
+-- Constraints for table `commentaires`
 --
 ALTER TABLE `commentaires`
   ADD CONSTRAINT `commentaires_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`),
-  ADD CONSTRAINT `commentaires_ibfk_2` FOREIGN KEY (`code_dep`) REFERENCES `users` (`code_dep`);
+  ADD CONSTRAINT `commentaires_ibfk_2` FOREIGN KEY (`code_dep`) REFERENCES `departement` (`Département`);
 
 --
--- Contraintes pour la table `users`
+-- Constraints for table `users`
 --
 ALTER TABLE `users`
-  ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`code_dep`) REFERENCES `departement` (`Département`);
+  ADD CONSTRAINT `cle1` FOREIGN KEY (`code_dep`) REFERENCES `departement` (`Département`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
