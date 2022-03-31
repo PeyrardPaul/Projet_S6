@@ -153,7 +153,7 @@
             <area shape="poly" coords="238,212,261,243,292,240,297,221,275,215,265,199,245,192" href="recherche_simple_affichage.php?dep=41" target="_self" title="Loir et Cher 41">
             <area shape="poly" coords="364,324,374,358,389,358,399,364,407,354,386,341,391,330,383,310,368,309" href="recherche_simple_affichage.php?dep=42" target="_self" title="Loire 42">
             <area shape="poly" coords="340,362,350,382,370,393,397,367,387,361,366,363,356,359" href="recherche_simple_affichage.php?dep=43" target="_self" title="Haute Loire 43">
-            <area shape="poly" coords="96,229,149,208,164,229,145,237,154,250,139,257,117,254" href="http://localhost:8888/Projet_S6/html/recherche_simple_affichage.php?dep44=" target="_self" title="Loire Atlantique 44">
+            <area shape="poly" coords="96,229,149,208,164,229,145,237,154,250,139,257,117,254" href="recherche_simple_affichage.php?dep44=" target="_self" title="Loire Atlantique 44">
             <area shape="poly" coords="271,197,278,212,319,225,332,192,311,190,306,180,292,180,284,190" href="recherche_simple_affichage.php?dep=45" target="_self" title="Loiret 45">
             <area shape="poly" coords="245,409,251,420,269,426,281,421,278,411,294,406,289,385,267,383" href="recherche_simple_affichage.php?dep=46" target="_self" title="Lot 46">
             <area shape="poly" coords="196,429,203,438,230,436,246,421,241,407,212,398" href="recherche_simple_affichage.php?dep=47" target="_self" title="Lot et Garonne 47">
@@ -217,7 +217,7 @@
     <footer><!--ici le pied de page -->
         <p>N-Maps &copy; 2022 
         -   <a href="qui_sommes_nous.php"> Qui sommes nous ? </a>   
-        -   <a href="contact.php"> Nous contacter </a>    
+        -   <a href="contact.php"> Nous contacter </a>   
         </p> 
     </footer>
    
