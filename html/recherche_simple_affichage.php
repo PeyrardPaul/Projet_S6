@@ -107,6 +107,20 @@
                 echo "<div class='info_dep'>";
                 $dep = $ligne['Nom'];
                 $id_dep = $ligne['Département'];
+                //remplacer le _ par un espace pour un meilleur affichage
+                $ligne['Population'] = str_replace("_"," ",$ligne['Population']); 
+                $ligne['Nombre de crimes pour 100 000 habitants'] = str_replace("_"," ",$ligne['Nombre de crimes pour 100 000 habitants']); 
+                //remplacer la virgule par le point pour pouvoir arrondir
+                $ligne['Santé (nombre de médecin pour 100 000 habitants)'] = str_replace(",",".",$ligne['Santé (nombre de médecin pour 100 000 habitants)']);
+                $ligne['Nombre de jours de pluie par an'] = str_replace(",",".",$ligne['Nombre de jours de pluie par an']);
+                $ligne['Taux de réussite au brevet (%)'] = str_replace(",",".",$ligne['Taux de réussite au brevet (%)']);
+                //arrondir
+                $ligne['Santé (nombre de médecin pour 100 000 habitants)'] = round($ligne['Santé (nombre de médecin pour 100 000 habitants)'],0,PHP_ROUND_HALF_EVEN); // arrondir à l'unité
+                $ligne['Nombre de jours de pluie par an'] = round($ligne['Nombre de jours de pluie par an'],0,PHP_ROUND_HALF_EVEN); // arrondir à l'unité   
+                $ligne['Taux de réussite au brevet (%)'] = round($ligne['Taux de réussite au brevet (%)'],2,PHP_ROUND_HALF_EVEN); // arrondir à deux chiffres après la virgule 
+                //reremplacer le point par la virgule pour un meilleur affichage 
+                $ligne['Taux de réussite au brevet (%)'] = str_replace(".",",",$ligne['Taux de réussite au brevet (%)']);
+
                     echo "<p>Numéro du département : ".$ligne['Département']."<br></p>";
                     echo "<p>Population : ".$ligne['Population']." habitants"."<br></p>";
                     echo "<p>Nombre de médecins pour 100 000 habitants : ".$ligne['Santé (nombre de médecin pour 100 000 habitants)']."<br></p>";
@@ -127,7 +141,7 @@
         $req = $bdd->query("SELECT id_commentaire,user_id,code_dep,contenu, date_commentaire 
         FROM commentaires WHERE code_dep = '{$id_dep}' ORDER BY date_commentaire DESC LIMIT 0,7");
         while ($mat = $req->fetch()) {?>
-        <div class="news">
+        <div class="aff_com">
             <?php 
                 $id=$mat['user_id'];
                 $req2 = $bdd->query("SELECT nom, prenom FROM users WHERE user_id = '{$id}'");
@@ -138,10 +152,10 @@
                 $req2->closeCursor();
             ?>
             <h3 style="margin-bottom:5px;"> 
-                <em style="border-bottom:1px black solid;"><?php echo $dep." -- ".$mat['date_commentaire']." par M/Mme ".$nom." ".$prenom;?></em>
+                <em><?php echo $dep." -- ".$mat['date_commentaire']." par M/Mme ".$nom." ".$prenom;?></em>
             </h3>
             <p>
-                <?php echo $mat['contenu']."<br/><br/>"; ?>
+                <?php echo "<p>".$mat['contenu']."</p><br/><br/>"; ?>
             </p>
         </div>
 
