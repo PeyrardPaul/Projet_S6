@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306:3306
--- Generation Time: Mar 31, 2022 at 02:59 PM
+-- Generation Time: Mar 31, 2022 at 03:02 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.4.16
 
@@ -34,27 +34,6 @@ CREATE TABLE `commentaires` (
   `contenu` varchar(5000) NOT NULL,
   `date_commentaire` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `commentaires`
---
-
-INSERT INTO `commentaires` (`id_commentaire`, `user_id`, `code_dep`, `contenu`, `date_commentaire`) VALUES
-(1, 11, 11, ' mon premier commentaire', '2022-03-30'),
-(2, 11, 11, ' mon premier commentaire', '2022-03-30'),
-(3, 11, 11, ' mon premier commentaire', '2022-03-30'),
-(4, 11, 11, ' salut', '2022-03-30'),
-(5, 11, 11, ' salut', '2022-03-30'),
-(6, 11, 11, ' salut', '2022-03-30'),
-(7, 12, 3, ' caca', '2022-03-30'),
-(8, 12, 13, 'pipi', '2022-03-30'),
-(9, 12, 1, ' popopo', '2022-03-30'),
-(10, 12, 1, 'rerere', '2022-03-30'),
-(11, 12, 17, ' ici cest paris', '2022-03-30'),
-(12, 12, 64, ' c est mon probleme', '2022-03-30'),
-(13, 12, 64, ' aujourd\'hui', '2022-03-30'),
-(14, 12, 64, ' j\'aimerais savoir quel est lle probèle ici pour ça', '2022-03-30'),
-(15, 12, 75, ' ici c\'est PARIS !!!', '2022-03-30');
 
 -- --------------------------------------------------------
 
@@ -234,19 +213,6 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`user_id`, `code_dep`, `nom`, `prenom`, `pseudo`, `password`, `adresse_email`, `adresse`, `type`, `password_reset`) VALUES
-(3, 16, 'iris', 'lila', 'lili', '$2y$10$0rAF3WA2r1dZTT6a8HJCGOWNljY/aou11ZqGronUmGVR4kvve3pka', 'lili@lila', 'rue des rosiers', 0, ''),
-(4, 34, 'Cyr', 'Me', 'Cyrme', '$2y$10$Hqce/fsL5ttMhxNaQBreluIE83Y0g4DXCAEXtQck8S3ch4R7eeQ6y', 'cyr@me', 'le calvados', 0, ''),
-(6, 2, 'Admin', 'Me', 'AdminMe', '$2y$10$lWvy8vsfod8ClROxkryqreuNzNa5VFpCZoHA7TpQhVGZzaCg6i8s.', 'admin@me', 'rue des piverts', 1, ''),
-(7, 35, 'gh', 'gfghjhj', 'lui', '$2y$10$/PAt2r/niy4RIamde8xF3ujbrnvDiqZDpKNLgzZoEX2.1a.bwJdHe', 'lui@elle', 'fghjjkk', 0, ''),
-(8, 1, 'a', 'a', 'a', '$2y$10$FYt8FVlhQBIiZOR1eIfBVO/sdYrarkqQ5skiC4eQVVp2lwr0fl0CS', 'a', 'le@thao', 0, ''),
-(11, 12, 'Dupalmier', 'Michel', 'popo', 'pmpm', 'michel@gm.frr', 'Adresse de ma rue à l\'avenue', 0, ''),
-(12, 34, 'peyrard', 'paul', 'paulito', 'motdepasse', 'paul.peyrard17@gmail.com', 'Adresse de ma rue à l\'avenue', 0, '');
-
---
 -- Indexes for dumped tables
 --
 
@@ -285,7 +251,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `commentaires`
 --
 ALTER TABLE `commentaires`
-  MODIFY `id_commentaire` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_commentaire` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `contact`
@@ -297,7 +263,7 @@ ALTER TABLE `contact`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
