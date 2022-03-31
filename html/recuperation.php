@@ -25,12 +25,12 @@
             // si l'utilisateur n'est pas connecté 
             if(!isset($_SESSION['user'])) {
                 echo'<li><a href="index.php">Accueil</a></li>';
-                echo'<li><a href="recherche_simple.php">Recherche simple</a></li>';
+                //echo'<li><a href="recherche_simple.php">Recherche simple</a></li>';
                 echo'<li><a href="connexion.php">Connexion </a></li>';
             } else if(isset($_SESSION['user'])) {
                 // si l'utilisateur est connecté 
                 echo'<li><a href="index.php">Accueil</a></li>';
-                echo'<li><a href="recherche_simple.php">Recherche simple</a></li>';
+                //echo'<li><a href="recherche_simple.php">Recherche simple</a></li>';
                 echo'<li><a href="recherche_avancee.php">Recherche avancée</a></li>';
                 echo"<li><a href='deconnexion.php'>Déconnexion</a></li>";
                 echo "<li>Bonjour ".$_SESSION['user'][2]."</li>";
