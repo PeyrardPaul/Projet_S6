@@ -2,18 +2,17 @@
 <html>
 <head>
 <meta charset="utf-8" />
-<style>
-.wrapper
-{
-  background-color: rgba(170,170,170);
-}
-</style>
-<?php include 'includes/session.php'; ?>
-<?php include 'includes/header.php'; ?>
-<body class="hold-transition  skin-purple">
-<div class="">
+<link rel="stylesheet" href="../../Styles/style.css" type="text/css" media="screen"/>
+    <title>N-Maps</title>
 
-  <?php include 'includes/navbar.php'; ?>
+<?php include 'session.php'; ?>
+ <?php include 'includes/header.php'; ?> 
+<body class="hold-transition  skin-purple">
+<div class="bandeau"> <!--ici le bandeau haut de page -->
+        <img id="logo" src="../../images/N-Maps.png" alt="images logo" >
+        <h1><a href="index.php">N-MAPS</a></h1>
+        </div>
+  <?php include 'includes/navbar.php'; ?> 
  
 
   <!-- Content Wrapper. Contains page content -->
@@ -25,7 +24,7 @@
       </h1>
       <ol class="breadcrumb">
         <li><a href="home.php"><i class="fa fa-home"></i> Acceuil</a></li>
-        <li>Produits</li>
+        <li>Administration</li>
         <li class="active">Département</li>
       </ol>
     </section>
@@ -68,7 +67,7 @@
                 </thead>
                 <tbody>
                   <?php
-                    $conn = $pdo->open();
+                    $conn = getBD();
 
                     try{
                       $stmt = $conn->prepare("SELECT * FROM departement");
@@ -76,10 +75,10 @@
                       foreach($stmt as $row){
                         echo "
                           <tr>
-                            <td>".$row['nom']."</td>
+                            <td>".$row['Nom']."</td>
                             <td>
-                              <button class='btn btn-primary btn-sm edit btn-flat' data-id='".$row['id']."'><i class='fa fa-edit'></i> Editer</button>
-                              <button class='btn btn-warning btn-sm delete btn-flat' data-id='".$row['id']."'><i class='fa fa-trash'></i> Supprimer</button>
+                              <button class='btn btn-primary btn-sm edit btn-flat' data-id='".$row['Département']."'><i class='fa fa-edit'></i> Editer</button>
+                              <button class='btn btn-warning btn-sm delete btn-flat' data-id='".$row['Département']."'><i class='fa fa-trash'></i> Supprimer</button>
                             </td>
                           </tr>
                         ";
@@ -89,7 +88,7 @@
                       echo $e->getMessage();
                     }
 
-                    $pdo->close();
+                    $stmt->closeCursor();
                   ?>
                 </tbody>
               </table>
@@ -100,10 +99,10 @@
     </section>
      
   </div>
-  	<?php include '../footer.php'; ?>
+ 
     <?php include 'departement_model.php'; ?>
 
-</div>
+
 <!-- ./wrapper -->
 
 <?php include 'includes/scripts.php'; ?>
@@ -112,14 +111,14 @@ $(function(){
   $(document).on('click', '.edit', function(e){
     e.preventDefault();
     $('#edit').modal('show');
-    var id = $(this).data('id');
+    var id = $(this).data('Département');
     getRow(id);
   });
 
   $(document).on('click', '.delete', function(e){
     e.preventDefault();
     $('#delete').modal('show');
-    var id = $(this).data('id');
+    var id = $(this).data('Département');
     getRow(id);
   });
 
@@ -129,12 +128,12 @@ function getRow(id){
   $.ajax({
     type: 'POST',
     url: 'departement_row.php',
-    data: {id:id},
+    data: {Département:id},
     dataType: 'json',
     success: function(response){
-      $('.catid').val(response.id);
-      $('#edit_name').val(response.name);
-      $('.catname').html(response.name);
+      $('.catid').val(response.Département);
+      $('#edit_name').val(response.Nom);
+      $('.catname').html(response.Nom);
     }
   });
 }

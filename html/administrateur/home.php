@@ -15,7 +15,7 @@
         <ul class="menu">
 
         <p>
-                        <?php
+             <?php
 
 
                        include 'session.php';
@@ -23,8 +23,6 @@
 
                             echo "Welcome ".$admin['pseudo']."<br/>";
                             echo'<li><a href="../index.php">Accueil</a></li>';
-                            echo'<li><a href="../recherche_simple.php">Recherche simple</a></li>';
-                            echo'<li><a href="../recherche_avancee.php">Recherche avancée</a></li>';
                             echo'<li><a href="../contact.php">Contact</a></li>';
                             echo"<li><a href='../deconnexion.php'>Déconnexion</a></li>";
                             echo'<li><a href="../commentaire.php"> Espace commentaires</a></li>';
@@ -39,12 +37,9 @@
                     </p>
        </ul>
     </div>
-    
-     <div> <!--je fais une grosse div qui contiendra la page. -->
-    
-        <header>
+    <header>
                 
-        <!--    <div class="header-cover">  </div>-->
+        
                    
                         <div class="conteneur">
                         <div class="d2"></div>
@@ -53,20 +48,6 @@
            
             <div class="header-area">
                  <div class="header-content">
-                    
-                        <?php
-                            if(isset($_SESSION['admin'])) {
-
-                            echo'<li><a href="departement_add.php">Ajouter un département</a></li>';
-                            echo'<li><a href="departement_delete.php">Supprimer un département</a></li>';
-                            echo'<li><a href="departement_edit.php">Modifier un département</a></li>';
-                            echo'<li><a href="user_add.php">Ajouter un utilisateur</a></li>';
-                            echo'<li><a href="user_delete.php">Supprimer un utilisateur</a></li>';
-                            echo'<li><a href="user_edit.php">Modifier un utilisateur</a></li>';
-                            echo'<li><a href="user.php">Utilisateur</a></li>';
-
-                            }
-                        ?>
 
                     <p>
                         Site d'avis et de comparaison des départements en France. </p>
@@ -94,14 +75,92 @@
              </div> 
              
         </header>
+    
+     <!-- <div> 
+    
+        
+</body>
+
+<footer>
+        <p>N-Maps © 2022 - <a id="quisommesnous" href="qui_sommes_nous.php">Qui sommes nous ?</a></p>
+        
+</footer> -->
 
 
+<?php include 'includes/header.php'; ?>
+<body class="hold-transition skin-purple ">
+<div class="">
 
+  <?php include 'includes/navbar.php'; ?>
+ 
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Gestion
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i> Acceuil</a></li>
+        <li class="active">Gestion</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="">
+      <?php
+        if(isset($_SESSION['error'])){
+          echo "
+            <div class='alert alert-danger alert-dismissible'>
+              <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+              <h4><i class='icon fa fa-warning'></i> Error!</h4>
+              ".$_SESSION['error']."
+            </div>
+          ";
+          unset($_SESSION['error']);
+        }
+        if(isset($_SESSION['success'])){
+          echo "
+            <div class='alert alert-success alert-dismissible'>
+              <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+              <h4><i class='icon fa fa-check'></i> Success!</h4>
+              ".$_SESSION['success']."
+            </div>
+          ";
+          unset($_SESSION['success']);
+        }
+      ?>
+    
+    <?php include 'includes/menubar.php'; ?>
+   
+     
+
+      </section>
+      <!-- right col -->
+    </div>
+  
+
+</div>
+
+
+<?php include 'includes/scripts.php'; ?>
+
+<script>
+$(function(){
+  $('#select_year').change(function(){
+    window.location.href = 'home.php?year='+$(this).val();
+  });
+});
+</script>
 </body>
 
 <footer><!--ici le pied de page -->
-        <p>N-Maps © 2022 - <a id="quisommesnous" href="qui_sommes_nous.php">Qui sommes nous ?</a></p>
-        
-</footer>
+        <p>N-Maps &copy; 2022 
+        -   <a href="../qui_sommes_nous.php"> Qui sommes nous ? </a>   
+        -   <a href="../commentaire.php"> Espace commentaires</a>  
+        </p> 
+    </footer>
+
 
 </html>

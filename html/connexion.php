@@ -30,7 +30,7 @@
                 echo'<li><a href="recherche_simple.php">Recherche simple</a></li>';
                 echo'<li><a href="recherche_avancee.php">Recherche avancée</a></li>';
                 echo"<li><a href='deconnexion.php'>Déconnexion</a></li>";
-                echo "<li>Bonjour ".$_SESSION['user'][2]."</li>";
+                echo "<li>Bonjour ".$user['pseudo']."</li>";
             }
         ?>
     </ul>
@@ -40,8 +40,8 @@
 
 	<form method="post" action="connecter.php" autocomplete="on">
 		<div class="pseudo">
-			<label style="" for="pseudo"> Pseudo </label> :
-			<input type="pseudo"  name="pseudo" value=<?php echo "'".$_GET['pseudo']."'"?> placeholder="Saisir pseudo" required/>
+			<label for="pseudo"> Pseudo </label> :
+			<input type="pseudo"  name="pseudo" value="" placeholder="Saisir pseudo" required/>
 		</div>
 
 		<div class="password">

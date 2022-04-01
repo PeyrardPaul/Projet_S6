@@ -4,7 +4,7 @@
 	if(isset($_POST['delete'])){
 		$id = $_POST['id'];
 		
-		$conn = $pdo->open();
+		$conn = getBD();
 
 		try{
 			$stmt = $conn->prepare("DELETE FROM departement WHERE Département=:id");
@@ -16,7 +16,7 @@
 			$_SESSION['error'] = $e->getMessage();
 		}
 
-		$pdo->close();
+		
 	}
 	else{
 		$_SESSION['error'] = "Sélectionner d'abord un département à supprimer";

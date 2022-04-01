@@ -16,5 +16,6 @@
 		} catch(PDOException $e){
 			echo "Problème de connexion";
 		}
+		$stmt->closeCursor();
 	}
 ?>

@@ -6,7 +6,7 @@
 		$name = $_POST['name'];
 
 		try{
-			$stmt = $conn->prepare("UPDATE departement SET nom=:name WHERE Département=:id");
+			$stmt = $conn->prepare("UPDATE departement SET Nom=:name WHERE Département=:id");
 			$stmt->execute(['name'=>$name, 'id'=>$id]);
 			$_SESSION['success'] = 'Département mis à jour';
 		}
@@ -14,7 +14,7 @@
 			$_SESSION['error'] = $e->getMessage();
 		}
 		
-		$pdo->close();
+	
 	}
 	else{
 		echo "erreur";

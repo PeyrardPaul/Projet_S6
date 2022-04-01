@@ -28,7 +28,7 @@ include 'session.php'; ?>
                 echo'<li><a href="recherche_simple.php">Recherche simple</a></li>';
                 echo'<li><a href="recherche_avancee.php">Recherche avancée</a></li>';
                 echo"<li><a href='deconnexion.php'>Déconnexion</a></li>";
-                echo "<li>Bonjour ".$_SESSION['user'][2]."</li>";
+                echo "<li>Bonjour ".$user['pseudo']."</li>";
             }
         ?>
         </ul>
@@ -46,7 +46,13 @@ if(isset($_POST['login'])){
 	while ($mat = $rep->fetch()) {
 		$boo=true;
 		echo "<h2>Connexion réussie, profitez au maximum de notre site maintenant !</h2>";
-		$_SESSION['user']=array($mat['user_id'],$mat['code_dep'],$mat['nom'],$mat['password'],$mat['adresse_email'],$mat['adresse'],$mat['type'],$mat['password_reset']);
+		if($mat['type']==1){
+			$_SESSION['admin'] = $mat['user_id'];
+			header('location: administrateur/home.php');
+		}
+		else
+					{
+		$_SESSION['user']=$mat['user_id'];}
     }
 }
 if ($boo==true) {

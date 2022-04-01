@@ -5,7 +5,7 @@
 	if(isset($_POST['add'])){
 		$name = $_POST['name'];
 
-		$conn = $pdo->open();
+		$conn = getBD();
 
 		$stmt = $conn->prepare("SELECT *, COUNT(*) AS numrows FROM departement WHERE Nom=:name");
 		$stmt->execute(['name'=>$name]);
@@ -25,7 +25,7 @@
 			}
 		}
 
-		$pdo->close();
+		$stmt->closeCursor();
 	}
 	else{
 		echo "erreur";
