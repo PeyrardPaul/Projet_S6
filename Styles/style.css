@@ -546,3 +546,24 @@ input{
 	margin-top:-4px;
 	padding:5px 5px 5px;
 }
+
+.dep_colle {
+	display: inline-block;
+	background-color: rgba(100, 100, 111, 0.2);
+	padding:10px 35px 35px 35px;
+	margin-top:35px;
+	border-radius: 2%;
+}
+
+.out_dep_colle {
+	text-align: center;
+}
+.dep_colle+.dep_colle {
+	margin-left:100px;
+}
+
+.out_dep_colle~p {
+	margin:auto;
+	width: 47em;
+}
+
