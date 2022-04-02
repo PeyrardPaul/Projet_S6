@@ -44,8 +44,11 @@
         $dep2=$_POST['dep2'];
         $rep = $bdd->query("SELECT * FROM departement WHERE Nom = '{$dep1}' OR Nom = '{$dep2}'");
     //rea : récupère et affiche
+    echo "<div class='out_dep_colle'>";
     while ($ligne = $rep ->fetch()) {
         echo "<br/><strong>".$ligne['Nom']."</strong>"; //affiche le nom
+        echo "<div class='dep_colle'>";
+        echo "<br/><h3>".$ligne['Nom']."</h3>"; //affiche le nom
         for ($i = 0; $i != count($_SESSION['critere']); $i++) { //affiche les critères
             if ($_SESSION['critere'][$i]!="") {
                 echo "Note ".$_SESSION['critere'][$i]." = ";
@@ -66,7 +69,9 @@
                 }
             }
         }
+        echo "</div>";
     }
+    echo "</div>";
     //Description des critères
     echo "<h2> Description des critères </h2>";
         
