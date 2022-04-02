@@ -1,6 +1,6 @@
 <?php 
-	require '../../bd.php'; 
-    session_start();
+	
+    include 'session.php';
 	$bdd = getBD();
 ?>
 
@@ -28,7 +28,7 @@
                 // echo'<li><a href="recherche_simple.php">Recherche simple</a></li>';
                 echo'<li><a href="recherche_avancee.php">Recherche avancée</a></li>';
                 echo"<li><a href='deconnexion.php'>Déconnexion</a></li>";
-                echo "<li>Bonjour ".$_SESSION['user'][2]."</li>";
+                echo "<li>Bonjour ".$user['pseudo']."</li>";
             }
         ?>
         </ul>
@@ -183,7 +183,7 @@
     }
     ?>
 </body>
-<footer><!--ici le pied de page -->
+<footer class='footer'><!--ici le pied de page -->
         <p>N-Maps &copy; 2022 
         -   <a href="qui_sommes_nous.php"> Qui sommes nous ? </a>   
         -   <a href="contact.php"> Nous contacter </a>   
