@@ -155,7 +155,7 @@ $(function(){
 </script>
 </body>
 
-<footer><!--ici le pied de page -->
+<footer class="footer"><!--ici le pied de page -->
         <p>N-Maps &copy; 2022 
         -   <a href="../qui_sommes_nous.php"> Qui sommes nous ? </a>   
         -   <a href="../commentaire.php"> Espace commentaires</a>  
