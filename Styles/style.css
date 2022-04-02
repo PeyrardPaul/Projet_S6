@@ -463,8 +463,8 @@ p a:hover {
 	 line-height: 1.5em;
  }
  .sais_dep {
-	 margin-top: 50px;
-	 margin-left: 50px;
+	 margin-top: 10px;
+	 margin-left: 10px;
  }
 .marg {
 	margin-left:50px;
@@ -483,20 +483,51 @@ input{
 }
 
 .sais_dep>form>*{
-	margin-left: 50%;
-	transform: translateX(-50%);
+	/* margin-left: 50%; */
+	/* transform: translateX(-50%); */
 	color: var(--text-color);
 	text-align: center;
-	border: solid 2px var(--bandeau);
+	border: solid 1px var(--bandeau);
 	border-radius: 10px;
+	background-color: var(--background);
 	width: auto;
 	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
+
 .sais_dep>form>select{
-	margin-top: 50px;
-	
+	/* margin-top: 50px; */	
 }
-.news {
-	background-color: white;
+
+#mamap{
+	width: 655.5px;
+	margin-left: 50%;
+	transform: translateX(-50%);
+}
+
+.info_dep{
+	margin-top: 50px;
+	margin-left: 50px;
+	width: 500px;
+}
+.sais_com {
+	text-align:center;
+	margin-top:25px;
+}
+.sais_com>h3 {
+	color:orange;
+}
+.sais_com>form>p {
+	font-size: 13px;
+}
+.aff_com>h3 {
+	margin-bottom:5px;
+}
+.aff_com>h3>em {
+	border-bottom:2px black solid;
+}
+.aff_com>p {
+	border:1px black solid;
+	margin-top:-5px;
+	padding:5px 5px 5px;
 }

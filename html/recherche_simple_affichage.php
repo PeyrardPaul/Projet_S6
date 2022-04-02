@@ -20,12 +20,12 @@
             // si l'utilisateur n'est pas connecté 
             if(!isset($_SESSION['user'])) {
                 echo'<li><a href="index.php">Accueil</a></li>';
-                echo'<li><a href="recherche_simple.php">Recherche simple</a></li>';
+                // echo'<li><a href="recherche_simple.php">Recherche simple</a></li>';
                 echo'<li><a href="connexion.php">Connexion </a></li>';
             } else if(isset($_SESSION['user'])) {
                 // si l'utilisateur est connecté 
                 echo'<li><a href="index.php">Accueil</a></li>';
-                echo'<li><a href="recherche_simple.php">Recherche simple</a></li>';
+                // echo'<li><a href="recherche_simple.php">Recherche simple</a></li>';
                 echo'<li><a href="recherche_avancee.php">Recherche avancée</a></li>';
                 echo"<li><a href='deconnexion.php'>Déconnexion</a></li>";
                 echo "<li>Bonjour ".$_SESSION['user'][2]."</li>";
@@ -35,7 +35,61 @@
 </div>
 <body>
     <div><!-- ici une div avec le contenu des informations sur la page  -->
-    <a class="Retour" href="recherche_simple.php">Retour</a> <!--bouton retour vers recherche simple -->
+    <a class="Retour" href="index.php#ancre">Retour carte</a> <!--bouton retour vers recherche simple -->
+
+    <!-- rajout de menu déroulant -->
+            
+    <?php $bdd = new PDO('mysql:host=localhost;dbname=projet_s6_indice_de_vie;charset=utf8', 'root', 'root'); ?>
+    <?php
+    
+    // Connect to database 
+    $con = mysqli_connect("localhost","root","root","projet_s6_indice_de_vie");
+        
+    // Get all the categories from category table
+    $sql = "SELECT * FROM `departement`";
+    $all_categories = mysqli_query($con,$sql);
+    
+    // The following code checks if the submit button is clicked 
+    // and inserts the data in the database accordingly
+    if(isset($_POST['submit']))
+    {
+        // Store the Product name in a "name" variable
+        $name = mysqli_real_escape_string($con,$_POST['dep']);
+        
+    }
+    ?>
+
+    <div class="sais_dep">
+    <p>
+        Explorez un nouveau département
+    </p>
+   
+    <form method="GET" action="recherche_simple_affichage.php">
+            <select name="dep">
+                <?php 
+                    // use a while loop to fetch data 
+                    // from the $all_categories variable 
+                    // and individually display as an option
+                    while ($category = mysqli_fetch_array(
+                            $all_categories,MYSQLI_ASSOC)):; 
+                ?>
+                    <option value="<?php echo $category["Département"];
+                        // The value we usually set is the primary key
+                    ?>">
+                        <?php echo $category["Nom"];
+                            // To show the category name to the user
+                        ?>
+                    </option>
+                <?php 
+                    endwhile; 
+                    // While loop must be terminated
+                ?>
+            </select>
+            <br>
+            <input type="submit" value="Valider" name="submit">
+    </form>
+    </div>
+    <!-- fin du menu déroulant -->
 
     <?php //echo '<img class="photo_dep" src="../images/departements/'.$_POST['dep'].'.jpg" alt="photo du département en question">';
             $rep = $bdd->query("select * from departement where Département ='".$_GET['dep']."'"); //ici on affiche les informations pour le département selectionné
@@ -52,8 +106,23 @@
                     </header>');
                 echo "<div class='info_dep'>";
                 $dep = $ligne['Nom'];
+                $id_dep = $ligne['Département'];
+                //remplacer le _ par un espace pour un meilleur affichage
+                $ligne['Population'] = str_replace("_"," ",$ligne['Population']); 
+                $ligne['Nombre de crimes pour 100 000 habitants'] = str_replace("_"," ",$ligne['Nombre de crimes pour 100 000 habitants']); 
+                //remplacer la virgule par le point pour pouvoir arrondir
+                $ligne['Santé (nombre de médecin pour 100 000 habitants)'] = str_replace(",",".",$ligne['Santé (nombre de médecin pour 100 000 habitants)']);
+                $ligne['Nombre de jours de pluie par an'] = str_replace(",",".",$ligne['Nombre de jours de pluie par an']);
+                $ligne['Taux de réussite au brevet (%)'] = str_replace(",",".",$ligne['Taux de réussite au brevet (%)']);
+                //arrondir
+                $ligne['Santé (nombre de médecin pour 100 000 habitants)'] = round($ligne['Santé (nombre de médecin pour 100 000 habitants)'],0,PHP_ROUND_HALF_EVEN); // arrondir à l'unité
+                $ligne['Nombre de jours de pluie par an'] = round($ligne['Nombre de jours de pluie par an'],0,PHP_ROUND_HALF_EVEN); // arrondir à l'unité   
+                $ligne['Taux de réussite au brevet (%)'] = round($ligne['Taux de réussite au brevet (%)'],2,PHP_ROUND_HALF_EVEN); // arrondir à deux chiffres après la virgule 
+                //reremplacer le point par la virgule pour un meilleur affichage 
+                $ligne['Taux de réussite au brevet (%)'] = str_replace(".",",",$ligne['Taux de réussite au brevet (%)']);
+
                     echo "<p>Numéro du département : ".$ligne['Département']."<br></p>";
-                    echo "<p>".$ligne['Population']." habitants"."<br></p>";
+                    echo "<p>Population : ".$ligne['Population']." habitants"."<br></p>";
                     echo "<p>Nombre de médecins pour 100 000 habitants : ".$ligne['Santé (nombre de médecin pour 100 000 habitants)']."<br></p>";
                     echo "<p>Nombre de crimes pour 100 000 habitants : ".$ligne['Nombre de crimes pour 100 000 habitants']."<br></p>";
                     echo "<p>Taux de chômage : ".$ligne['Taux de chomage (%)']." %"."<br></p>";
@@ -69,10 +138,10 @@
         ?> 
         <h2>Espace commentaire département <?php echo $dep;?></h2> <br/> 
         <?php
-        $req = $bdd->query('SELECT id_commentaire,user_id,code_dep,contenu, DATE_FORMAT(date_commentaire, \'%d/%m/%Y à %Hh%imin%ss\') AS
-        date_commentaire_fr FROM commentaires ORDER BY date_commentaire DESC LIMIT 0,7');
+        $req = $bdd->query("SELECT id_commentaire,user_id,code_dep,contenu, date_commentaire 
+        FROM commentaires WHERE code_dep = '{$id_dep}' ORDER BY date_commentaire DESC LIMIT 0,7");
         while ($mat = $req->fetch()) {?>
-        <div class="news">
+        <div class="aff_com">
             <?php 
                 $id=$mat['user_id'];
                 $req2 = $bdd->query("SELECT nom, prenom FROM users WHERE user_id = '{$id}'");
@@ -83,10 +152,10 @@
                 $req2->closeCursor();
             ?>
             <h3 style="margin-bottom:5px;"> 
-                <em style="border-bottom:1px black solid;"><?php echo $dep." -- ".$mat['date_commentaire_fr']." par M/Mme ".$nom." ".$prenom;?></em>
+                <em><?php echo $dep." -- ".$mat['date_commentaire']." par M/Mme ".$nom." ".$prenom;?></em>
             </h3>
             <p>
-                <?php echo $mat['contenu']."<br/><br/>"; ?>
+                <?php echo "<p>".$mat['contenu']."</p><br/><br/>"; ?>
             </p>
         </div>
 
@@ -95,13 +164,28 @@
         $req->closeCursor();
         ?>
         
-    </div> 
+    </div>
+    <?php
+    if (isset($_SESSION['user'])) {
+        echo "<div class='sais_com'>
+        <h3>Laissez un commentaire ici &rarr;</h3>
+        <form method=Post action='com_affich_simple.php' autocomplete=ON>
+            <p>Message :<br/>
+		    <textarea rows='8' cols='45' name='com'> </textarea>
+	        </p>
+            <input type='hidden' name='dep' value='".$id_dep."'>
+        <p>
+		    <input type='submit' value='Envoyer' />
+        </p>
+        </form>
+        </div>";
+    }
+    ?>
 </body>
 <footer><!--ici le pied de page -->
         <p>N-Maps &copy; 2022 
         -   <a href="qui_sommes_nous.php"> Qui sommes nous ? </a>   
-        -   <a href="contact.php"> Nous contacter </a>  
-        -   <a href="commentaire.php"> Espace commentaires</a>  
+        -   <a href="contact.php"> Nous contacter </a>   
         </p> 
     </footer>
 
