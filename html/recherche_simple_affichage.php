@@ -155,8 +155,9 @@
                 <em><?php echo $dep." -- ".$mat['date_commentaire']." par M/Mme ".$nom." ".$prenom;?></em>
             </h3>
             <p>
-                <?php echo "<p>".$mat['contenu']."</p><br/><br/>"; ?>
+                <?php echo $mat['contenu']; ?>
             </p>
+            <?php echo "<br/><br/>";?>
         </div>
 
         <?php
