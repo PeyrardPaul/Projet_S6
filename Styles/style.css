@@ -144,7 +144,7 @@ h2{
 
 
 /* pied de page  */
-footer{
+.footer{
 	min-height: 50px;
 	background-color:var(--footer);
 	font-size: .9rem;
@@ -157,15 +157,15 @@ footer{
 }
 
 /* paragraphe du pied de page */
-footer > p{
+.footer > p{
 	background-color:var(--footer);
 	margin-top: 10px;
 	color: var(--text-color-beige);
-	font-size: .9rem;
+	font-size: 1.8em;
 	display: flex;
 }
 /* les liens du pieds de page */
-footer > a{
+.footer > a{
 	background-color:var(--footer);
 	margin-top: 10px;
 	color: var(--text-color-beige);
@@ -276,7 +276,7 @@ header {
 /*  c'est où ? */
 label {
   display: inline-block;
-  width: 100px;
+  width: 120px;
   text-align: left;
   color: black;
   font-size: 1.3em;
@@ -495,10 +495,25 @@ input{
 }
 
 
-.sais_dep>form>select{
-	/* margin-top: 50px; */	
-}
+/* .sais_dep>form>select{
+	margin-top: 50px; 
+} 
+*/
 
+.box
+{
+	margin: 0 auto;
+  width: 400px;
+	padding: 1em;
+  border: 2px solid #CCC;
+  border-radius: 2em;
+ 
+}
+.box-msg
+{
+	text-align: center;
+	font-style: italic;
+}
 #mamap{
 	width: 655.5px;
 	margin-left: 50%;

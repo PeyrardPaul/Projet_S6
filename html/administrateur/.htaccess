@@ -1,0 +1,4 @@
+AuthName "Bienvenue vous être administrateur vous êtes seul à avoir accès à cette page en vous identifiant correctement"
+AuthType Basic
+AuthUserFile "C:/Semestre 4/xampp/Nouveau dossier/htdocs/Projet_S6/html/administrateur/.htpasswd"
+Require valid-user
