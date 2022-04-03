@@ -81,7 +81,7 @@
 <p class="profil">
     <!-- photo de profil-->
     <br/>
-    Nour Aït-Kadour <br/>
+    Nour Aït Kaddour <br/>
     20 ans 
 </p>   
 
