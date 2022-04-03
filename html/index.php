@@ -53,7 +53,7 @@
                         <?php
 		                if(isset($_SESSION['user'])) {
    
-							echo "Bonjour <strong><font color='black'>". $user['pseudo']. "</font></strong><br/>" ;
+							echo "Bonjour <strong><font color='white'>". $user['pseudo']. "</font></strong><br/>" ;
                             echo "Bienvenue sur N-MAPS"."<br/>";
 
 		                }
@@ -63,19 +63,18 @@
                     </p>
 
                     <p>
-                        Site d'avis et de comparaison des départements en France. </p>
-                        Il s'agit d'un outil qui a pour but principal 
-                        de vous faire découvrir les départements de France métropolitaine à travers différents indices de vie.
+                        Site d'avis et de comparaison des départements français. </p>
+                        Il s'agit d'un outil qui vous fera découvrir les départements de France métropolitaine à travers différents indices de vie.
                         <br/>
 
                         Nous souhaitons que nos utilisateurs s'approprient cet outil !<br/>
                         <br/>
 
-                        Que ce soit pour des projets sérieux tels que le choix d'un futur lieu de résidence. <br/>
+                        Que ce soit pour des projets sérieux tels que le choix d'un futur lieu de résidence, <br/>
 
-                        Ou quelque chose de plus léger comme votre prochaine destination de vacance ! <br/>
+                        ou quelque chose de plus léger comme votre prochaine destination de vacance ! <br/>
 
-                        Et même pour satisfaire votre soif de connaissances... <br/>
+                        Ou bien même pour satisfaire votre soif de connaissances... <br/>
                         <br/>
 
                         Prenez le temps de découvrir la France à travers différents angles,
@@ -99,7 +98,7 @@
                     &#128077; Utilisez la  &#x1F449; <a href='recherche_simple.php'>recherche simple</a>&#x1F448; pour découvrir toutes les informations sur un département choisi. 
                 <br>
                 
-                    &#128077; Utilisez la <a href='recherche_avancee.php'>Recherche avancée</a> pour comparer deux départements choisis sur une liste de critères que vous selctionnez. 
+                    &#128077; Utilisez la <a href='recherche_avancee.php'>Recherche avancée</a> pour comparer deux départements choisis sur une liste de critères que vous sélectionnez. 
                 
             </div>
             ");

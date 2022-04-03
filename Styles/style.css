@@ -176,23 +176,10 @@ h2{
 	font-size: .9rem;
 }
 
-<<<<<<< HEAD
-.vu
-{
-	border: 1px solid grey;
-	background-color: grey;
-	width: 500px;
-	margin: auto;
-	text-align: center;
-	border-radius: 1em;
-	padding: 9px;
-}
-=======
 .contenu_page{
 	background-color: #0000007c;
 }
 
->>>>>>> ddb129d35b71d3ed96647246324341cb1b68ebca
 #quisommesnous{
 	color: var(--text-color-beige);
 	text-decoration: none;
@@ -212,6 +199,8 @@ a{
 body {
 	background-color: var(--background);
 }
+
+
 
 /*  c'est où ? */
 .menu{

@@ -39,11 +39,13 @@
     <img class ="logoupv" src = "../images/logo_univ_PVM3.png"   />
     <p class = "qui_sommes_nous">
     Nous sommes un groupe de cinq développeurs junior. Nous avons travaillé de concert dans le but de vous proposer
-    un site distrayant et informatif.<br/>
+    un site distrayant et informatif tout en étant sûr d'utilisation et parfaitement fonctionnel.<br/>
 
                         
     Nous sommes étudiants en troisième année de licence MIASHS à l'Université Paul-Valéry Montpellier III.
-    Ce site est le fruit d'un long projet d'une année de travail dans lequel nous avons mis toutes nos compétences.
+    Ce site est le fruit d'un long projet. Une année de travail dans laquelle nous avons acquis et
+    développés les compétences nécessaires à l'élaboration de ce projet.
+    
     </p>
     
 <p class="soustitre"> Présentons notre équipe <p>
