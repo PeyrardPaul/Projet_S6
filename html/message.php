@@ -10,7 +10,6 @@
 
 <?php 
         include 'session.php';
-        
         if(isset($_SESSION['user']))
     {
         $me=$_POST['mes'];
@@ -18,15 +17,17 @@
         function enregistre($iden,$messag) 
             {
             $bdd = getBD();
-            $req = $bdd->prepare('INSERT INTO messages (user_id, contenu)
-            VALUES(?,?)'); 
+            $req = $bdd->prepare('INSERT INTO messages (user_id, contenu) VALUES("'.$user['user_id'].'","'.$_POST['mes'].'")'); 
+            // trouver ou est stockée l'id user
+            
             $req->execute(array( 
                 $u,
                 $_POST['mes']
                                 ));
 
             }
-        
+
+           
         
         if(!isset($_POST["aide"]) && !isset($_POST["dem"]) && !isset($_POST["pl"]))
         {
@@ -44,7 +45,8 @@
                  header('location: recu.php');                       
         }
     
-    }
+    }   
+    echo 'INSERT INTO messages (user_id, contenu) VALUES("'.$user['user_id'].'","'.$_POST['mes'].'")';
 		?>
 	</body>
 	<footer class="footer"><!--ici le pied de page -->

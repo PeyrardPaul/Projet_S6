@@ -176,12 +176,6 @@ h2{
 	font-size: .9rem;
 }
 
-<<<<<<< HEAD
-.contenu_page{
-	background-color: #0000007c;
-}
-
-=======
 .vu
 {
 	border: 1px solid grey;
@@ -192,7 +186,6 @@ h2{
 	border-radius: 1em;
 	padding: 9px;
 }
->>>>>>> e6774c1401f63450af6a0967368e7cee2d15a419
 #quisommesnous{
 	color: var(--text-color-beige);
 	text-decoration: none;

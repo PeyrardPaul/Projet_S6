@@ -99,7 +99,7 @@
                     &#128077; Utilisez la  &#x1F449; <a href='recherche_simple.php'>recherche simple</a>&#x1F448; pour découvrir toutes les informations sur un département choisi. 
                 <br>
                 
-                    &#128077; Utilisez la recherche avancée pour comparer deux départements choisis sur une liste de critères que vous selctionnez. 
+                    &#128077; Utilisez la <a href='recherche_avancee.php'>Recherche avancée</a> pour comparer deux départements choisis sur une liste de critères que vous selctionnez. 
                 
             </div>
             ");
