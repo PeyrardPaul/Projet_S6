@@ -176,6 +176,19 @@ h2{
 	font-size: .9rem;
 }
 
+<<<<<<< HEAD
+=======
+.vu
+{
+	border: 1px solid grey;
+	background-color: grey;
+	width: 500px;
+	margin: auto;
+	text-align: center;
+	border-radius: 1em;
+	padding: 9px;
+}
+>>>>>>> a5c23f96bf08c03786e716adf9c7db3a8a6622f1
 .contenu_page{
 	background-color: #0000007c;
 }
