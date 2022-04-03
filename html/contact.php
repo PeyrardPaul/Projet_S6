@@ -37,14 +37,14 @@
     </div>
 
 	<div> <!--ici la grande div qui a le contenu de la page -->
-	<form method="post" class="formulaire" action="">
+	<form method="post" class="formulaire" action="message.php">
 	<div class="marg">
 	<!--<p> <strong> Nom : </strong>
 		<input style="margin-bottom:15px;" type="text" id="user" value="" />
 	</p>-->
 
 	<p> <strong> Email : </strong>
-		<input type="text" value="" />
+		<input type="text" name="ma"/>
 	</p>
 
 	<br/>
@@ -69,19 +69,23 @@
     <input type="checkbox" id="pl" name="pl" value="Plainte"> 
     <br>
 
-	<p> <strong> Message : </strong>
-		<textarea rows="5" cols="30"> </textarea>
-	</p>
-	</div>
-
+	<p> <strong><label> Message</label> : </strong></p>
+	<textarea name="mes" rows="5" cols="30">
+	</textarea>
+	
 	<div style="margin-left: 150px;">
 		<p> <input type="submit" value="Envoyer" /> </p>
 		<!--<p> <input type="reset" value="Recommencer" /> </p>-->
 	</div>
 
+	</div>
 	</form>
 	</div>
-	
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
 	<footer class="footer"> 
         <p>N-Maps &copy; 2022 
         -   <a href="qui_sommes_nous.php"> Qui sommes nous ? </a>   

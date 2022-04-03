@@ -67,7 +67,7 @@ text-align: justify;
     <td>  <div class="treeview">
         
         <ul class="treeview-menu">
-          <div><a href="departement.php"><i class="fa"></i> Liste des départements</a></div>
+          <div><a href="mes.php"><i class="fa"></i> Voir nos messages</a></div>
          
         </ul>
       </div>

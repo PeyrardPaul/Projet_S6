@@ -173,7 +173,16 @@ h2{
 	font-size: .9rem;
 }
 
-
+.vu
+{
+	border: 1px solid grey;
+	background-color: grey;
+	width: 500px;
+	margin: auto;
+	text-align: center;
+	border-radius: 1em;
+	padding: 9px;
+}
 #quisommesnous{
 	color: var(--text-color-beige);
 	text-decoration: none;
