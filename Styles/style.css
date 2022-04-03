@@ -1,4 +1,6 @@
 /* Conseil de mise en page pendant la réalisation du site */
+
+
 :root{
 	--background:#fffef3;
 	--bandeau: #0E0D3F ;
@@ -15,6 +17,7 @@
 	/* border-width : 1px;
 	border-style : dotted;
 	border-color : #d46d6d; */
+	/* border : red solid 1px; */
 	padding : 0px;
 	margin : 0px;
 	font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
@@ -173,6 +176,9 @@ h2{
 	font-size: .9rem;
 }
 
+.contenu_page{
+	background-color: #0000007c;
+}
 
 #quisommesnous{
 	color: var(--text-color-beige);

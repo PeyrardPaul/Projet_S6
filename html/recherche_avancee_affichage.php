@@ -46,11 +46,8 @@
         
         $rep = $bdd->query("SELECT * FROM departement WHERE Nom = '{$dep1}' OR Nom = '{$dep2}'");
     //rea : récupère et affiche
-<<<<<<< HEAD
     echo "<div id='dept'>";
-=======
     echo "<div class='out_dep_colle'>";
->>>>>>> 9fb589380e702f86b13eefa0d4c649b59d82ff2e
     while ($ligne = $rep ->fetch()) {
         echo "<br/><strong>".$ligne['Nom']."</strong>"; //affiche le nom
         echo "<div class='dep_colle'>";
@@ -78,10 +75,6 @@
         echo "</div>";
     }
     echo "</div>";
-<<<<<<< HEAD
-
-=======
->>>>>>> 9fb589380e702f86b13eefa0d4c649b59d82ff2e
     //Description des critères
     echo "<h2> Description des critères </h2>";
         

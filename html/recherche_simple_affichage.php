@@ -34,7 +34,7 @@
         </ul>
 </div>
 <body>
-    <div><!-- ici une div avec le contenu des informations sur la page  -->
+    <div class = "contenu_page"><!-- ici une div avec le contenu des informations sur la page  -->
     <a class="Retour" href="index.php#ancre">Retour carte</a> <!--bouton retour vers recherche simple -->
 
     <!-- rajout de menu déroulant -->
