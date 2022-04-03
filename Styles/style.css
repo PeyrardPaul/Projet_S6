@@ -458,11 +458,12 @@ p a:hover {
 	font-size: 6em;
 	transition: color .4s;
  }
- #etoile {
+ .etoile {
 	 color:orange;
 	 font-size: 25px;
 	 white-space: nowrap;
 	 display: inline;
+	 border: blue solid 2px;
  }
 
  .page{
@@ -508,6 +509,20 @@ input{
 	margin-top: 50px; 
 } 
 */
+
+/* #dept{
+	border:black solid 5px;
+	display: inline-block;
+
+}
+
+input[name=="Note Niv_pop"]{
+	color : black;
+}
+
+strong{
+	border: red solid 2px;
+} */
 
 .box
 {

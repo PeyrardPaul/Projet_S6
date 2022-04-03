@@ -41,32 +41,47 @@
         $_POST['5g'],$_POST['qrzo']); // ajouter le critere dans la session
 
         $dep1=$_POST['dep1'];
+        
         $dep2=$_POST['dep2'];
+        
         $rep = $bdd->query("SELECT * FROM departement WHERE Nom = '{$dep1}' OR Nom = '{$dep2}'");
     //rea : récupère et affiche
+<<<<<<< HEAD
+    echo "<div id='dept'>";
+=======
+    echo "<div class='out_dep_colle'>";
+>>>>>>> 9fb589380e702f86b13eefa0d4c649b59d82ff2e
     while ($ligne = $rep ->fetch()) {
         echo "<br/><strong>".$ligne['Nom']."</strong>"; //affiche le nom
+        echo "<div class='dep_colle'>";
+        echo "<br/><h3>".$ligne['Nom']."</h3>"; //affiche le nom
         for ($i = 0; $i != count($_SESSION['critere']); $i++) { //affiche les critères
             if ($_SESSION['critere'][$i]!="") {
                 echo "Note ".$_SESSION['critere'][$i]." = ";
                 if($ligne[$_SESSION['critere'][$i]]=="1") {
-                    echo "<p id='etoile'>★☆☆☆☆</p><br/>";
+                    echo "<p class='etoile'>★☆☆☆☆</p><br/>";
                 }
                 else if($ligne[$_SESSION['critere'][$i]]=="2") {
-                    echo "<p id='etoile'>★★☆☆☆</p><br/>";
+                    echo "<p class='etoile'>★★☆☆☆</p><br/>";
                 }
                 else if($ligne[$_SESSION['critere'][$i]]=="3") {
-                    echo "<p id='etoile'>★★★☆☆</p><br/>";
+                    echo "<p class='etoile'>★★★☆☆</p><br/>";
                 }
                 else if($ligne[$_SESSION['critere'][$i]]=="4") {
-                    echo "<p id='etoile'>★★★★☆</p><br/>";
+                    echo "<p class='etoile'>★★★★☆</p><br/>";
                 }
                 else {
-                    echo "<p id='etoile'>★★★★★</p><br/>";
+                    echo "<p class='etoile'>★★★★★</p><br/>";
                 }
             }
         }
+        echo "</div>";
     }
+    echo "</div>";
+<<<<<<< HEAD
+
+=======
+>>>>>>> 9fb589380e702f86b13eefa0d4c649b59d82ff2e
     //Description des critères
     echo "<h2> Description des critères </h2>";
         
