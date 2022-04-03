@@ -41,32 +41,37 @@
         $_POST['5g'],$_POST['qrzo']); // ajouter le critere dans la session
 
         $dep1=$_POST['dep1'];
+        
         $dep2=$_POST['dep2'];
+        
         $rep = $bdd->query("SELECT * FROM departement WHERE Nom = '{$dep1}' OR Nom = '{$dep2}'");
     //rea : récupère et affiche
+    echo "<div id='dept'>";
     while ($ligne = $rep ->fetch()) {
         echo "<br/><strong>".$ligne['Nom']."</strong>"; //affiche le nom
         for ($i = 0; $i != count($_SESSION['critere']); $i++) { //affiche les critères
             if ($_SESSION['critere'][$i]!="") {
                 echo "Note ".$_SESSION['critere'][$i]." = ";
                 if($ligne[$_SESSION['critere'][$i]]=="1") {
-                    echo "<p id='etoile'>★☆☆☆☆</p><br/>";
+                    echo "<p class='etoile'>★☆☆☆☆</p><br/>";
                 }
                 else if($ligne[$_SESSION['critere'][$i]]=="2") {
-                    echo "<p id='etoile'>★★☆☆☆</p><br/>";
+                    echo "<p class='etoile'>★★☆☆☆</p><br/>";
                 }
                 else if($ligne[$_SESSION['critere'][$i]]=="3") {
-                    echo "<p id='etoile'>★★★☆☆</p><br/>";
+                    echo "<p class='etoile'>★★★☆☆</p><br/>";
                 }
                 else if($ligne[$_SESSION['critere'][$i]]=="4") {
-                    echo "<p id='etoile'>★★★★☆</p><br/>";
+                    echo "<p class='etoile'>★★★★☆</p><br/>";
                 }
                 else {
-                    echo "<p id='etoile'>★★★★★</p><br/>";
+                    echo "<p class='etoile'>★★★★★</p><br/>";
                 }
             }
         }
     }
+    echo "</div>";
+
     //Description des critères
     echo "<h2> Description des critères </h2>";
         
