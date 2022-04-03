@@ -12,6 +12,7 @@
         <h1> <a href="index.php">N-MAPS</a> </h1>
         <ul class="menu">
         <?php
+        include 'session.php';
             // si l'utilisateur n'est pas connecté 
             if(!isset($_SESSION['user'])) {
                 echo'<li><a href="index.php">Accueil</a></li>';
@@ -23,7 +24,7 @@
                 echo'<li><a href="recherche_simple.php">Recherche simple</a></li>';
                 echo'<li><a href="recherche_avancee.php">Recherche avancée</a></li>';
                 echo"<li><a href='deconnexion.php'>Déconnexion</a></li>";
-                echo "<li>Bonjour ".$_SESSION['user'][2]."</li>";
+                echo "<li>Bonjour ".$user['pseudo']."</li>";
             }
         ?>
         </ul>
@@ -64,7 +65,7 @@
     ?>
 
 </body>
-<footer>
+<footer class="footer">
         <p>N-Maps &copy; 2022 
         -   <a href="qui_sommes_nous.php"> Qui sommes nous ? </a>   
         -   <a href="contact.php"> Nous contacter </a>    

@@ -1,7 +1,7 @@
 <?php 
-    require '../../bd.php'; 
+    include 'session.php';
     $bdd = getBD();
-    session_start(); 
+    
 ?>
 
 <html lang="fr">
@@ -28,7 +28,7 @@
                 //echo'<li><a href="recherche_simple.php">Recherche simple</a></li>';
                 echo'<li><a href="recherche_avancee.php">Recherche avancée</a></li>';
                 echo"<li><a href='deconnexion.php'>Déconnexion</a></li>";
-                echo "<li>Bonjour ".$_SESSION['user'][2]."</li>";
+                echo "<li>Bonjour ".$user['pseudo']."</li>";
             }
         ?>
         </ul>
@@ -46,9 +46,15 @@
         
         $rep = $bdd->query("SELECT * FROM departement WHERE Nom = '{$dep1}' OR Nom = '{$dep2}'");
     //rea : récupère et affiche
+<<<<<<< HEAD
     echo "<div id='dept'>";
+=======
+    echo "<div class='out_dep_colle'>";
+>>>>>>> 9fb589380e702f86b13eefa0d4c649b59d82ff2e
     while ($ligne = $rep ->fetch()) {
         echo "<br/><strong>".$ligne['Nom']."</strong>"; //affiche le nom
+        echo "<div class='dep_colle'>";
+        echo "<br/><h3>".$ligne['Nom']."</h3>"; //affiche le nom
         for ($i = 0; $i != count($_SESSION['critere']); $i++) { //affiche les critères
             if ($_SESSION['critere'][$i]!="") {
                 echo "Note ".$_SESSION['critere'][$i]." = ";
@@ -69,9 +75,13 @@
                 }
             }
         }
+        echo "</div>";
     }
     echo "</div>";
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9fb589380e702f86b13eefa0d4c649b59d82ff2e
     //Description des critères
     echo "<h2> Description des critères </h2>";
         
@@ -96,7 +106,7 @@
 </body>
 
 
-    <footer>
+    <footer class="footer">
         <p>N-Maps &copy; 2022 
         -   <a href="qui_sommes_nous.php"> Qui sommes nous ? </a>   
         -   <a href="contact.php"> Nous contacter </a>    
