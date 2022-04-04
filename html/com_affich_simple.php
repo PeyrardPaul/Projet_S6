@@ -49,7 +49,7 @@
                 die('Erreur : ' . $e->getMessage().'<br/>');
             }
         
-            $sql="INSERT INTO commentaires(user_id,code_dep,contenu,date_commentaire) VALUES(".$id_client_c.",".$id_dep.",'".$com."',NOW())";
+            $sql="INSERT INTO commentaires(user_id,code_dep,contenu,date_commentaire) VALUES('".$id_client_c."','".$id_dep."','".$com."',NOW())";
         
             if (mysqli_query($db,$sql)) {
                 //echo "Votre commentaire a bien été ajouté<br/>";
