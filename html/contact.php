@@ -40,7 +40,7 @@
 	?>
 
 
-	<div> <!--ici la grande div qui a le contenu de la page -->
+	<div class="cont"> <!--ici la grande div qui a le contenu de la page -->
 	<form method="post" class="formulaire" action="message.php">
 	<div class="marg">
 	<!--<p> <strong> Nom : </strong>
