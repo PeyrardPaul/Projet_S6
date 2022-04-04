@@ -39,7 +39,7 @@
         if (isset($_POST['com'])) {
             $id_client_c = $_SESSION['user'][0];
             $com = $_POST['com'];
-            $com = str_replace("'","''",$com);
+            $com = str_replace("'","''",$com); //remplacer apostrophe par double apostrophe pour pas d'erreur lors de l'INSERT
             $id_dep = $_POST['dep'];
             
             try{
