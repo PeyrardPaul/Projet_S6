@@ -25,7 +25,7 @@
                 // si l'utilisateur est connecté 
                 echo'<li><a href="index.php">Accueil</a></li>';
                 // echo'<li><a href="recherche_simple.php">Recherche simple</a></li>';
-                echo'<li><a href="recherche_avancee.php">Recherche avancée</a></li>';
+                echo'<li><a href="recherche_avancee.php">Comparer</a></li>';
                 echo"<li><a href='deconnexion.php'>Déconnexion</a></li>";
                 echo "<li>Bonjour ".$user['pseudo']."</li>";
             }
@@ -39,7 +39,7 @@
         if (isset($_POST['com'])) {
             $id_client_c = $_SESSION['user'][0];
             $com = $_POST['com'];
-            $com = str_replace("'","''",$com);
+            $com = str_replace("'","''",$com); //remplacer apostrophe par double apostrophe pour pas d'erreur lors de l'INSERT
             $id_dep = $_POST['dep'];
             
             try{
@@ -50,7 +50,7 @@
             }
         
             $sql="INSERT INTO commentaires(user_id,code_dep,contenu,date_commentaire) VALUES('".$id_client_c."','".$id_dep."','".$com."',NOW())";
-        
+            
             if (mysqli_query($db,$sql)) {
                 //echo "Votre commentaire a bien été ajouté<br/>";
                 header('location: recherche_simple_affichage.php?dep='.$id_dep.'&submit=Valider');
