@@ -43,10 +43,6 @@
 		<input style="margin-bottom:15px;" type="text" id="user" value="" />
 	</p>-->
 
-	<p> <strong> Email : </strong>
-		<input type="text" name="ma"/>
-	</p>
-
 	<br/>
 	<!--<p> <strong> Sexe : </strong>
 		<input type="radio" id="H" name="H" style="margin-top:15px;" value="Homme" />
@@ -58,7 +54,7 @@
 	<br/>-->
 	<p> <strong>Motif : </strong></p>
 	<label class = "critcell" class = "critcell" for="aide"> Aide/Renseignements :</label>
-    <input type="checkbox" id="aide" name="aide" value="Aide/Renseignements">
+    <input type="radio" id="aide" name="drone" value="Aide/Renseignements">
     <br>
 
 	<label class = "critcell" class = "critcell" for="dem"> Demande d'inscription :</label>
