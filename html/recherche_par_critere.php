@@ -32,96 +32,35 @@
     </div>
 <body>
 
-
-
-
-<?php
-  
-    // Connect to database 
-    $con = mysqli_connect("localhost","root","root","projet_s6_indice_de_vie");
-      
-    // mysqli_connect("servername","username","password","database_name")
-   
-    // Get all the departements from departement table
-    $sql = "SELECT * FROM `departement`";
-    $all_departements = mysqli_query($con,$sql);
-   
-    // The following code checks if the submit button is clicked 
-    // and inserts the data in the database accordingly
-
-    
-         // Store the Product name in a "name" variable
-         $name = mysqli_real_escape_string($con,$_POST['dep']);
-         
-        // Store the departement ID in a "id" variable
-        $id = mysqli_real_escape_string($con,$_POST['Département']); 
-    
-?>
-   
-
- 
-    <form action="recherche_avancee_affichage.php" method="POST">
-
-    <div class="sais_dep">
-    <p id = "choidp">Choix des départements :</p>
-        <select class = "choixdp" name="dep1">
-            <?php 
-                // use a while loop to fetch data 
-                // from the $all_departements variable 
-                // and individually display as an option
-                while ($departement = mysqli_fetch_array($all_departements,MYSQLI_ASSOC)):; 
-            ?>
-                <option value="<?php echo $departement["Nom"];?>">
-                     <!-- The value we usually set is the primary key -->
-                
-                    <?php echo $departement["Nom"];?>
-                       <!-- To show the departement name to the user -->
-                    
-                </option>
-                <?php endwhile; ?>
-                <!-- While loop must be terminated -->
-        </select>  
-
-<?php
-  
-    // Connect to database 
-    $con = mysqli_connect("localhost","root","root","projet_s6_indice_de_vie");
-      
-    // mysqli_connect("servername","username","password","database_name")
-   
-    // Get all the departements from departement table
-    $sql = "SELECT * FROM `departement`";
-    $all_departements = mysqli_query($con,$sql);
-   
-    // The following code checks if the submit button is clicked 
-    // and inserts the data in the database accordingly
-
-    
-         // Store the Product name in a "name" variable
-         $name = mysqli_real_escape_string($con,$_POST['dep']);
-         
-        // Store the departement ID in a "id" variable
-        $id = mysqli_real_escape_string($con,$_POST['Département']); 
-    
-?>
-        <select class = "choixdp" name="dep2">
-            <?php 
-                // use a while loop to fetch data 
-                // from the $all_departements variable 
-                // and individually display as an option
-                while ($departement = mysqli_fetch_array($all_departements,MYSQLI_ASSOC)):; 
-            ?>
-                <option value="<?php echo $departement["Nom"];?>">
-                
-                    <?php echo $departement["Nom"];?>
-                    
-            </option>
-         <?php endwhile; ?>
-       </select>
-                    </div>
-    <br>
-    <div class="marg">
-    <p> Choix des critères de comparaison : </p>
+<h1>Using Form</h1>
+<form method="post" name="form_name" id="form_name">
+	<input type="checkbox" name="check[]" value="CheckBox 1"/>
+	<input type="checkbox" name="check[]" value="CheckBox 2"/>
+	<input type="checkbox" name="check[]" value="CheckBox 3"/>
+</form>
+<script>
+        function checkBoxLimit() {
+	var checkBoxGroup = document.forms['form_name']['check[]'];			
+	var limit = 2;
+	for (var i = 0; i < checkBoxGroup.length; i++) {
+		checkBoxGroup[i].onclick = function() {
+			var checkedcount = 0;
+			for (var i = 0; i < checkBoxGroup.length; i++) {
+				checkedcount += (checkBoxGroup[i].checked) ? 1 : 0;
+			}
+			if (checkedcount > limit) {
+				console.log("You can select maximum of " + limit + " checkboxes.");
+				alert("You can select maximum of " + limit + " checkboxes.");						
+				this.checked = false;
+			}
+		}
+	}
+}
+checkBoxLimit();
+    </script>
+<!--<form action="recherche_par_critere_affichage.php" method="POST">
+<div class="marg">
+    <p> Choix des 3 critères : </p>
         
     <label class = "critcell" for="pop"> Population :</label>
     <input type="checkbox" id="population" name="pop" value="Niv_pop">
@@ -203,16 +142,9 @@
                       
     <br>
 
-</div>
-
-                    </td>
-                    </tr>
- 
-</table>
-
     <input type="submit" value="Valider" />
 </div>
-</form>
+</form>-->
 </body>
 
     <footer class="footer">
