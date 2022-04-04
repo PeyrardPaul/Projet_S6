@@ -35,6 +35,10 @@
         ?>
         </ul>
     </div>
+	<?php
+		if (isset($_SESSION['user'])) {
+	?>
+
 
 	<div> <!--ici la grande div qui a le contenu de la page -->
 	<form method="post" class="formulaire" action="message.php">
@@ -58,11 +62,15 @@
     <br>
 
 	<label class = "critcell" class = "critcell" for="dem"> Demande d'inscription :</label>
-    <input type="checkbox" id="dem" name="dem" value="Demande d'inscription"> 
+    <input type="radio" id="dem" name="drone" value="Demande d'inscription"> 
     <br>
 
 	<label class = "critcell" class = "critcell" for="pl"> Plainte :</label>
-    <input type="checkbox" id="pl" name="pl" value="Plainte"> 
+    <input type="radio" id="pl" name="drone" value="Plainte"> 
+    <br>
+
+	<label class = "critcell" class = "critcell" for="autre"> Autres :</label>
+    <input type="radio" id="autre" name="drone" value="Autre"> 
     <br>
 
 	<p> <strong><label> Message</label> : </strong></p>
@@ -77,12 +85,17 @@
 	</div>
 	</form>
 	</div>
+	<?php
+		}else {
+			echo "<h2>Veuillez vous connecter <a href='connexion.php' style='color:blue'>ici</a> pour pouvoir nous contacter !</h2>";
+	}
+	?>
 	<br/>
 	<br/>
 	<br/>
 	<br/>
 	<br/>
-	<footer class="footer"> 
+	<footer class="footer">
         <p>N-Maps &copy; 2022 
         -   <a href="qui_sommes_nous.php"> Qui sommes nous ? </a>   
         -   <a href="contact.php"> Nous contacter </a>  
