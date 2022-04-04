@@ -27,8 +27,6 @@
 
             }
 
-           
-        
         if(!isset($_POST["aide"]) && !isset($_POST["dem"]) && !isset($_POST["pl"]))
         {
 			if($_POST['mail']=="" or $_POST['mes']=="" )
