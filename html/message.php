@@ -12,40 +12,28 @@
         include 'session.php';
         if(isset($_SESSION['user']))
     {
-        $me=$_POST['mes'];
-        $u=$user['user_id'];
-        function enregistre($iden,$messag) 
+       $me= $user['user_id'];
+        function enregistre($iden,$motif,$messag)
             {
             $bdd = getBD();
-            $req = $bdd->prepare('INSERT INTO messages (user_id, contenu) VALUES("'.$user['user_id'].'","'.$_POST['mes'].'")'); 
-            // trouver ou est stockée l'id user
-            
+            $req = $bdd->prepare('INSERT INTO contact (user_id,motif,message) VALUES(:id,:motif,:mess)');             
             $req->execute(array( 
-                $u,
-                $_POST['mes']
-                                ));
+                'id'=> $iden,
+               'motif' => $_POST['drone'],
+               'mess' => $_POST['mes']
+            ));
 
             }
 
-        if(!isset($_POST["aide"]) && !isset($_POST["dem"]) && !isset($_POST["pl"]))
+        if(!isset($_POST["drone"]))
         {
-			if($_POST['mail']=="" or $_POST['mes']=="" )
-            {
-					echo("<meta http-equiv='refresh' content='1; url=contact.php '>");
-			}
-            else{
-                echo "rien";
-            }
+			header('location: message.php');
         }  
-        else
-        {  
-                 enregistre($user['user_id'],$_POST['mes']);
-                 header('location: recu.php');                       
-        }
     
-    }   
-    echo 'INSERT INTO messages (user_id, contenu) VALUES("'.$user['user_id'].'","'.$_POST['mes'].'")';
-		?>
+    } 
+    echo enregistre($user['user_id'],$_POST['drone'],$_POST['mes']);
+    header('location: index.php');
+?>
 	</body>
 	<footer class="footer"><!--ici le pied de page -->
         <p>N-Maps &copy; 2022 

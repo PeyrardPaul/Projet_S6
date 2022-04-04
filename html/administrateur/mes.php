@@ -35,13 +35,14 @@
         <?php
        
    $bdd= getBD();
-    $rep = $bdd->query("select * from messages,users where messages.user_id=users.user_id ");
+    $rep = $bdd->query("select * from contact,users where contact.user_id=users.user_id ");
 
   while ($ligne =$rep->fetch()) 
 {
-    echo "<p class='vu'>Message de:" .$ligne['pseudo']."</p><br/>";
+    echo "<div class='vu'><h4>Message de : " .$ligne['pseudo']."</h4><br/>";
     echo "Email: ".$ligne['adresse_email']."<br/>";
-	echo "Contenu: ".$ligne['contenu']."<br/>";
+    echo "Motif: ".$ligne['motif']."<br/>";
+	echo "Contenu: ".$ligne['message']."<br/></div>";
 }
     
         ?>
