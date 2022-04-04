@@ -164,7 +164,7 @@ h2{
 	background-color:var(--footer);
 	margin-top: 10px;
 	color: var(--text-color-beige);
-	font-size: 1.8em;
+	/* font-size: 1.8em; */
 	display: flex;
 }
 /* les liens du pieds de page */
@@ -174,6 +174,13 @@ h2{
 	color: var(--text-color-beige);
 	text-decoration: none;
 	font-size: .9rem;
+}
+.footer > p> a:visited{
+	color: var(--text-color-beige);	
+}
+
+.footer >p>a:hover{
+	text-decoration: underline;
 }
 
 .vu {
@@ -186,9 +193,9 @@ h2{
 	padding: 9px;
 }
 
-.contenu_page{
+/* .contenu_page{
 	background-color: #0000007c;
-}
+} */
 
 #quisommesnous{
 	color: var(--text-color-beige);
@@ -203,6 +210,7 @@ h2{
 a{
 	text-decoration: none;
 }
+
 
 
 /* fond de couleur du body */
@@ -262,9 +270,11 @@ header {
 	background: rgba(44, 44, 44, 0.4);
 	border-radius: 20px;
 	padding: 2em;
-	max-width: 1024px;
+	max-width: 40%;
 	min-width: 30%;
 	margin: auto;
+	/* position:relative; */
+	margin-left: 53%;
 	/* height: 250px; */
 	/* text-shadow: rgba(112, 112, 112, 0.609) 1px 0 10px; */
 }
@@ -361,7 +371,7 @@ g path:hover {
 }
 /* fin du style de la carte */
 
-/*  c'est où ? */
+/*  bouton retour carte */
 .retour{
 	display:block;                /* Transformation en block */
     width: 120px; 
@@ -383,13 +393,19 @@ g path:hover {
 	box-shadow: 3px 3px 5px var(--color-shadow);
 }
 
+.retour:visited{
+	color: var(--text-color);
+}
+
 /*  c'est où ? */
 .photo_dep{
 	/* photo du dep en question. */
 	position:relative;
-	max-width: 50%;
+	max-width: 40%;
 	margin-left: 50%;
-	transform: translateX(-50%);
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	/* padding-right: 10%; */
+	/* transform: translateX(-50%); */
 }
 
 
@@ -480,8 +496,13 @@ p a:hover {
 	 text-align: center;
 	 line-height: 1.5em;
  }
+ .page>a:visited{
+	color: var(--text-color);
+ }
+
  .sais_dep {
-	 margin-top: 10px;
+	 padding-bottom: 50px;
+	 margin-top: -20px;
 	 margin-left: 10px;
 	 text-align: center;
  }
@@ -554,8 +575,8 @@ strong{
 }
 
 .info_dep{
-	margin-top: 50px;
-	margin-left: 50px;
+	margin-top: -320px;
+	margin-left: 150px;
 	width: 500px;
 }
 .sais_com {
@@ -563,7 +584,7 @@ strong{
 	margin-top:25px;
 }
 .sais_com>h3 {
-	color:orange;
+	color:var(--text-color);
 }
 .sais_com>form>p {
 	font-size: 13px;
