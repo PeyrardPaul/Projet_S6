@@ -27,7 +27,7 @@
                 // si l'utilisateur est connecté 
                 echo'<li><a href="index.php">Accueil</a></li>';
                 // echo'<li><a href="recherche_simple.php">Recherche simple</a></li>';
-                echo'<li><a href="recherche_avancee.php">Recherche avancée</a></li>';
+                echo'<li><a href="recherche_avancee.php">Comparer</a></li>';
                 echo"<li><a href='deconnexion.php'>Déconnexion</a></li>";
                 echo "<li>Bonjour ".$user['pseudo']."</li>";
             }
@@ -98,7 +98,7 @@
                     &#128077; Utilisez la  &#x1F449; <a href='recherche_simple.php'>recherche simple</a>&#x1F448; pour découvrir toutes les informations sur un département choisi. 
                 <br>
                 
-                    &#128077; Utilisez la <a href='recherche_avancee.php'>Recherche avancée</a> pour comparer deux départements choisis sur une liste de critères que vous sélectionnez. 
+                    &#128077; Utilisez la <a href='recherche_avancee.php'>Comparer</a> pour comparer deux départements choisis sur une liste de critères que vous sélectionnez. 
                 
             </div>
             ");

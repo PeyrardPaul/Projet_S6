@@ -26,7 +26,7 @@
                 // si l'utilisateur est connecté 
                 echo'<li><a href="index.php">Accueil</a></li>';
                 // echo'<li><a href="recherche_simple.php">Recherche simple</a></li>';
-                echo'<li><a href="recherche_avancee.php">Recherche avancée</a></li>';
+                echo'<li><a href="recherche_avancee.php">Comparer</a></li>';
                 echo"<li><a href='deconnexion.php'>Déconnexion</a></li>";
                 echo "<li>Bonjour ".$user['pseudo']."</li>";
             }
