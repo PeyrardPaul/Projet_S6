@@ -176,8 +176,7 @@ h2{
 	font-size: .9rem;
 }
 
-.vu
-{
+.vu {
 	border: 1px solid grey;
 	background-color: grey;
 	width: 500px;
@@ -186,6 +185,7 @@ h2{
 	border-radius: 1em;
 	padding: 9px;
 }
+
 .contenu_page{
 	background-color: #0000007c;
 }
@@ -209,6 +209,8 @@ a{
 body {
 	background-color: var(--background);
 }
+
+
 
 /*  c'est où ? */
 .menu{
@@ -595,5 +597,9 @@ strong{
 .out_dep_colle~p {
 	margin:auto;
 	width: 47em;
+}
+
+.cont {
+	text-align: center;
 }
 

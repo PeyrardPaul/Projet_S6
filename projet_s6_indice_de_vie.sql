@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306:3306
--- Generation Time: Mar 31, 2022 at 03:02 PM
+-- Generation Time: Apr 04, 2022 at 12:19 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.4.16
 
@@ -43,7 +43,7 @@ CREATE TABLE `commentaires` (
 
 CREATE TABLE `contact` (
   `id_contact` int(11) NOT NULL,
-  `mail` varchar(50) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `motif` varchar(50) NOT NULL,
   `message` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -228,7 +228,8 @@ ALTER TABLE `commentaires`
 -- Indexes for table `contact`
 --
 ALTER TABLE `contact`
-  ADD PRIMARY KEY (`id_contact`);
+  ADD PRIMARY KEY (`id_contact`),
+  ADD KEY `user_id` (`user_id`);
 
 --
 -- Indexes for table `departement`
@@ -275,6 +276,12 @@ ALTER TABLE `users`
 ALTER TABLE `commentaires`
   ADD CONSTRAINT `commentaires_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`),
   ADD CONSTRAINT `commentaires_ibfk_2` FOREIGN KEY (`code_dep`) REFERENCES `departement` (`Département`);
+
+--
+-- Constraints for table `contact`
+--
+ALTER TABLE `contact`
+  ADD CONSTRAINT `contact_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
 
 --
 -- Constraints for table `users`
