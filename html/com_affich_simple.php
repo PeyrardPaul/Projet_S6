@@ -48,15 +48,31 @@
             catch (Exception $e){
                 die('Erreur : ' . $e->getMessage().'<br/>');
             }
-        
-            $sql="INSERT INTO commentaires(user_id,code_dep,contenu,date_commentaire) VALUES('".$id_client_c."','".$id_dep."','".$com."',NOW())";
             
+            $sql="INSERT INTO commentaires(user_id,code_dep,contenu,date_commentaire) VALUES('".$id_client_c."','".$id_dep."','".$com."',NOW())";
+            $interdit = array("put","merde","salop","con","couille","encu","slp","pd","pédé","niq","nik","DROP","drop","ALTER","alter","insert","INSERT","INTO","into");
+            $flag = False;
+            $i = 0;
+            $ttl = count($interdit);
+            while($flag == False){
+                for($i=0; $i<($ttl-1); $i++){
+                    if(strpos($com,$interdit[$i])== True){
+                        $flag = True;
+                        break;
+                    }
+                }
+            }
+            if($flag == True){
+                echo "Si vous êtes là c'est que nous ne tolérons pas l'un des mots qui composent votre commentaire, merci de ne pas mettre d'insulte ou de mot déplacé.";
+            }
+            else{
             if (mysqli_query($db,$sql)) {
                 //echo "Votre commentaire a bien été ajouté<br/>";
                 header('location: recherche_simple_affichage.php?dep='.$id_dep.'&submit=Valider');
             } else {
                 echo "Error: " . $sql . "<br/>" . mysqli_error($bdd);
             }
+        }
         }
     }
     ?>
