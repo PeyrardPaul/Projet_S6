@@ -35,15 +35,16 @@
 </div>
 <body>
     <div class = "contenu_page"><!-- ici une div avec le contenu des informations sur la page  -->
+
     <a class="Retour" href="index.php#ancre">Retour carte</a> <!--bouton retour vers recherche simple -->
 
     <!-- rajout de menu déroulant -->
             
-    <?php $bdd = new PDO('mysql:host=localhost;dbname=projet_s6_indice_de_vie;charset=utf8', 'root', 'root'); ?>
+    <?php $bdd = new PDO('mysql:host=localhost;dbname=projet_s6_indice_de_vie;charset=utf8', 'root', ''); ?>
     <?php
     
     // Connect to database 
-    $con = mysqli_connect("localhost","root","root","projet_s6_indice_de_vie");
+    $con = mysqli_connect("localhost","root","","projet_s6_indice_de_vie");
         
     // Get all the categories from category table
     $sql = "SELECT * FROM `departement`";
@@ -62,7 +63,9 @@
     <div class="sais_dep">
     <p>
         Explorez un nouveau département
+        
     </p>
+    
    
     <form method="GET" action="recherche_simple_affichage.php">
             <select name="dep">
@@ -90,13 +93,18 @@
     </form>
     </div>
     <!-- fin du menu déroulant -->
+    
 
-    <?php //echo '<img class="photo_dep" src="../images/departements/'.$_POST['dep'].'.jpg" alt="photo du département en question">';
+    <?php 
+   
+    //echo '<img class="photo_dep" src="../images/departements/'.$_POST['dep'].'.jpg" alt="photo du département en question">';
             $rep = $bdd->query("select * from departement where Département ='".$_GET['dep']."'"); //ici on affiche les informations pour le département selectionné
-            while ($ligne = $rep ->fetch()) {
+            while ($ligne = $rep ->fetch()) 
+            {
                 echo('<header>
                         <div class="header-cover">
                             <img class="photo_dep" src="../images/departements/'.$_GET['dep'].'.jpg" alt="photo du département en question">
+                            
                         </div>
                         <div class="header-area">
                             <div class="header-content">
@@ -104,6 +112,7 @@
                             </div> 
                         </div>     
                     </header>');
+              //  echo  "<img src='recherche_simple_affichage.php' alt='gaphe'>";
                 echo "<div class='info_dep'>";
                 $dep = $ligne['Nom'];
                 $id_dep = $ligne['Département'];
@@ -136,6 +145,98 @@
             }
             $rep ->closeCursor();
         ?> 
+
+    <?php 
+
+            require_once("../jpgraph/src/jpgraph.php");
+            require_once("../jpgraph/src/jpgraph_bar.php");
+
+            $req = $bdd->query("SELECT AVG(`Nombre de crimes pour 100 000 habitants`)/100 as tot, AVG(`Taux de chomage (%)`) as tot2, AVG(`Santé (nombre de médecin pour 100 000 habitants)`)/100 as tot3, AVG(`Taux de réussite au brevet (%)`) as tot4, Département FROM `departement` WHERE Département='".$_GET['dep']."'");
+            while ($ligne =$req->fetch()) 
+            {
+            $donnees1=$ligne['tot'];
+            $donnees2=$ligne['tot2'];
+            $donnees3=$ligne['tot3'];
+            $donnees4=$ligne['tot4'];
+            
+            $donnees=array($donnees1,$donnees2,$donnees3,$donnees4);
+            $donneesx=array("Crimes/Délits","Chômage","Santé","Réussite");
+           
+            $largeur = 250;
+            $hauteur = 200;
+
+            // Initialisation du graphique
+            $graphe = new Graph($largeur, $hauteur);
+            // Echelle lineaire ('lin') en ordonnee et pas de valeur en abscisse ('text')
+            // Valeurs min et max seront determinees automatiquement
+            $graphe->setScale("textlin");
+
+            // Creation de l'histogramme
+            $histo = new BarPlot($donnees);
+            
+            // Ajout de l'histogramme au graphique
+            $graphe->add($histo);
+
+            $filename='graphe.png';
+            if (file_exists($filename)) 
+            {
+              unlink($filename);
+            } 
+            // Ajout du titre du graphique
+            $graphe->title->set("Proportions pour 100");
+            $graphe->xaxis->SetTickLabels($donneesx);
+            $graphe->xaxis->SetLabelAngle(50);
+            $graphe->img->SetMargin(50,50,35,65);
+ 
+            $graphe->SetMarginColor("lightblue:1.1");
+            $graphe->SetShadow();
+
+            $bplot = new BarPlot($donnees);
+            $bplot->SetWidth(0.6);
+            $bplot->SetFillGradient("navy:0.9","navy:1.85",GRAD_LEFT_REFLECTION);
+
+
+            $bplot->SetColor("white");
+            $graphe->Add($bplot);
+            // Affichage du graphique
+            $graphe->stroke($filename);
+            echo "<img width='350px' src='graphe.png'/>";
+           
+            }
+            $req->closeCursor();
+    ?>
+
+
+    <?php
+
+    require_once ('../jpgraph/src/jpgraph_pie.php');
+       $re= $bdd->query("SELECT Population as pop, Département FROM `departement` WHERE Département='".$_GET['dep']."'");
+       while ($ligne =$re->fetch()) 
+            {
+                $pop=$ligne['pop'];
+                $donnees=array(63973538,$pop); 
+
+                $graph = new PieGraph(300,200);
+                $graph->SetShadow();
+                
+                $graph->title->Set("Prop sur la population totale");
+                $p1 = new PiePlot($donnees);
+                $graph->Add($p1);
+
+                $file='pie.png';
+            if (file_exists($file)) 
+            {
+              unlink($file);
+            } 
+
+            $graph->stroke($file);
+            echo "<img width='350px' src='pie.png'/>";
+               // $graph->Stroke();
+            }
+
+        $re->closeCursor();
+    ?>
+
         <h2>Espace commentaire département <?php echo $dep;?></h2> <br/> 
         <?php
         $req = $bdd->query("SELECT id_commentaire,user_id,code_dep,contenu, date_commentaire 

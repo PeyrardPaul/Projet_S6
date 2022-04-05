@@ -1,5 +1,5 @@
 <?php 
-	require '../../bd.php'; 
+	require '../../bd.php'; 	
 	$bdd = getBD();
 ?>
 
@@ -50,9 +50,9 @@
 
 				enregistrer($n,$p,$psd,$dep,$adr,$mail,$mdp1);
 				header('location: index.php');
+				
 			}
-		?>
-
+		?> 
 	</head>
 	<body>
 	</body>
