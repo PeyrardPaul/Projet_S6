@@ -239,9 +239,9 @@
 
         <h2>Espace commentaire département <?php echo $dep;?></h2> <br/> 
         <?php
-        $req = $bdd->query("SELECT id_commentaire,user_id,code_dep,contenu, date_commentaire 
+        $requ = $bdd->query("SELECT id_commentaire,user_id,code_dep,contenu, date_commentaire 
         FROM commentaires WHERE code_dep = '{$id_dep}' ORDER BY date_commentaire DESC LIMIT 0,7");
-        while ($mat = $req->fetch()) {?>
+        while ($mat = $requ->fetch()) {?>
         <div class="aff_com">
             <?php 
                 $id=$mat['user_id'];
@@ -263,7 +263,7 @@
 
         <?php
         } 
-        $req->closeCursor();
+        $requ->closeCursor();
         ?>
         
     </div>
