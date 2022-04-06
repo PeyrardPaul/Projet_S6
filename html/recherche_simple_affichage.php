@@ -151,7 +151,7 @@
             require_once("../jpgraph/src/jpgraph.php");
             require_once("../jpgraph/src/jpgraph_bar.php");
 
-            $req = $bdd->query("SELECT AVG(`Nombre de crimes pour 100 000 habitants`)/100 as tot, AVG(`Taux de chomage (%)`) as tot2, AVG(`Santé (nombre de médecin pour 100 000 habitants)`)/100 as tot3, AVG(`Taux de réussite au brevet (%)`) as tot4, Département FROM `departement` WHERE Département='".$_GET['dep']."'");
+            $req = $bdd->query("SELECT AVG(`Nombre de crimes pour 100 000 habitants`)/1000 as tot, AVG(`Taux de chomage (%)`) as tot2, AVG(`Santé (nombre de médecin pour 100 000 habitants)`)/1000 as tot3, AVG(`Taux de réussite au brevet (%)`) as tot4, Département FROM `departement` WHERE Département='".$_GET['dep']."'");
             while ($ligne =$req->fetch()) 
             {
             $donnees1=$ligne['tot'];
