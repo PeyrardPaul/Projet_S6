@@ -40,11 +40,11 @@
 
     <!-- rajout de menu déroulant -->
             
-    <?php $bdd = new PDO('mysql:host=localhost;dbname=projet_s6_indice_de_vie;charset=utf8', 'root', ''); ?>
+    <?php //$bdd = new PDO('mysql:host=localhost;dbname=projet_s6_indice_de_vie;charset=utf8', 'root', ''); ?>
     <?php
     
     // Connect to database 
-    $con = mysqli_connect("localhost","root","","projet_s6_indice_de_vie");
+    $con = mysqli_connect("localhost","root","root","projet_s6_indice_de_vie");
         
     // Get all the categories from category table
     $sql = "SELECT * FROM `departement`";
