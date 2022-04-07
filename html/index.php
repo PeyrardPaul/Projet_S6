@@ -32,12 +32,14 @@
                 echo "<li>Bonjour ".$user['pseudo']."</li>";
             }
         ?>
-
+ <a id="casecompteur"><img id = "compteur" src="http://www.mon-compteur.fr/html_c01genv2-235151-5" border="0" /></a>
+     <!-- ce compteur est directement issu du site : http://www.mon-compteur.fr, page installation.html -->
        </ul>
     </div>
     
      <div> <!--je fais une grosse div qui contiendra la page. -->
     
+
         <header>
                 
         <!--    <div class="header-cover">  </div>-->
@@ -63,6 +65,7 @@
                     </p>
 
                     <p>
+                        
                         Site d'avis et de comparaison des départements français. </p>
                         Il s'agit d'un outil qui vous fera découvrir les départements de France métropolitaine à travers différents indices de vie.
                         <br/>

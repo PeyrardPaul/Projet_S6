@@ -32,6 +32,9 @@ strong{
 
 /* bandeau de l'index */
 .bandeau{
+	position: fixed;
+	width: 100%;
+	height: 18%;
 	color: var(--text-color-beige) ;
 	background:var(--bandeau);
 	z-index: 99;
@@ -42,6 +45,16 @@ strong{
 	font-size: 2em;
 	margin: 0 0 0 0;
 	padding: 15px;
+}
+/* compteur de vues */
+#casecompteur{
+display: block;
+border: inherit;
+}
+
+#compteur{
+	border-radius: 30px;
+	background-color: rgba(0, 0, 0, 1);
 }
 
 /* lien des titres h1 (vers les pages) dans le bandeau */
