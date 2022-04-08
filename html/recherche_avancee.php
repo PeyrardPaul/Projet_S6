@@ -25,7 +25,6 @@ recherche_avancee.php redirige vers recherche_avancee_affichage.php -->
                 echo'<li><a href="index.php">Accueil</a></li>';
                 //echo'<li><a href="recherche_simple.php">Recherche simple</a></li>';
                 echo'<li><a href="recherche_avancee.php">Comparer</a></li>';
-                echo '<li><a href="recherche_par_critere.php">Recherche par critère</a></li>';
                 echo"<li><a href='deconnexion.php'>Déconnexion</a></li>";
                 echo "<li>Bonjour ".$user['pseudo']."</li>";
             }

@@ -1,4 +1,6 @@
-<?php include 'session.php'; ?>
+<?php include 'session.php'; 
+$bdd = getBD();
+?>
 
 <html lang="fr">
 <head>
@@ -38,16 +40,22 @@
     $_POST['5g'],$_POST['qrzo']); // ajouter le critere dans la session
 
     $_SESSION['rech_critere'] = array();
-    for ($i = 0; $i!=count($_SESSION['test']); $i++) { //varaible session avec que les critères saisis
+    for ($i = 0; $i!=count($_SESSION['test']); $i++) { //variable session avec que les critères saisis
         if (isset($_SESSION['test'][$i])) {
             array_push($_SESSION['rech_critere'],$_SESSION['test'][$i]);
         }
     }
-    print_r($_SESSION['rech_critere']);
-        $req = $bdd->query("SELECT * FROM departement");
-        while ($ligne = $req->fetch()) {
-            echo "<br><h3>".$ligne['Nom']."</h3>";
+    $crit1 = $_SESSION['rech_critere'][0];
+    $crit2 = $_SESSION['rech_critere'][1];
+    $crit3 = $_SESSION['rech_critere'][2];
+        $rep = $bdd->query("SELECT * FROM departement WHERE '{$crit1}' = '5' ");
+        while ($mat = $rep ->fetch()) {
+            echo "<h1>saluttt</h1>";
         }
+        //echo "<table border='1'><tr><th>".$crit1."</th></tr>"; //table crit1
+
+        $rep->closeCursor();
+        //echo "</table>";
     unset($_SESSION['test']);
     unset($_SESSION['rech_critere']);
     ?>
