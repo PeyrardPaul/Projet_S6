@@ -1,3 +1,6 @@
+<!-- cette page affiche les données sur le département cliqué par l'utilisateur 
+sur la carte de l'index.
+On y accède via index.php -->
 <?php 
 	
     include 'session.php';
@@ -46,15 +49,13 @@
     // Connect to database 
     $con = mysqli_connect("localhost","root","root","projet_s6_indice_de_vie");
         
-    // Get all the categories from category table
+    // Get all the departements from departement table
     $sql = "SELECT * FROM `departement`";
     $all_categories = mysqli_query($con,$sql);
     
-    // The following code checks if the submit button is clicked 
-    // and inserts the data in the database accordingly
     if(isset($_POST['submit']))
     {
-        // Store the Product name in a "name" variable
+     
         $name = mysqli_real_escape_string($con,$_POST['dep']);
         
     }
@@ -71,7 +72,7 @@
             <select name="dep">
                 <?php 
                     // use a while loop to fetch data 
-                    // from the $all_categories variable 
+                    // from the $all_departement variable 
                     // and individually display as an option
                     while ($category = mysqli_fetch_array(
                             $all_categories,MYSQLI_ASSOC)):; 
@@ -80,7 +81,7 @@
                         // The value we usually set is the primary key
                     ?>">
                         <?php echo $category["Nom"];
-                            // To show the category name to the user
+                            // To show the departement name to the user
                         ?>
                     </option>
                 <?php 
@@ -93,6 +94,11 @@
     </form>
     </div>
     <!-- fin du menu déroulant -->
+    <!-- ce menu déroulant est issu d'un site web, le modele de fonctionnement du moins.
+    Le site web cherchait à intégrer de nouveaux objets à une boutique en ligne et ensuite créer un menu 
+    déroulant qui afficherait le nouvel onglet. Nous nous sommes donc inspirés de cette idée de menu déroulant
+    pour en ajouter un qui irait chercher tous les départements de notre bd et les afficheraient dans 
+    une liste cliquable. -->
     
 
     <?php 

@@ -1,3 +1,6 @@
+<!-- cette page est au centre de notre site, elle fait office d'accueil et sert
+à se connecter et à accéder aux fonctionnalités de notre site. -->
+
 <?php
 	include 'session.php';
 	//$bdd = getBD();

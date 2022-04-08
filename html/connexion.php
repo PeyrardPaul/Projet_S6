@@ -1,3 +1,6 @@
+<!-- cette page permet à un utilisateur membre de se connecter, si il ne l'est pas
+elle lui propose de créer un compte.
+on y accède par l'index uniquement quand on n'est pas connecté -->
 <?php include 'session.php'; ?>
 
 <!DOCTYPE html>

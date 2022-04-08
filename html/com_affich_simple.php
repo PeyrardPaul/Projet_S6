@@ -1,3 +1,8 @@
+<!-- Cette page sert à évaluer si le commentaire posté par 
+l'utilisateur convient à nos standards, si c'est le cas, il sera intégré à notre BD
+on y accède par recherche simple affichage en utilisant le formulaire pour envoyer un commentaire en bas de page
+-->
+
 <?php 
 	include 'session.php';
 	$bdd = getBD();
@@ -67,7 +72,7 @@
             }
             else{
             if (mysqli_query($db,$sql)) {
-                //echo "Votre commentaire a bien été ajouté<br/>";
+                echo "Votre commentaire a bien été ajouté<br/>";
                 header('location: recherche_simple_affichage.php?dep='.$id_dep.'&submit=Valider');
             } else {
                 echo "Error: " . $sql . "<br/>" . mysqli_error($bdd);

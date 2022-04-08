@@ -1,3 +1,5 @@
+<!-- page permettant la comparaison de deux départements selon les critères choisis
+recherche_avancee.php redirige vers recherche_avancee_affichage.php -->
 <?php include 'session.php'; ?>
 
 <html lang="fr">

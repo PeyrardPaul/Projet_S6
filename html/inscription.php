@@ -1,3 +1,6 @@
+<!-- Cette page est destiné aux utilisateurs n'ayant pas encore de compte, 
+elle permet de créer un compte et envoie les données à enregistrement.php.
+on y accède par index.php, connexion.php uniquement quand on n'est pas connecté -->
 <?php
 	//include '../../bd.php';
 	include 'session.php';

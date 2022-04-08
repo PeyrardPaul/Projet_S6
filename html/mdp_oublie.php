@@ -1,3 +1,6 @@
+<!-- Cette page prend en entrée un email de récupération et y envoie la procédure pour récupérer son mot de passe.
+On y accède par connexion.php -->
+
 <?php
 	include '../../bd.php';
 	session_start();

@@ -1,3 +1,6 @@
+<!-- cette page renseigne sur l'équipe qui a travaillé sur ce projet, 
+elle est accessible par le lien dans le bandeau en pied de page -->
+
 <?php
 	include 'session.php';
     $bdd = getBD();

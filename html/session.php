@@ -1,3 +1,4 @@
+<!-- cette page ne renvoie pas de visuel, elle sert à créer des sessions. -->
 <?php
 	session_start();
 	include '../../bd.php';

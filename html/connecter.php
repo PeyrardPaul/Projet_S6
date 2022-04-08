@@ -1,3 +1,5 @@
+<!-- cette page recoit les infos de connexion.php et s'en sert pour connecter ou non l'utilisateur. -->
+
 <?php
 include 'session.php'; ?>
 <?php ?>

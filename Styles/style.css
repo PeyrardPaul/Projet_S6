@@ -32,7 +32,6 @@ strong{
 
 /* bandeau de l'index */
 .bandeau{
-	position: fixed;
 	width: 100%;
 	height: 18%;
 	color: var(--text-color-beige) ;

@@ -1,3 +1,5 @@
+<!-- cette page permet de changer son mot de passe -->
+
 <?php
 	include '../../bd.php';
 	session_start();

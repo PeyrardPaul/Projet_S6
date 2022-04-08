@@ -1,3 +1,6 @@
+
+<!-- Cette page sert à contacter l'équipe qui gère le site web, on y accède
+par le lien dans le  bandeau en pied de page -->
 <?php
 	include 'session.php';
 	$bdd = getBD();

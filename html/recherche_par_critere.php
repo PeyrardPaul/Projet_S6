@@ -1,3 +1,7 @@
+<!-- cette page permet à l'utilisateur de sélectionner des critères et de se voir renvoyer le département
+qui y correspond le mieux.
+Une fois connecté on y accède par le bouton comparé sur l'index puis par le bouton recherche par critère -->
+
 <?php include 'session.php'; ?>
 
 <html lang="fr">

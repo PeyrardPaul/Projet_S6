@@ -1,3 +1,6 @@
+<!-- Cette page fait echo à inscription.php, elle recoit les données du formulaire
+d'inscription et créé un nouveau client dans la bd. -->
+
 <?php 
 	require '../../bd.php'; 	
 	$bdd = getBD();
