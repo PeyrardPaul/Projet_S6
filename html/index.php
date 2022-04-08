@@ -32,6 +32,7 @@
                 echo "<li>Bonjour ".$user['pseudo']."</li>";
             }
         ?>
+        
  <a id="casecompteur"><img id = "compteur" src="http://www.mon-compteur.fr/html_c01genv2-235151-5" border="0" /></a>
      <!-- ce compteur est directement issu du site : http://www.mon-compteur.fr, page installation.html -->
        </ul>

@@ -50,12 +50,11 @@ strong{
 #casecompteur{
 display: block;
 border: inherit;
+
 }
 
-#compteur{
-	border-radius: 30px;
-	background-color: rgba(0, 0, 0, 1);
-}
+
+   
 
 /* lien des titres h1 (vers les pages) dans le bandeau */
 .bandeau > h1 > a{
@@ -224,7 +223,6 @@ a{
 body {
 	background-color: var(--background);
 }
-
 
 
 /*  c'est où ? */
