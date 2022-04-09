@@ -57,32 +57,32 @@ elle est accessible par le lien dans le bandeau en pied de page -->
     <img src = "../images/melissa.jpeg"/>
     <br/>
     Mélissa Pulci <br/>
-    21 ans 
+    20 ans 
 </p>
 
 <p class="profil">
-    <!-- photo de profil-->
+<img src = "../images/shelmy.jpeg"/>
     <br/>
     Shelmy Assiah <br/>
     20 ans 
 </p>
 
 <p class="profil">
-    <!-- photo de profil-->
+<img src = "../images/paul.jpeg"/>
     <br/>
     Paul Peyrard <br/>
     20 ans 
 </p>
 
 <p class="profil">
-    <!-- photo de profil-->
+<img src = "../images/augustin.jpg"/>
     <br/>
     Augustin Hannebert <br/>
     20 ans 
 </p>
 
 <p class="profil">
-    <!-- photo de profil-->
+<img src = "../images/nour.jpeg"/>
     <br/>
     Nour Aït Kaddour <br/>
     20 ans 

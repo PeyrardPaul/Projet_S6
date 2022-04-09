@@ -211,7 +211,7 @@ recherche_avancee.php redirige vers recherche_avancee_affichage.php -->
  
 </table>
 
-    <input type="submit" value="Valider" />
+    <input id="bout" type="submit" value="Valider" />
 </div>
 </form>
 </body>

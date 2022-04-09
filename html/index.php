@@ -97,7 +97,7 @@
     <?php
         if(isset($_SESSION['user'])){
             echo("
-            <div class='page'>
+            <div id='pres'>
     
             <!-- Ici on va proposer les 2 manières de s'informer sur le dpt en question  -->
                 <h3>Pour découvrir la France, choississez un mode de recherche &#x1F440;</h3>
