@@ -52,8 +52,14 @@ border: inherit;
 
 }
 
+.bout{
+	margin: auto;
+	position: center;
+}
 
-   
+.pres{
+	position: fixed;
+}
 
 /* lien des titres h1 (vers les pages) dans le bandeau */
 .bandeau > h1 > a{
@@ -199,9 +205,7 @@ h2{
 	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-.contenu_page{
-	
-}
+
 
 #quisommesnous{
 	color: var(--text-color-beige);
