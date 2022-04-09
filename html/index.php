@@ -42,13 +42,13 @@
                 
         <!--    <div class="header-cover">  </div>-->
                    
-                        <div class="conteneur">
-                            <div class="d2"></div>
+                        <div class="conteneur_index">
+                            <div class="d2_index"></div>
                         </div>
            
            
-            <div class="header-area">
-                 <div class="header-content">
+            <div class="header-area_index">
+                 <div class="header-content_index">
                     <p>
                         <?php
 		                if(isset($_SESSION['user'])) {

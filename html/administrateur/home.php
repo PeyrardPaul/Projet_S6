@@ -41,13 +41,13 @@
                 
         
                    
-                        <div class="conteneur">
-                        <div class="d2"></div>
+                        <div class="conteneur_index">
+                        <div class="d2_index"></div>
                         </div>
            
            
-            <div class="header-area">
-                 <div class="header-content">
+            <div class="header-area_index">
+                 <div class="header-content_index">
 
                     <p>
                         Site d'avis et de comparaison des départements en France. </p>

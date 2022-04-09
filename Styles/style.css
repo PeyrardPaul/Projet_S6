@@ -291,6 +291,30 @@ header {
 	margin: auto;
     width: 100%;
 }
+
+.header-content_index{
+	background: rgba(44, 44, 44, 0.4);
+	border-radius: 20px;
+	padding: 2em;
+	max-width: 40%;
+	min-width: 30%;
+	margin: auto;
+	/* position:relative; */
+	/* margin-left: 53%; */
+	/* height: 250px; */
+	/* text-shadow: rgba(112, 112, 112, 0.609) 1px 0 10px; */
+}
+.header-area_index {
+    text-align: center;
+    position: absolute;
+    display: flex;
+    min-height: 100%;
+    top: 0;
+    left: 0;
+    color: var(--text-color-beige);
+	margin: auto;
+    width: 100%;
+}
 .header-cover img{
     opacity: 1;
     width: 100%;
@@ -418,7 +442,20 @@ g path:hover {
 }
 
 /*  c'est où ? */
-.d2{
+.d2_index{
+    width: auto;
+    /* height: -50px; */
+    padding-top: 54%;
+    /* box-shadow: 0px 0px 10px #777; */
+    background-color: var(--background);
+    background-size: contain;
+    animation: fondu 15s ease-in-out infinite both;
+	background-repeat: no-repeat;
+}
+.d2:hover{
+    animation-play-state: paused;
+}/*  c'est où ? */
+.d2_index{
     width: auto;
     /* height: -50px; */
     padding-top: 54%;
@@ -586,7 +623,7 @@ strong{
 	margin-top:25px;
 }
 .sais_com>h3 {
-	color:var(--text-color);
+	color:#f0ad4e;
 }
 .sais_com>form>p {
 	font-size: 13px;
