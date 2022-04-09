@@ -36,35 +36,9 @@ Une fois connecté on y accède par le bouton comparé sur l'index puis par le b
     </div>
 <body>
 
-<h1>Using Form</h1>
-<form method="post" name="form_name" id="form_name">
-	<input type="checkbox" name="check[]" value="CheckBox 1"/>
-	<input type="checkbox" name="check[]" value="CheckBox 2"/>
-	<input type="checkbox" name="check[]" value="CheckBox 3"/>
-</form>
-<script>
-        function checkBoxLimit() {
-	var checkBoxGroup = document.forms['form_name']['check[]'];			
-	var limit = 2;
-	for (var i = 0; i < checkBoxGroup.length; i++) {
-		checkBoxGroup[i].onclick = function() {
-			var checkedcount = 0;
-			for (var i = 0; i < checkBoxGroup.length; i++) {
-				checkedcount += (checkBoxGroup[i].checked) ? 1 : 0;
-			}
-			if (checkedcount > limit) {
-				console.log("You can select maximum of " + limit + " checkboxes.");
-				alert("You can select maximum of " + limit + " checkboxes.");						
-				this.checked = false;
-			}
-		}
-	}
-}
-checkBoxLimit();
-    </script>
-<!--<form action="recherche_par_critere_affichage.php" method="POST">
+<form action="recherche_par_critere_affichage.php" name="form_name" method="POST">
 <div class="marg">
-    <p> Choix des 3 critères : </p>
+    <h1> Choix des 3 critères : </h1>
         
     <label class = "critcell" for="pop"> Population :</label>
     <input type="checkbox" id="population" name="pop" value="Niv_pop">
@@ -148,7 +122,27 @@ checkBoxLimit();
 
     <input type="submit" value="Valider" />
 </div>
-</form>-->
+</form>
+<script>
+    function checkBoxLimit() {
+	var checkBoxGroup = document.forms['form_name'];			
+	var limit = 3;
+	for (var i = 0; i < checkBoxGroup.length; i++) {
+		checkBoxGroup[i].onclick = function() {
+			var checkedcount = 0;
+			for (var i = 0; i < checkBoxGroup.length; i++) {
+				checkedcount += (checkBoxGroup[i].checked) ? 1 : 0;
+			}
+			if (checkedcount > limit) {
+				console.log("Vous ne pouvez sélectionner que " + limit + " critères.");
+				alert("Vous ne pouvez sélectionner que " + limit + " critères.");						
+				this.checked = false;
+			}
+		}
+	}
+}
+checkBoxLimit();
+    </script>
 </body>
 
     <footer class="footer">
