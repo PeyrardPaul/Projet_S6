@@ -136,17 +136,17 @@ On y accède via index.php -->
                 //reremplacer le point par la virgule pour un meilleur affichage 
                 $ligne['Taux de réussite au brevet (%)'] = str_replace(".",",",$ligne['Taux de réussite au brevet (%)']);
 
-                    echo "<p>Numéro du département : ".$ligne['Département']."<br></p>";
-                    echo "<p>Population : ".$ligne['Population']." habitants"."<br></p>";
-                    echo "<p>Nombre de médecins pour 100 000 habitants : ".$ligne['Santé (nombre de médecin pour 100 000 habitants)']."<br></p>";
-                    echo "<p>Nombre de crimes pour 100 000 habitants : ".$ligne['Nombre de crimes pour 100 000 habitants']."<br></p>";
-                    echo "<p>Taux de chômage : ".$ligne['Taux de chomage (%)']." %"."<br></p>";
-                    echo "<p>Taux de réussite au brevet des collège : ".$ligne['Taux de réussite au brevet (%)']." %"."<br></p>";
-                    echo "<p>Nombre de jours de pluie par an : ".$ligne['Nombre de jours de pluie par an']."<br></p>";
-                    echo "<p>Nombre de plan d'eau : ".$ligne["Nombre de plans d’eau"]."<br></p>";
-                    echo "<p>Température médiane en hiver : ".$ligne["Médiane de la température du mois de janvier (Hiver) en C°"]." C°"."<br/></p>";
-                    echo "<p>Température médiane en été : ".$ligne["Médiane de la température du mois de juin (Ete) en C°"]." C°"."<br></p>";
-                echo "</div>";
+                    echo "<p><strong style='display:inline;'>Numéro du département :</strong> ".$ligne['Département']."<br></p>";
+                    echo "<p><strong style='display:inline;'>Population :</strong> ".$ligne['Population']." habitants"."<br></p>";
+                    echo "<p><strong style='display:inline;'>Nombre de médecins pour 100 000 habitants :</strong> ".$ligne['Santé (nombre de médecin pour 100 000 habitants)']."<br></p>";
+                    echo "<p><strong style='display:inline;'>Nombre de crimes pour 100 000 habitants :</strong> ".$ligne['Nombre de crimes pour 100 000 habitants']."<br></p>";
+                    echo "<p><strong style='display:inline;'>Taux de chômage :</strong> ".$ligne['Taux de chomage (%)']." %"."<br></p>";
+                    echo "<p><strong style='display:inline;'>Taux de réussite au brevet des collège :</strong> ".$ligne['Taux de réussite au brevet (%)']." %"."<br></p>";
+                    echo "<p><strong style='display:inline;'>Nombre de jours de pluie par an :</strong> ".$ligne['Nombre de jours de pluie par an']."<br></p>";
+                    echo "<p><strong style='display:inline;'>Nombre de plan d'eau :</strong> ".$ligne["Nombre de plans d’eau"]."<br></p>";
+                    echo "<p><strong style='display:inline;'>Température médiane en hiver :</strong> ".$ligne["Médiane de la température du mois de janvier (Hiver) en C°"]." C°"."<br/></p>";
+                    echo "<p><strong style='display:inline;'>Température médiane en été :</strong> ".$ligne["Médiane de la température du mois de juin (Ete) en C°"]." C°"."<br></p>";
+                echo "<br><br></div>";
                 
             }
             $rep ->closeCursor();
