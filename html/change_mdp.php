@@ -51,7 +51,8 @@
         $sql="UPDATE users SET password = '{$mdp}' WHERE user_id = '{$id}'";
         
         if (mysqli_query($db,$sql)) {
-            echo "Votre mot de passe a été modifié <br/>";
+            echo "<h2><Votre mot de passe a été modifié </h2><br/>";
+            header('location: index.php' );
             unset($_SESSION['recup']);
         } else {
             echo "Error: " . $sql . "<br/>" . mysqli_error($bdd);
@@ -75,7 +76,7 @@
     }
     ?>
 </body>
-<footer><!--ici le pied de page -->
+<footer class="footer"><!--ici le pied de page -->
         <p>N-Maps &copy; 2022 
         -   <a href="qui_sommes_nous.php"> Qui sommes nous ? </a>   
         -   <a href="contact.php"> Nous contacter </a>    
